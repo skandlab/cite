@@ -24,7 +24,7 @@ export const StatusBar = (props: Props) => {
 							<label>Ligand-Receptor Combinations:</label>
 						</Form.Field>
 						<Form.Field>
-							<Statistic text size="mini">
+							<Statistic text size="mini" color="grey">
 								<Statistic.Value>
 									{props.filteredData.length}
 								</Statistic.Value>
@@ -34,7 +34,7 @@ export const StatusBar = (props: Props) => {
 							</Statistic>
 						</Form.Field>
 						<Form.Field>
-							<Statistic text size="mini">
+							<Statistic text size="mini" color="grey">
 								<Statistic.Value>
 									{start + "-" + end}
 								</Statistic.Value>
