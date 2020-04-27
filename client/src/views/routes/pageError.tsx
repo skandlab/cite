@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Header, Icon, Button } from "semantic-ui-react";
 import { browserHistory } from "../../utils/browser_history";
 import { GridColumn } from "../styled/gridColumn";
-import { Members } from "../../utils/constants";
+import { Members, ROUTES } from "../../utils/constants";
 
 export const ErrorPage = () => (
 	<Grid.Row className="errorpage" centered>
@@ -20,7 +20,7 @@ export const ErrorPage = () => (
 				<Button.Group>
 					<Button
 						color="black"
-						onClick={() => browserHistory.push("/")}
+						onClick={() => browserHistory.push(ROUTES.Home.route)}
 					>
 						Back to home
 					</Button>
