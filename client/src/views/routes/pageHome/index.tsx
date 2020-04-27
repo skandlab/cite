@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Dimmer, Loader, Segment } from "semantic-ui-react";
-import { API_DATA, API_METADATA } from "../../../utils/constants";
+import { API_DATA, API_METADATA, ROUTE_ERROR } from "../../../utils/constants";
 import axios from "axios";
 import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
 import { HeatMapCards } from "./heatmapCards";
@@ -8,6 +8,7 @@ import { ColumnBrowserGroup } from "./columnBrowser/columnBrowserGroup";
 import { StatusBar } from "./statusBar/statusBar";
 import { AppPagination, paginationData } from "./pagination";
 import { GridColumn } from "../../styled/gridColumn";
+import { browserHistory } from "../../../utils/browser_history";
 
 export interface InterfaceData {
 	ligand: string;
@@ -68,7 +69,8 @@ export class Home extends React.Component<{}, State> {
 					isFetchingData: false,
 				})
 			)
-			.catch(() => this.setState({ isFetchingData: false }));
+			.catch((_) => browserHistory.push(ROUTE_ERROR))
+			.finally(() => this.setState({ isFetchingData: false }));
 	}
 
 	updateLigandOrReceptor = (
@@ -98,7 +100,8 @@ export class Home extends React.Component<{}, State> {
 							receptorOptions: _receptorOptions,
 						})
 					)
-					.catch(() => this.setState({ isFetchingData: false }))
+					.catch((_) => browserHistory.push(ROUTE_ERROR))
+					.finally(() => this.setState({ isFetchingData: false }))
 			);
 		}
 	};
