@@ -4,7 +4,11 @@ import { URL_NAVBAR_LOGO, ROUTE_HOME, APP_TITLE } from "../../utils/constants";
 import { browserHistory } from "../../utils/browser_history";
 import { GridColumn } from "./gridColumn";
 
-export const Navbar = () => (
+interface Props {
+	currentUrl: string;
+}
+
+export const Navbar = (_: Props) => (
 	<Grid.Row centered className="menuRow">
 		<GridColumn>
 			<Menu fluid borderless>
