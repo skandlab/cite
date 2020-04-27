@@ -1,0 +1,24 @@
+{
+  "heatmapProps": {
+    "indexBy": "tumor_type",
+    "minValue": 0,
+    "maxValue": 100,
+    "colors": "reds",
+    "padding": 3,
+    "margin": { "top": 24, "right": 0, "bottom": 0, "left": 48 },
+    "axisTop": {
+      "orient": "top",
+      "tickSize": 5,
+      "tickPadding": 5,
+      "tickRotation": 0,
+      "legend": "",
+      "legendOffset": 36
+    },
+    "cellOpacity": 0.6,
+    "enableLabels": false,
+    "animate": false,
+    "hoverTarget": "cell",
+    "cellHoverOpacity": 0.6,
+    "cellHoverOthersOpacity": 0.25
+  }
+}
