@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Dimmer, Loader, Segment } from "semantic-ui-react";
+import { Grid, Dimmer, Loader } from "semantic-ui-react";
 import { API_DATA, API_METADATA, ROUTE_ERROR } from "../../../utils/constants";
 import axios from "axios";
 import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
