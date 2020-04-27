@@ -5,21 +5,10 @@ import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { Navbar } from "../styled/navbar";
 import { Home } from "./pageHome";
 import { ErrorPage } from "./pageError";
+import { PageTeam } from "./pageTeam";
 
-import {
-	ROUTE_HOME,
-	//   ROUTE_HEATMAP_IMAGE,
-	ROUTE_ERROR,
-	//   ROUTE_PATHWAY_SEARCH,
-	//   ROUTE_TEAM,
-	//   ROUTE_HEATMAP,
-	//   ROUTE_HEATMAP_CMP,
-	//   ROUTE_PATHWAY_SEARCH_IMAGE,
-} from "../../utils/constants";
+import { ROUTES } from "../../utils/constants";
 import { browserHistory } from "../../utils/browser_history";
-// import { HeatMapPage } from "./pageHeatmap";
-// import { SearchPage } from "./pageSearch";
-// import { PageTeam } from "./pageTeam";
 
 interface State {
 	currentUrl: string;
@@ -52,12 +41,22 @@ export class AppRouter extends React.Component<{}, State> {
 				<Navbar {...this.state} />
 				<Router history={browserHistory}>
 					<Switch>
-						<Route exact path={ROUTE_HOME} component={Home} />
-						<Route exact path={ROUTE_ERROR} component={ErrorPage} />
-						{/* <Route exact path={[ROUTE_HEATMAP_IMAGE, ROUTE_HEATMAP_CMP]} component={HeatMapPage} />
-        <Redirect exact from={ROUTE_HEATMAP} to={ROUTE_HEATMAP + "/cs"} />
-        <Route exact path={[ROUTE_PATHWAY_SEARCH, ROUTE_PATHWAY_SEARCH_IMAGE]} component={SearchPage} />
-        <Route exact path={ROUTE_TEAM} component={PageTeam} /> */}
+						<Route
+							exact
+							path={ROUTES.Home.route}
+							component={Home}
+						/>
+						<Route
+							exact
+							path={ROUTES.Team.route}
+							component={PageTeam}
+						/>
+						<Route
+							exact
+							path={ROUTES.Error.route}
+							component={ErrorPage}
+						/>
+
 						<Redirect from="*" to="/ui" />
 					</Switch>
 				</Router>

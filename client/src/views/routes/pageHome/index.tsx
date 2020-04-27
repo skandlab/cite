@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Dimmer, Loader } from "semantic-ui-react";
-import { API_DATA, API_METADATA, ROUTE_ERROR } from "../../../utils/constants";
+import { API_DATA, API_METADATA, ROUTES } from "../../../utils/constants";
 import axios from "axios";
 import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
 import { HeatMapCards } from "./heatmapCards";
@@ -69,7 +69,7 @@ export class Home extends React.Component<{}, State> {
 					isFetchingData: false,
 				})
 			)
-			.catch((_) => browserHistory.push(ROUTE_ERROR))
+			.catch((_) => browserHistory.push(ROUTES.Error.route))
 			.finally(() => this.setState({ isFetchingData: false }));
 	}
 
@@ -100,7 +100,7 @@ export class Home extends React.Component<{}, State> {
 							receptorOptions: _receptorOptions,
 						})
 					)
-					.catch((_) => browserHistory.push(ROUTE_ERROR))
+					.catch((_) => browserHistory.push(ROUTES.Error.route))
 					.finally(() => this.setState({ isFetchingData: false }))
 			);
 		}

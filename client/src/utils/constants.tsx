@@ -1,8 +1,35 @@
 export const APP_TITLE = "Tumeric";
 
 export const ROUTE_PREFIX = "/ui";
-export const ROUTE_HOME = ROUTE_PREFIX + "/";
-export const ROUTE_ERROR = ROUTE_PREFIX + "/error";
+
+export const ROUTES = {
+	Home: {
+		name: "Home",
+		show: true,
+		route: ROUTE_PREFIX + "/",
+		matches: (current_route: string) =>
+			current_route === ROUTE_PREFIX ||
+			current_route === ROUTE_PREFIX + "/",
+	},
+	Team: {
+		name: "Team",
+		show: true,
+		route: ROUTE_PREFIX + "/team",
+		matches: (current_route: string) =>
+			current_route === ROUTE_PREFIX + "/team" ||
+			current_route === ROUTE_PREFIX + "/team/",
+	},
+	Error: {
+		name: "Error",
+		show: false,
+		route: ROUTE_PREFIX + "/error",
+		matches: (current_route: string) =>
+			current_route === ROUTE_PREFIX + "/error" ||
+			current_route === ROUTE_PREFIX + "/error/",
+	},
+};
+
+export const ROUTES_ARRAY = Object.values(ROUTES);
 
 export const API_URL = "http://localhost:5000/server";
 export const API_METADATA = () => API_URL + "/v1/metadata";
