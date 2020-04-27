@@ -103,9 +103,7 @@ export const ColumnBrowser = (props: Props) => {
 								};
 							})
 						);
-						updateCurrentFilteredStatistic(
-							currentFilteredStatistic - 1
-						);
+						updateCurrentFilteredStatistic(0);
 					}}
 				>
 					<Icon name="undo" />
