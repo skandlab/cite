@@ -25,22 +25,22 @@ export const StatusBar = (props: Props) => {
 						</Form.Field>
 						<Form.Field>
 							<Statistic text size="mini">
-								<Statistic.Label>
-									<small>Total</small>
-								</Statistic.Label>
 								<Statistic.Value>
 									{props.filteredData.length}
 								</Statistic.Value>
+								<Statistic.Label>
+									<small>Total</small>
+								</Statistic.Label>
 							</Statistic>
 						</Form.Field>
 						<Form.Field>
 							<Statistic text size="mini">
-								<Statistic.Label>
-									<small>Showing</small>
-								</Statistic.Label>
 								<Statistic.Value>
 									{start + "-" + end}
 								</Statistic.Value>
+								<Statistic.Label>
+									<small>Showing</small>
+								</Statistic.Label>
 							</Statistic>
 						</Form.Field>
 					</Form.Group>
