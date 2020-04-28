@@ -35,17 +35,23 @@ interface Props {
 	handleOnPageChange: (activePageNumber: number) => void;
 }
 
-export const AppPagination = (props: Props) => (
-	<Container textAlign="center">
-		<Pagination
-			className="pagination"
-			pointing
-			secondary
-			defaultActivePage={1}
-			totalPages={Math.ceil(props.filteredData.length / CardsPerPage)}
-			onPageChange={(_, { activePage }) =>
-				props.handleOnPageChange(activePage as number)
-			}
-		/>
-	</Container>
-);
+export const AppPagination = (props: Props) => {
+	const totalPages = Math.max(
+		Math.ceil(props.filteredData.length / CardsPerPage),
+		1
+	);
+	return (
+		<Container textAlign="center">
+			<Pagination
+				className="pagination"
+				pointing
+				secondary
+				defaultActivePage={1}
+				totalPages={totalPages}
+				onPageChange={(_, { activePage }) =>
+					props.handleOnPageChange(activePage as number)
+				}
+			/>
+		</Container>
+	);
+};
