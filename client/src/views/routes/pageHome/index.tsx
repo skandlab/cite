@@ -126,15 +126,16 @@ export class Home extends React.Component<{}, State> {
 					</GridColumn>
 				</Grid.Row>
 
+				<Grid.Row centered>
+					<GridColumn>
+						<StatusBar {...this.state} />
+					</GridColumn>
+				</Grid.Row>
+				<Grid.Row />
+
 				{this.state.filteredData.length !== 0 &&
 					!this.state.isFetchingData && (
 						<>
-							<Grid.Row centered>
-								<GridColumn>
-									<StatusBar {...this.state} />
-								</GridColumn>
-							</Grid.Row>
-							<Grid.Row />
 							<Grid.Row centered>
 								<GridColumn>
 									<HeatMapCards

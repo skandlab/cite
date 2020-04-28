@@ -24,6 +24,7 @@ export function paginationText(props: {
 	totalItems: number;
 }) {
 	let { start, end } = calculatePaginationItems(props.currentPageNumber);
+	start = Math.min(start, props.totalItems);
 	end = Math.min(end, props.totalItems);
 	return { start: start, end: end };
 }
