@@ -88,6 +88,7 @@ export class Home extends React.Component<{}, State> {
 				filteredData: this.state.unfilteredData,
 				ligandOptions: _ligandOptions,
 				receptorOptions: _receptorOptions,
+				currentPageNumber: 1,
 			});
 		} else {
 			this.setState({ isFetchingData: true }, () =>
@@ -98,6 +99,7 @@ export class Home extends React.Component<{}, State> {
 							isFetchingData: false,
 							ligandOptions: _ligandOptions,
 							receptorOptions: _receptorOptions,
+							currentPageNumber: 1,
 						})
 					)
 					.catch((_) => browserHistory.push(ROUTES.Error.route))
