@@ -49,15 +49,4 @@ def data():
 
 @app.route("/metadata", methods=["GET"])
 def metadata():
-    return jsonify(
-        {
-            "tumorOptions": [
-                {"isChecked": False, "value": tumor_type}
-                for tumor_type in dao.list_tumor_type
-            ],
-            "pairsOptions": [
-                {"isChecked": False, "value": interaction_type}
-                for interaction_type in dao.list_interaction_type
-            ],
-        }
-    )
+    return jsonify(dao.metadata)

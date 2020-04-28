@@ -11,31 +11,41 @@ df[["ligand", "receptor"]] = df.lr.str.split("_", expand=True)
 df.drop("lr", axis=1, inplace=True)
 df.columns = ["tumorType", "cc", "cs", "nn", "sc", "ss", "ligand", "receptor"]
 
-list_tumor, list_ligand, list_receptor, list_interactions = (
+list_tumor_type, list_ligand, list_receptor, list_interaction_type = (
     df.tumorType.unique().tolist(),
     df.ligand.unique().tolist(),
     df.receptor.unique().tolist(),
     ["cc", "cs", "nn", "sc", "ss"],
 )
-list_tumor = [tumor for tumor in list_tumor if tumor != "MEDIAN"]
+list_tumor_type = [tumorType for tumorType in list_tumor_type if tumorType != "MEDIAN"]
 
 with open(OUTPUT_METADATA_FILE, "w") as f:
     json.dump(
         {
             "ligand": list_ligand,
             "receptor": list_receptor,
-            "tumorType": list_tumor,
-            "interactionType": list_interactions,
+            "tumorType": list_tumor_type,
+            "interactionType": list_interaction_type,
+            "metadata": {
+                "tumorTypeOptions": [
+                    {"isChecked": False, "value": tumor_type}
+                    for tumor_type in list_tumor_type
+                ],
+                "interactionTypeOptions": [
+                    {"isChecked": False, "value": interaction_type}
+                    for interaction_type in list_interaction_type
+                ],
+            },
         },
         f,
     )
 
 
 df.set_index("tumorType", inplace=True)
-df = df.loc[list_tumor].reset_index()
+df = df.loc[list_tumor_type].reset_index()
 ligand_receptor_groups = df.groupby(["ligand", "receptor"]).groups
 cols = ["tumorType"]
-cols.extend(list_interactions)
+cols.extend(list_interaction_type)
 
 with open(OUTPUT_DATA_FILE, "w") as f:
     json.dump(

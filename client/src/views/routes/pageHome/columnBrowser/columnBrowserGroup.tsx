@@ -5,15 +5,15 @@ import { ColumnBrowser, ColumnBrowserProps } from "./columnBrowser";
 interface Props {
 	ligandOptions: ColumnBrowserProps[];
 	receptorOptions: ColumnBrowserProps[];
-	tumorOptions: ColumnBrowserProps[];
-	pairsOptions: ColumnBrowserProps[];
+	tumorTypeOptions: ColumnBrowserProps[];
+	interactionTypeOptions: ColumnBrowserProps[];
 	updateLigandOrReceptor: (
 		ligandOptions: ColumnBrowserProps[],
 		receptorOptions: ColumnBrowserProps[],
 		updateIsLigand: boolean
 	) => void;
-	updateTumorOptions: (data: ColumnBrowserProps[]) => void;
-	updatePairsOptions: (data: ColumnBrowserProps[]) => void;
+	updateTumorTypeOptions: (data: ColumnBrowserProps[]) => void;
+	updateInteractionTypeOptions: (data: ColumnBrowserProps[]) => void;
 }
 
 export const ColumnBrowserGroup = (props: Props) => (
@@ -34,13 +34,13 @@ export const ColumnBrowserGroup = (props: Props) => (
 		/>
 		<ColumnBrowser
 			title="Interaction type"
-			options={props.pairsOptions}
-			updateOptions={(value) => props.updatePairsOptions(value)}
+			options={props.interactionTypeOptions}
+			updateOptions={(value) => props.updateInteractionTypeOptions(value)}
 		/>
 		<ColumnBrowser
 			title="Tumor type"
-			options={props.tumorOptions}
-			updateOptions={(value) => props.updateTumorOptions(value)}
+			options={props.tumorTypeOptions}
+			updateOptions={(value) => props.updateTumorTypeOptions(value)}
 		/>
 	</Card.Group>
 );

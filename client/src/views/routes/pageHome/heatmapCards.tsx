@@ -6,23 +6,23 @@ import { InterfaceData } from "../../../utils/interfaces";
 
 interface Props {
 	data: InterfaceData[];
-	pairsOptions: ColumnBrowserProps[];
-	tumorOptions: ColumnBrowserProps[];
+	interactionTypeOptions: ColumnBrowserProps[];
+	tumorTypeOptions: ColumnBrowserProps[];
 }
 
 export const HeatMapCards = (props: Props) => {
-	let _pairKeys = props.pairsOptions
+	let _pairKeys = props.interactionTypeOptions
 		.filter((pair) => pair.isChecked)
 		.map((pair) => pair.value);
-	let _tumorKeys = props.tumorOptions
-		.filter((tumor) => tumor.isChecked)
-		.map((tumor) => tumor.value);
+	let _tumorKeys = props.tumorTypeOptions
+		.filter((tumorType) => tumorType.isChecked)
+		.map((tumorType) => tumorType.value);
 
 	if (_pairKeys.length === 0) {
-		_pairKeys = props.pairsOptions.map((pair) => pair.value);
+		_pairKeys = props.interactionTypeOptions.map((pair) => pair.value);
 	}
 	if (_tumorKeys.length === 0) {
-		_tumorKeys = props.tumorOptions.map((tumor) => tumor.value);
+		_tumorKeys = props.tumorTypeOptions.map((tumorType) => tumorType.value);
 	}
 
 	return (

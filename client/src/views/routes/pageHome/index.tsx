@@ -18,8 +18,8 @@ interface State {
 	unfilteredLigandOptions: ColumnBrowserProps[];
 	receptorOptions: ColumnBrowserProps[];
 	unfilteredReceptorOptions: ColumnBrowserProps[];
-	tumorOptions: ColumnBrowserProps[];
-	pairsOptions: ColumnBrowserProps[];
+	tumorTypeOptions: ColumnBrowserProps[];
+	interactionTypeOptions: ColumnBrowserProps[];
 	isFetchingData: boolean;
 	currentPageNumber: number;
 }
@@ -43,8 +43,8 @@ export class Home extends React.Component<{}, State> {
 			unfilteredLigandOptions: [],
 			receptorOptions: [],
 			unfilteredReceptorOptions: [],
-			tumorOptions: [],
-			pairsOptions: [],
+			tumorTypeOptions: [],
+			interactionTypeOptions: [],
 			isFetchingData: false,
 			currentPageNumber: 1,
 		};
@@ -62,8 +62,9 @@ export class Home extends React.Component<{}, State> {
 					unfilteredLigandOptions: resp[0].data["ligandOptions"],
 					receptorOptions: resp[0].data["receptorOptions"],
 					unfilteredReceptorOptions: resp[0].data["receptorOptions"],
-					tumorOptions: resp[1].data["tumorOptions"],
-					pairsOptions: resp[1].data["pairsOptions"],
+					tumorTypeOptions: resp[1].data["tumorTypeOptions"],
+					interactionTypeOptions:
+						resp[1].data["interactionTypeOptions"],
 					isFetchingData: false,
 				})
 			)
@@ -126,11 +127,11 @@ export class Home extends React.Component<{}, State> {
 						<ColumnBrowserGroup
 							{...this.state}
 							{...this}
-							updateTumorOptions={(value) =>
-								this.setState({ tumorOptions: value })
+							updateTumorTypeOptions={(value) =>
+								this.setState({ tumorTypeOptions: value })
 							}
-							updatePairsOptions={(value) =>
-								this.setState({ pairsOptions: value })
+							updateInteractionTypeOptions={(value) =>
+								this.setState({ interactionTypeOptions: value })
 							}
 						/>
 					</GridColumn>

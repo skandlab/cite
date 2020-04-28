@@ -6,9 +6,10 @@ with open(settings.DATA_FILEPATH, "r") as f:
 
 with open(settings.DATA_METADATA_FILEPATH, "r") as f:
     __tmp__ = json.load(f)
-    list_ligand, list_receptor, list_tumor_type, list_interaction_type = (
+    list_ligand, list_receptor, list_tumor_type, list_interaction_type, metadata = (
         __tmp__["ligand"],
         __tmp__["receptor"],
         __tmp__["tumorType"],
         __tmp__["interactionType"],
+        __tmp__["metadata"],
     )
