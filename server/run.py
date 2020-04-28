@@ -4,6 +4,10 @@ from src import settings
 from src import main
 from src import error
 
+from logging import getLogger
+
+LOGGER = getLogger(__name__)
+
 app = Flask(__name__)
 
 app.register_blueprint(main.app)
@@ -11,11 +15,13 @@ app.register_blueprint(main.app)
 
 @app.errorhandler(Exception)
 def GenericExceptionHandler(error):
+    LOGGER.error(error)
     return jsonify("Internal Server Error", 500)
 
 
 @app.errorhandler(error.ValidationError)
 def ValidationErrorHandler(error):
+    LOGGER.error(error)
     return jsonify(str(error), 400)
 
 
