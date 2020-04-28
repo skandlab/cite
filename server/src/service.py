@@ -32,8 +32,23 @@ def get_score(
     list_ligand, list_receptor = __check_if_all__(list_ligand, list_receptor)
     __validate__(list_ligand, list_receptor)
 
-    return [
-        dic
-        for dic in dao.data
-        if dic["ligand"] in list_ligand and dic["receptor"] in list_receptor
-    ]
+    ligandOptions = []
+    receptorOptions = []
+    filteredData = []
+    alreadySelectedLigand = []
+    alreadySelectedReceptor = []
+    for dic in dao.data:
+        ligand, receptor = dic["ligand"], dic["receptor"]
+        if ligand in list_ligand and receptor in list_receptor:
+            if ligand not in alreadySelectedLigand:
+                ligandOptions.append({"isChecked": False, "value": ligand})
+                alreadySelectedLigand.append(ligand)
+            if receptor not in alreadySelectedReceptor:
+                receptorOptions.append({"isChecked": False, "value": receptor})
+                alreadySelectedReceptor.append(receptor)
+            filteredData.append(dic)
+    return {
+        "ligandOptions": ligandOptions,
+        "receptorOptions": receptorOptions,
+        "filteredData": filteredData,
+    }

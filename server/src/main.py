@@ -51,13 +51,6 @@ def data():
 def metadata():
     return jsonify(
         {
-            "ligandOptions": [
-                {"isChecked": False, "value": ligand} for ligand in dao.list_ligand
-            ],
-            "receptorOptions": [
-                {"isChecked": False, "value": receptor}
-                for receptor in dao.list_receptor
-            ],
             "tumorOptions": [
                 {"isChecked": False, "value": tumor_type}
                 for tumor_type in dao.list_tumor_type

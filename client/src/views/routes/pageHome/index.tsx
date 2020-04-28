@@ -9,21 +9,15 @@ import { StatusBar } from "./statusBar/statusBar";
 import { AppPagination, paginationData } from "./pagination";
 import { GridColumn } from "../../styled/gridColumn";
 import { browserHistory } from "../../../utils/browser_history";
-
-export interface InterfaceData {
-	ligand: string;
-	receptor: string;
-	scoreMatrix: {
-		tumorType: string;
-		[key: string]: string;
-	}[];
-}
+import { InterfaceData } from "../../../utils/interfaces";
 
 interface State {
-	unfilteredData: InterfaceData[];
 	filteredData: InterfaceData[];
+	unfilteredData: InterfaceData[];
 	ligandOptions: ColumnBrowserProps[];
+	unfilteredLigandOptions: ColumnBrowserProps[];
 	receptorOptions: ColumnBrowserProps[];
+	unfilteredReceptorOptions: ColumnBrowserProps[];
 	tumorOptions: ColumnBrowserProps[];
 	pairsOptions: ColumnBrowserProps[];
 	isFetchingData: boolean;
@@ -46,7 +40,9 @@ export class Home extends React.Component<{}, State> {
 			unfilteredData: [],
 			filteredData: [],
 			ligandOptions: [],
+			unfilteredLigandOptions: [],
 			receptorOptions: [],
+			unfilteredReceptorOptions: [],
 			tumorOptions: [],
 			pairsOptions: [],
 			isFetchingData: false,
@@ -60,10 +56,12 @@ export class Home extends React.Component<{}, State> {
 			.all([requestData([], []), requestMetadata()])
 			.then((resp) =>
 				this.setState({
-					unfilteredData: resp[0].data,
-					filteredData: resp[0].data,
-					ligandOptions: resp[1].data["ligandOptions"],
-					receptorOptions: resp[1].data["receptorOptions"],
+					unfilteredData: resp[0].data["filteredData"],
+					filteredData: resp[0].data["filteredData"],
+					ligandOptions: resp[0].data["ligandOptions"],
+					unfilteredLigandOptions: resp[0].data["ligandOptions"],
+					receptorOptions: resp[0].data["receptorOptions"],
+					unfilteredReceptorOptions: resp[0].data["receptorOptions"],
 					tumorOptions: resp[1].data["tumorOptions"],
 					pairsOptions: resp[1].data["pairsOptions"],
 					isFetchingData: false,
@@ -74,31 +72,43 @@ export class Home extends React.Component<{}, State> {
 	}
 
 	updateLigandOrReceptor = (
-		_ligandOptions: ColumnBrowserProps[],
-		_receptorOptions: ColumnBrowserProps[]
+		ligandOptions: ColumnBrowserProps[],
+		receptorOptions: ColumnBrowserProps[],
+		updateIsLigand: boolean
 	) => {
-		let _tmpLigandList = grepValueFromOption(_ligandOptions);
-		let _tmpReceptorList = grepValueFromOption(_receptorOptions);
+		let ligandList = grepValueFromOption(ligandOptions);
+		let receptorList = grepValueFromOption(receptorOptions);
+
+		// if no filtered ligand and no filtered receptor
+		// and filteredData is not same as unfilteredData
 		if (
-			_tmpLigandList.length === 0 &&
-			_tmpReceptorList.length === 0 &&
+			ligandList.length === 0 &&
+			receptorList.length === 0 &&
 			this.state.filteredData.length !== this.state.unfilteredData.length // first mount case
 		) {
 			this.setState({
 				filteredData: this.state.unfilteredData,
-				ligandOptions: _ligandOptions,
-				receptorOptions: _receptorOptions,
+				ligandOptions: updateIsLigand
+					? ligandOptions
+					: this.state.unfilteredLigandOptions,
+				receptorOptions: updateIsLigand
+					? this.state.unfilteredReceptorOptions
+					: receptorOptions,
 				currentPageNumber: 1,
 			});
 		} else {
 			this.setState({ isFetchingData: true }, () =>
-				requestData(_tmpLigandList, _tmpReceptorList)
+				requestData(ligandList, receptorList)
 					.then((resp) =>
 						this.setState({
-							filteredData: resp.data,
+							filteredData: resp.data["filteredData"],
 							isFetchingData: false,
-							ligandOptions: _ligandOptions,
-							receptorOptions: _receptorOptions,
+							ligandOptions: updateIsLigand
+								? ligandOptions
+								: resp.data["ligandOptions"],
+							receptorOptions: updateIsLigand
+								? resp.data["receptorOptions"]
+								: receptorOptions,
 							currentPageNumber: 1,
 						})
 					)

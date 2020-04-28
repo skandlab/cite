@@ -1,8 +1,8 @@
 import React from "react";
 import { Menu, Statistic, Form } from "semantic-ui-react";
 import { ColorBar } from "./colorbar";
-import { InterfaceData } from "..";
 import { paginationText } from "../pagination";
+import { InterfaceData } from "../../../../utils/interfaces";
 
 interface Props {
 	filteredData: InterfaceData[];

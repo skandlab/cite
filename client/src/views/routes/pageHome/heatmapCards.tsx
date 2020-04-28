@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, Statistic } from "semantic-ui-react";
-import { InterfaceData } from ".";
 import { HeatMap } from "../../plots/heatmap";
 import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
+import { InterfaceData } from "../../../utils/interfaces";
 
 interface Props {
 	data: InterfaceData[];

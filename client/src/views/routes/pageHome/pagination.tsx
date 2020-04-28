@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Pagination } from "semantic-ui-react";
-import { InterfaceData } from ".";
+import { InterfaceData } from "../../../utils/interfaces";
 
 const CardsPerPage: number = 12;
 

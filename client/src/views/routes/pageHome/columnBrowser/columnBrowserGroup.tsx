@@ -9,7 +9,8 @@ interface Props {
 	pairsOptions: ColumnBrowserProps[];
 	updateLigandOrReceptor: (
 		ligandOptions: ColumnBrowserProps[],
-		receptorOptions: ColumnBrowserProps[]
+		receptorOptions: ColumnBrowserProps[],
+		updateIsLigand: boolean
 	) => void;
 	updateTumorOptions: (data: ColumnBrowserProps[]) => void;
 	updatePairsOptions: (data: ColumnBrowserProps[]) => void;
@@ -21,14 +22,14 @@ export const ColumnBrowserGroup = (props: Props) => (
 			title="Ligand"
 			options={props.ligandOptions}
 			updateOptions={(value) =>
-				props.updateLigandOrReceptor(value, props.receptorOptions)
+				props.updateLigandOrReceptor(value, props.receptorOptions, true)
 			}
 		/>
 		<ColumnBrowser
 			title="Receptor"
 			options={props.receptorOptions}
 			updateOptions={(value) =>
-				props.updateLigandOrReceptor(props.ligandOptions, value)
+				props.updateLigandOrReceptor(props.ligandOptions, value, false)
 			}
 		/>
 		<ColumnBrowser
