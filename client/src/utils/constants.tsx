@@ -1,4 +1,4 @@
-export const APP_TITLE = "Tumeric";
+export const APP_TITLE = "TUMERIC";
 
 export const ROUTE_PREFIX = "/ui";
 
