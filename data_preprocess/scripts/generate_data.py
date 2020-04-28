@@ -5,6 +5,14 @@ INPUT_FILE = "source/pancancer_product_score.csv"
 OUTPUT_METADATA_FILE = "output/metadata.json"
 OUTPUT_DATA_FILE = "output/data.json"
 
+INTERACTION_TYPE_DESCRIPTION = {
+    "cc": "cancer-cancer",
+    "cs": "cancer-stroma",
+    "nn": "normal-normal",
+    "sc": "stroma-cancer",
+    "ss": "stroma-stroma",
+}
+
 df = pd.read_csv(INPUT_FILE, usecols=["lr", "t", "cc", "cs", "nn", "sc", "ss"])
 
 df[["ligand", "receptor"]] = df.lr.str.split("_", expand=True)
@@ -32,7 +40,11 @@ with open(OUTPUT_METADATA_FILE, "w") as f:
                     for tumor_type in list_tumor_type
                 ],
                 "interactionTypeOptions": [
-                    {"isChecked": False, "value": interaction_type}
+                    {
+                        "isChecked": False,
+                        "value": interaction_type,
+                        "description": INTERACTION_TYPE_DESCRIPTION[interaction_type],
+                    }
                     for interaction_type in list_interaction_type
                 ],
             },

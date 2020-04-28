@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 
 export interface ColumnBrowserProps {
+	description?: string;
 	value: string;
 	isChecked: boolean;
 }
@@ -73,18 +74,31 @@ export const ColumnBrowser = (props: Props) => {
 									.startsWith(inputText.toLowerCase())
 							)
 							.map((option, index) => (
-								<Item key={option.value}>
-									<Checkbox
-										label={option.value}
-										checked={option.isChecked}
-										onChange={() =>
-											handleToggleCheckbox(
-												index,
-												option.isChecked
-											)
-										}
-									/>
-								</Item>
+								<Item
+									key={option.value}
+									meta={
+										option.description && (
+											<>
+												<small>
+													{option.description}
+												</small>
+												<br />
+											</>
+										)
+									}
+									description={
+										<Checkbox
+											label={option.value}
+											checked={option.isChecked}
+											onChange={() =>
+												handleToggleCheckbox(
+													index,
+													option.isChecked
+												)
+											}
+										/>
+									}
+								/>
 							))}
 					</Item.Group>
 				</Card.Description>
@@ -98,7 +112,7 @@ export const ColumnBrowser = (props: Props) => {
 						props.updateOptions(
 							props.options.map((option) => {
 								return {
-									value: option.value,
+									...option,
 									isChecked: false,
 								};
 							})
