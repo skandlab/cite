@@ -14,7 +14,7 @@ app = Blueprint(
 )
 
 
-REQUIRED_QUERY_PARAMETERS = ["list_ligand", "list_receptor", "list_tumor", "list_pairs"]
+REQUIRED_QUERY_PARAMETERS = ["list_ligand", "list_receptor"]
 
 
 @app.route("/data", methods=["GET"])
@@ -25,13 +25,14 @@ def data():
     structure of JSON:
     - List of Dictionary
         - Dictionary
-            ligand_receptor: name of the ligand receptor combination
+            ligand: str
+            receptor: str
             values: List of Dictionary
                 - Dictionary
                     tumor_type: str
                     - [pair]: score of the pair
     """
-    query_params_present = [i for i in request.values.keys()]
+    query_params_present = [k for k in request.values.keys()]
 
     for query_param in REQUIRED_QUERY_PARAMETERS:
         if query_param not in query_params_present:
@@ -39,15 +40,11 @@ def data():
                 "required query parameter not present: {}".format(query_param)
             )
 
-    list_ligand, list_receptor, list_tumor, list_pairs = (
+    list_ligand, list_receptor = (
         request.values.get("list_ligand").split(","),
         request.values.get("list_receptor").split(","),
-        request.values.get("list_tumor").split(","),
-        request.values.get("list_pairs").split(","),
     )
-    return jsonify(
-        service.get_score(list_tumor, list_pairs, list_ligand, list_receptor)
-    )
+    return jsonify(service.get_score(list_ligand, list_receptor))
 
 
 @app.route("/metadata", methods=["GET"])
@@ -62,10 +59,12 @@ def metadata():
                 for receptor in dao.list_receptor
             ],
             "tumorOptions": [
-                {"isChecked": False, "value": tumor} for tumor in dao.list_tumor
+                {"isChecked": False, "value": tumor_type}
+                for tumor_type in dao.list_tumor_type
             ],
             "pairsOptions": [
-                {"isChecked": False, "value": pair} for pair in dao.list_pairs
+                {"isChecked": False, "value": interaction_type}
+                for interaction_type in dao.list_interaction_type
             ],
         }
     )

@@ -13,8 +13,8 @@ import { browserHistory } from "../../../utils/browser_history";
 export interface InterfaceData {
 	ligand: string;
 	receptor: string;
-	values: {
-		tumor_type: string;
+	scoreMatrix: {
+		tumorType: string;
 		[key: string]: string;
 	}[];
 }

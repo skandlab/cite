@@ -38,11 +38,7 @@ export const API_DATA = (list_ligand: string[], list_receptor: string[]) =>
 	"/v1/data?list_ligand=" +
 	list_ligand.join(",") +
 	"&list_receptor=" +
-	list_receptor.join(",") +
-	"&list_tumor=" +
-	// list_tumor.join(",") +
-	"&list_pairs=";
-// list_pairs.join(",");
+	list_receptor.join(",");
 
 export const URL_NAVBAR_LOGO = require("../assets/logo.svg");
 
