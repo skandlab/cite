@@ -116,7 +116,7 @@ export const ColumnBrowser = (props: Props) => {
 					color="grey"
 					text
 				>
-					<Statistic.Value style={{ width: "48px" }}>
+					<Statistic.Value>
 						{currentFilteredStatistic === 0
 							? props.options.length
 							: currentFilteredStatistic}{" "}
