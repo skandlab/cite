@@ -17,7 +17,7 @@ const MemberInfo = (props: Props) => (
 		<Card.Content>
 			<Card.Header>{props.header}</Card.Header>
 			<Card.Meta>
-				<span className="date">{props.subHeader}</span>
+				<span>{props.subHeader}</span>
 			</Card.Meta>
 			<Card.Description>{props.jobDescription}</Card.Description>
 		</Card.Content>
@@ -32,7 +32,7 @@ export const PageTeam = () => (
 	<Grid.Row centered>
 		<GridColumn>
 			<Card.Group centered stackable>
-				{Members.map(props => (
+				{Members.map((props) => (
 					<MemberInfo {...props} key={props.email} />
 				))}
 			</Card.Group>

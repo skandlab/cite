@@ -3,12 +3,21 @@ import { Card, Statistic } from "semantic-ui-react";
 import { HeatMap } from "../../plots/heatmap";
 import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
 import { InterfaceData } from "../../../utils/interfaces";
+import styled from "@emotion/styled";
 
 interface Props {
 	data: InterfaceData[];
 	interactionTypeOptions: ColumnBrowserProps[];
 	tumorTypeOptions: ColumnBrowserProps[];
 }
+
+const StyledHeatmapCard = styled(Card)`
+	margin: 3em 0 !important;
+`;
+
+const StyledHeatmapCardDescriptor = styled(Card.Description)`
+	height: 320px !important;
+`;
 
 export const HeatMapCards = (props: Props) => {
 	let _pairKeys = props.interactionTypeOptions
@@ -28,33 +37,31 @@ export const HeatMapCards = (props: Props) => {
 	return (
 		<Card.Group centered>
 			{props.data.map((_data, index) => (
-				<Card className="heatmapcard" key={index}>
+				<StyledHeatmapCard key={index}>
 					<Card.Content>
 						<Card.Header>
 							<Statistic.Group widths={2}>
-								<Statistic className="extra" size="mini" text>
-									<Statistic.Value>
-										{_data.ligand}
-									</Statistic.Value>
-									<Statistic.Label>Ligand</Statistic.Label>
-								</Statistic>
-								<Statistic className="extra" size="mini" text>
-									<Statistic.Value>
-										{_data.receptor}
-									</Statistic.Value>
-									<Statistic.Label>Receptor</Statistic.Label>
-								</Statistic>
+								<Statistic
+									className="xs"
+									label="Ligand"
+									value={_data.ligand}
+								/>
+								<Statistic
+									className="xs"
+									label="Receptor"
+									value={_data.receptor}
+								/>
 							</Statistic.Group>
 						</Card.Header>
-						<Card.Description style={{ height: "320px" }}>
+						<StyledHeatmapCardDescriptor>
 							<HeatMap
 								data={_data.scoreMatrix}
 								pairKeys={_pairKeys}
 								tumorKeys={_tumorKeys}
 							/>
-						</Card.Description>
+						</StyledHeatmapCardDescriptor>
 					</Card.Content>
-				</Card>
+				</StyledHeatmapCard>
 			))}
 		</Card.Group>
 	);

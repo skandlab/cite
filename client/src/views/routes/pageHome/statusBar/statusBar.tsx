@@ -24,24 +24,18 @@ export const StatusBar = (props: Props) => {
 							<label>Ligand-Receptor Combinations:</label>
 						</Form.Field>
 						<Form.Field>
-							<Statistic text size="mini" color="grey">
-								<Statistic.Value>
-									{props.filteredData.length}
-								</Statistic.Value>
-								<Statistic.Label>
-									<small>Total</small>
-								</Statistic.Label>
-							</Statistic>
+							<Statistic
+								label={<small>Total</small>}
+								value={props.filteredData.length}
+								size="mini"
+							/>
 						</Form.Field>
 						<Form.Field>
-							<Statistic text size="mini" color="grey">
-								<Statistic.Value>
-									{start + "-" + end}
-								</Statistic.Value>
-								<Statistic.Label>
-									<small>Showing</small>
-								</Statistic.Label>
-							</Statistic>
+							<Statistic
+								label={<small>Showing</small>}
+								value={start + "-" + end}
+								size="mini"
+							/>
 						</Form.Field>
 					</Form.Group>
 				</Form>

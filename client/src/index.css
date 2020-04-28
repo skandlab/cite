@@ -109,33 +109,14 @@ body {
 /*
 * minor customization to elements
 */
-.ui.statistic > .label {
-	text-transform: unset !important;
-}
-.ui.mini.extra.statistic > .value {
+.ui.xs.statistic > .value {
 	font-size: 1rem !important;
 }
-.ui.mini.extra.statistic > .label {
+.ui.xs.statistic > .label {
 	font-size: 0.7rem !important;
 	color: unset !important;
 }
-.ui[class*="right floated"].statistic {
-	margin: 0 0 0 1em !important;
-}
-.ui.secondary.pointing.menu.pagination {
-	border-bottom: none !important;
-}
-.ui.secondary.pointing.menu.pagination .active.item {
-	background-color: rgb(0, 0, 0, 0.8) !important;
-	color: #ffffff !important;
-	border-radius: 6px !important;
-}
-.ui.secondary.pointing.menu.pagination .item:hover {
-	border-radius: 6px !important;
-}
+
 .ui.menu.nohover .item:hover {
 	background-color: unset !important;
-}
-.ui.card.heatmapcard {
-	margin: 3em 0 !important;
 }

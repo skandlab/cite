@@ -8,6 +8,7 @@ import {
 	Statistic,
 	Button,
 } from "semantic-ui-react";
+import styled from "@emotion/styled";
 
 export interface ColumnBrowserProps {
 	description?: string;
@@ -20,6 +21,11 @@ interface Props {
 	options: ColumnBrowserProps[];
 	updateOptions: (options: ColumnBrowserProps[]) => void;
 }
+
+const StyledItemGroup = styled(Item.Group)`
+	overflow-y: scroll;
+	height: 160px;
+`;
 
 export const ColumnBrowser = (props: Props) => {
 	const [currentFilteredStatistic, updateCurrentFilteredStatistic] = useState(
@@ -64,9 +70,7 @@ export const ColumnBrowser = (props: Props) => {
 						</Form.Group>
 					</Form>
 
-					<Item.Group
-						style={{ overflowY: "scroll", height: "160px" }}
-					>
+					<StyledItemGroup>
 						{props.options
 							.filter((option) =>
 								option.value
@@ -100,7 +104,7 @@ export const ColumnBrowser = (props: Props) => {
 									}
 								/>
 							))}
-					</Item.Group>
+					</StyledItemGroup>
 				</Card.Description>
 			</Card.Content>
 			<Card.Content extra>
@@ -124,20 +128,17 @@ export const ColumnBrowser = (props: Props) => {
 					Reset Filter
 				</Button>
 				<Statistic
-					className="extra"
-					size="mini"
-					floated="right"
-					color="grey"
-					text
-				>
-					<Statistic.Value>
-						{currentFilteredStatistic === 0
+					className="xs"
+					label="showing"
+					value={
+						(currentFilteredStatistic === 0
 							? props.options.length
-							: currentFilteredStatistic}{" "}
-						/ {props.options.length}
-					</Statistic.Value>
-					<Statistic.Label>showing</Statistic.Label>
-				</Statistic>
+							: currentFilteredStatistic) +
+						" /" +
+						props.options.length
+					}
+					floated="right"
+				/>
 			</Card.Content>
 		</Card>
 	);

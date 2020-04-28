@@ -1,5 +1,6 @@
 import React from "react";
 import { HeatMap } from "../../../plots/heatmap";
+import styled from "@emotion/styled";
 
 const data = [
 	{
@@ -17,8 +18,13 @@ const data = [
 	},
 ];
 
+const StyledColorBar = styled.div`
+	height: 64px;
+	width: 360px;
+`;
+
 export const ColorBar = () => (
-	<div style={{ height: "64px", width: "360px" }}>
+	<StyledColorBar>
 		<HeatMap
 			data={data as any}
 			pairKeys={[
@@ -46,5 +52,5 @@ export const ColorBar = () => (
 				},
 			}}
 		/>
-	</div>
+	</StyledColorBar>
 );

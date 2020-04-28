@@ -16,7 +16,7 @@ interface Props {
 export const Navbar = (props: Props) => {
 	return (
 		<>
-			<Grid.Row centered className="menuRow">
+			<Grid.Row centered>
 				<GridColumn>
 					<Menu fluid borderless>
 						<Menu.Item>
