@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-INPUT_FILE = "source/pancancer_product_score.csv"
+INPUT_FILE = "source/product_score.csv"
 OUTPUT_METADATA_FILE = "output/metadata.json"
 OUTPUT_DATA_FILE = "output/data.json"
 
@@ -13,11 +13,7 @@ INTERACTION_TYPE_DESCRIPTION = {
     "ss": "stroma-stroma",
 }
 
-df = pd.read_csv(INPUT_FILE, usecols=["lr", "t", "cc", "cs", "nn", "sc", "ss"])
-
-df[["ligand", "receptor"]] = df.lr.str.split("_", expand=True)
-df.drop("lr", axis=1, inplace=True)
-df.columns = ["tumorType", "cc", "cs", "nn", "sc", "ss", "ligand", "receptor"]
+df = pd.read_csv(INPUT_FILE, usecols=["ligand", "receptor", "tumorType", "cc", "cs", "nn", "sc", "ss"])
 
 list_tumor_type, list_ligand, list_receptor, list_interaction_type = (
     df.tumorType.unique().tolist(),

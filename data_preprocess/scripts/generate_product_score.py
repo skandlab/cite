@@ -1,0 +1,48 @@
+import pandas as pd
+import numpy as np
+
+INPUT_DATA_FILE = "source/deconv_logx+1nt_pct1.csv"
+INPUT_INTERACTION_FILE = "source/1380_pairs.txt"
+OUTPUT_FILE = "source/product_score.csv"
+
+df = pd.read_csv(INPUT_DATA_FILE)
+
+list_tumor_type = df.t.values[:20].tolist()
+
+df.columns = ["sample", "tumorType", "cancer", "normal", "stroma", "T", "pct"]
+df = df[["sample", "tumorType", "cancer", "normal", "stroma"]]
+df.set_index(["sample", "tumorType"], inplace=True)
+
+df = pd.DataFrame(np.exp2(df.values) - 1, index=df.index, columns=df.columns)
+
+def func(ligand, receptor):
+    df_ligand = df.loc[ligand].loc[list_tumor_type]
+    df_receptor = df.loc[receptor].loc[list_tumor_type]
+    cc = df_ligand["cancer"]*df_receptor["cancer"]
+    cs = df_ligand["cancer"]*df_receptor["stroma"]
+    nn = df_ligand["normal"]*df_receptor["normal"]
+    ss = df_ligand["stroma"]*df_receptor["stroma"]
+    sc = df_ligand["stroma"]*df_receptor[ "cancer"]
+    
+    _sum = cc + cs + nn + ss + sc
+    
+    _df = pd.concat([cc/_sum, cs/_sum, nn/_sum, ss/_sum, sc/_sum], axis=1)*100
+    _df.columns = ["cc", "cs", "nn", "ss", "sc"]
+    _df["ligand"] = [ligand]*len(list_tumor_type)
+    _df["receptor"] = [receptor]*len(list_tumor_type)
+    _df = _df.round(3)
+    return _df.reset_index()
+
+
+
+l = []
+with open(INPUT_INTERACTION_FILE, "r") as f:
+    line = f.readline()
+    while(line):
+        try:
+            l.append(func(*line.strip().split("_")))
+        except KeyError:
+            print("{} not present".format(line))
+        line = f.readline()
+
+pd.concat(l).to_csv(OUTPUT_FILE, index=False)
