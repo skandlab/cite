@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Card, Image, Icon } from "semantic-ui-react";
+import { Grid, Card, Image, Icon, Label } from "semantic-ui-react";
 import { GridColumn } from "../styled/gridColumn";
 import { Members } from "../../utils/constants";
 
@@ -17,13 +17,19 @@ const MemberInfo = (props: Props) => (
 		<Card.Content>
 			<Card.Header>{props.header}</Card.Header>
 			<Card.Meta>
-				<span>{props.subHeader}</span>
+				<span className="date">{props.subHeader}</span>
 			</Card.Meta>
 			<Card.Description>{props.jobDescription}</Card.Description>
 		</Card.Content>
 		<Card.Content extra>
-			<Icon name="user" />
-			{props.email}
+			<Label
+				as="a"
+				href={"mailto:" + props.email}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Icon name="mail" /> Contact
+			</Label>
 		</Card.Content>
 	</Card>
 );

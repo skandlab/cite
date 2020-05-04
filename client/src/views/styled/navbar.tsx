@@ -1,55 +1,107 @@
 import React from "react";
-import { Menu, Grid, Image } from "semantic-ui-react";
 import {
-	APP_TITLE,
-	URL_NAVBAR_LOGO,
-	ROUTES_ARRAY,
-	ROUTES,
-} from "../../utils/constants";
-import { browserHistory } from "../../utils/browser_history";
+	Grid,
+	Menu,
+	Header,
+	Image,
+	Responsive,
+	Dropdown,
+} from "semantic-ui-react";
+
+import { URL_NAVBAR_LOGO, APP_TITLE } from "../../utils/constants";
+import { browserHistory } from "../../utils/browserHistory";
+import { ROUTES_ARRAY, ROUTES } from "../../utils/routes";
 import { GridColumn } from "./gridColumn";
 
 interface Props {
-	currentUrl: string;
+	currentRoute: string;
 }
 
-export const Navbar = (props: Props) => {
-	return (
-		<>
-			<Grid.Row centered>
-				<GridColumn>
-					<Menu fluid borderless>
-						<Menu.Item>
-							<Image
-								size="mini"
-								src={URL_NAVBAR_LOGO}
-								alt={APP_TITLE + "-logo"}
-								onClick={() =>
-									browserHistory.push(ROUTES.Home.route)
-								}
-							/>
-						</Menu.Item>
-						<Menu.Item>
-							<Menu.Header as="h2">{APP_TITLE}</Menu.Header>
-						</Menu.Item>
-						<Menu.Menu position="right">
-							{ROUTES_ARRAY.filter((val) => val.show).map(
-								(val) => (
-									<Menu.Item
+const CommonMenu = () => (
+	<>
+		<Menu.Item>
+			<Image
+				size="mini"
+				src={URL_NAVBAR_LOGO}
+				alt="CaMP-logo"
+				onClick={() => browserHistory.push(ROUTES.Home.push())}
+			/>
+		</Menu.Item>
+		<Menu.Item>
+			<Responsive maxWidth={1000}>
+				<Header as="h2">
+					<b>{APP_TITLE}</b>
+				</Header>
+			</Responsive>
+			<Responsive maxWidth={1200} minWidth={1000}>
+				<Header as="h3">
+					<b>{APP_TITLE}</b>
+				</Header>
+			</Responsive>
+			<Responsive minWidth={1200}>
+				<Header as="h2">
+					<b>{APP_TITLE}</b>
+				</Header>
+			</Responsive>
+		</Menu.Item>
+	</>
+);
+
+const ComputerMenu = (props: { currentRoute: string }) => (
+	<Menu fluid borderless>
+		<CommonMenu />
+		<Menu.Menu position="right">
+			{ROUTES_ARRAY.map(
+				(val) =>
+					val.show && (
+						<Menu.Item
+							key={val.name}
+							name={val.name}
+							active={val.match(props.currentRoute)}
+							onClick={() => browserHistory.push(val.push())}
+						/>
+					)
+			)}
+		</Menu.Menu>
+	</Menu>
+);
+
+const MobileMenu = (props: { currentRoute: string }) => (
+	<Menu fluid borderless>
+		<CommonMenu />
+		<Menu.Menu position="right">
+			<Menu.Item>
+				<Dropdown icon="bars">
+					<Dropdown.Menu>
+						{ROUTES_ARRAY.map(
+							(val) =>
+								val.show && (
+									<Dropdown.Item
 										key={val.name}
-										name={val.name}
-										active={val.matches(props.currentUrl)}
+										text={val.name}
+										selected={val.match(props.currentRoute)}
 										onClick={() =>
-											browserHistory.push(val.route)
+											browserHistory.push(val.push())
 										}
 									/>
 								)
-							)}
-						</Menu.Menu>
-					</Menu>
-				</GridColumn>
-			</Grid.Row>
-			<Grid.Row />
-		</>
-	);
-};
+						)}
+					</Dropdown.Menu>
+				</Dropdown>
+			</Menu.Item>
+		</Menu.Menu>
+	</Menu>
+);
+
+export const Navbar = (props: Props) => (
+	<Grid.Row centered className="menuRow">
+		<GridColumn>
+			<Responsive minWidth={Responsive.onlyMobile.maxWidth}>
+				<ComputerMenu currentRoute={props.currentRoute} />
+			</Responsive>
+			<Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
+				<MobileMenu currentRoute={props.currentRoute} />
+			</Responsive>
+		</GridColumn>
+	</Grid.Row>
+);

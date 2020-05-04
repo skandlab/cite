@@ -1,19 +1,17 @@
 import React from "react";
 import { Menu, Statistic, Form } from "semantic-ui-react";
 import { ColorBar } from "./colorbar";
-import { paginationText } from "../pagination";
-import { InterfaceData } from "../../../../utils/interfaces";
+import { calculatePaginationItems } from "../pagination";
 
 interface Props {
-	filteredData: InterfaceData[];
+	totalItems: number;
 	currentPageNumber: number;
 }
 
 export const StatusBar = (props: Props) => {
-	const { start, end } = paginationText({
-		...props,
-		totalItems: props.filteredData.length,
-	});
+	let { start, end } = calculatePaginationItems(props.currentPageNumber);
+	end = Math.min(end, props.totalItems);
+	start = props.totalItems === 0 ? 0 : start + 1;
 
 	return (
 		<Menu className="nohover" secondary borderless>
@@ -26,7 +24,7 @@ export const StatusBar = (props: Props) => {
 						<Form.Field>
 							<Statistic
 								label={<small>Total</small>}
-								value={props.filteredData.length}
+								value={props.totalItems}
 								size="mini"
 							/>
 						</Form.Field>

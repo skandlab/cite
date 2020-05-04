@@ -3,15 +3,15 @@ import { Grid } from "semantic-ui-react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { Navbar } from "../styled/navbar";
-import { Home } from "./pageHome";
+import { HomePage } from "./pageHome";
 import { ErrorPage } from "./pageError";
 import { PageTeam } from "./pageTeam";
 
-import { ROUTES } from "../../utils/constants";
-import { browserHistory } from "../../utils/browser_history";
+import { browserHistory } from "../../utils/browserHistory";
+import { ROUTES } from "../../utils/routes";
 
 interface State {
-	currentUrl: string;
+	currentRoute: string;
 }
 
 export class AppRouter extends React.Component<{}, State> {
@@ -19,14 +19,14 @@ export class AppRouter extends React.Component<{}, State> {
 		super(props);
 
 		this.state = {
-			currentUrl: window.location.pathname,
+			currentRoute: window.location.pathname,
 		};
 	}
 
 	componentDidMount() {
 		//@ts-ignore
 		this.unlisten = browserHistory.listen((location) => {
-			this.setState({ currentUrl: location.pathname });
+			this.setState({ currentRoute: location.pathname });
 		});
 	}
 
@@ -43,21 +43,20 @@ export class AppRouter extends React.Component<{}, State> {
 					<Switch>
 						<Route
 							exact
-							path={ROUTES.Home.route}
-							component={Home}
-						/>
-						<Route
-							exact
-							path={ROUTES.Team.route}
+							path={ROUTES.Team.routes}
 							component={PageTeam}
 						/>
 						<Route
 							exact
-							path={ROUTES.Error.route}
+							path={ROUTES.Error.routes}
 							component={ErrorPage}
 						/>
-
-						<Redirect from="*" to="/ui" />
+						<Route
+							exact
+							path={ROUTES.Home.routes}
+							component={HomePage}
+						/>
+						<Redirect from="*" to={ROUTES.Home.push()} />
 					</Switch>
 				</Router>
 			</Grid>

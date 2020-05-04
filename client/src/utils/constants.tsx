@@ -1,45 +1,5 @@
 export const APP_TITLE = "TUMERIC";
 
-export const ROUTE_PREFIX = "/ui";
-
-export const ROUTES = {
-	Home: {
-		name: "Home",
-		show: true,
-		route: ROUTE_PREFIX + "/",
-		matches: (current_route: string) =>
-			current_route === ROUTE_PREFIX ||
-			current_route === ROUTE_PREFIX + "/",
-	},
-	Team: {
-		name: "Team",
-		show: true,
-		route: ROUTE_PREFIX + "/team",
-		matches: (current_route: string) =>
-			current_route === ROUTE_PREFIX + "/team" ||
-			current_route === ROUTE_PREFIX + "/team/",
-	},
-	Error: {
-		name: "Error",
-		show: false,
-		route: ROUTE_PREFIX + "/error",
-		matches: (current_route: string) =>
-			current_route === ROUTE_PREFIX + "/error" ||
-			current_route === ROUTE_PREFIX + "/error/",
-	},
-};
-
-export const ROUTES_ARRAY = Object.values(ROUTES);
-
-export const API_URL = "http://localhost:5000/server";
-export const API_METADATA = () => API_URL + "/v1/metadata";
-export const API_DATA = (list_ligand: string[], list_receptor: string[]) =>
-	API_URL +
-	"/v1/data?list_ligand=" +
-	list_ligand.join(",") +
-	"&list_receptor=" +
-	list_receptor.join(",");
-
 export const URL_NAVBAR_LOGO = require("../assets/logo.svg");
 
 export const Members: {

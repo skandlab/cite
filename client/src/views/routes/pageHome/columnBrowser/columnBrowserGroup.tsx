@@ -1,46 +1,70 @@
 import React from "react";
-import { Card } from "semantic-ui-react";
-import { ColumnBrowser, ColumnBrowserProps } from "./columnBrowser";
+
+import { Card, Dimmer, Loader } from "semantic-ui-react";
+import { ColumnBrowser } from "./columnBrowser";
+
+import { InterfaceColumnBrowserProps } from "../../../../utils/interfaces";
 
 interface Props {
-	ligandOptions: ColumnBrowserProps[];
-	receptorOptions: ColumnBrowserProps[];
-	tumorTypeOptions: ColumnBrowserProps[];
-	interactionTypeOptions: ColumnBrowserProps[];
-	updateLigandOrReceptor: (
-		ligandOptions: ColumnBrowserProps[],
-		receptorOptions: ColumnBrowserProps[],
-		updateIsLigand: boolean
+	ligandOptions: InterfaceColumnBrowserProps[];
+	receptorOptions: InterfaceColumnBrowserProps[];
+	interactionOptions: InterfaceColumnBrowserProps[];
+	tumorOptions: InterfaceColumnBrowserProps[];
+	isFetchingData: boolean;
+	handleFilter: (
+		options: InterfaceColumnBrowserProps[],
+		whichOption: {
+			ligand: boolean;
+			receptor: boolean;
+			interaction: boolean;
+			tumor: boolean;
+		}
 	) => void;
-	updateTumorTypeOptions: (data: ColumnBrowserProps[]) => void;
-	updateInteractionTypeOptions: (data: ColumnBrowserProps[]) => void;
 }
 
-export const ColumnBrowserGroup = (props: Props) => (
-	<Card.Group centered doubling stackable>
-		<ColumnBrowser
-			title="Ligand"
-			options={props.ligandOptions}
-			updateOptions={(value) =>
-				props.updateLigandOrReceptor(value, props.receptorOptions, true)
-			}
-		/>
-		<ColumnBrowser
-			title="Receptor"
-			options={props.receptorOptions}
-			updateOptions={(value) =>
-				props.updateLigandOrReceptor(props.ligandOptions, value, false)
-			}
-		/>
-		<ColumnBrowser
-			title="Interaction type"
-			options={props.interactionTypeOptions}
-			updateOptions={(value) => props.updateInteractionTypeOptions(value)}
-		/>
-		<ColumnBrowser
-			title="Tumor type"
-			options={props.tumorTypeOptions}
-			updateOptions={(value) => props.updateTumorTypeOptions(value)}
-		/>
-	</Card.Group>
-);
+const ColumnBrowserConfigArray: {
+	title: string;
+	options: string;
+	handler: { [key: string]: boolean };
+}[] = [
+	{ title: "Ligand", options: "ligandOptions", handler: { ligand: true } },
+	{
+		title: "Receptor",
+		options: "receptorOptions",
+		handler: { receptor: true },
+	},
+	{
+		title: "Interaction type",
+		options: "interactionOptions",
+		handler: { interaction: true },
+	},
+	{ title: "Tumor type", options: "tumorOptions", handler: { tumor: true } },
+];
+
+export const ColumnBrowserGroup = (props: Props) =>
+	props.ligandOptions.length !== 0 ? (
+		<Card.Group centered doubling stackable>
+			{ColumnBrowserConfigArray.map((config) => (
+				<ColumnBrowser
+					{...props}
+					key={config.title}
+					title={config.title}
+					// @ts-ignore
+					options={props[config.options]}
+					handleFilter={(value) =>
+						props.handleFilter(value, {
+							ligand: false,
+							receptor: false,
+							interaction: false,
+							tumor: false,
+							...config.handler,
+						})
+					}
+				/>
+			))}
+		</Card.Group>
+	) : (
+		<Dimmer active inverted page>
+			<Loader size="huge" />
+		</Dimmer>
+	);

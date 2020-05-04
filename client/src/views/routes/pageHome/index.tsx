@@ -1,156 +1,171 @@
 import React from "react";
-import { Grid, Dimmer, Loader } from "semantic-ui-react";
-import { API_DATA, API_METADATA, ROUTES } from "../../../utils/constants";
 import axios from "axios";
-import { ColumnBrowserProps } from "./columnBrowser/columnBrowser";
+
+import { Grid } from "semantic-ui-react";
+import { GridColumn } from "../../styled/gridColumn";
 import { HeatMapCards } from "./heatmapCards";
 import { ColumnBrowserGroup } from "./columnBrowser/columnBrowserGroup";
 import { StatusBar } from "./statusBar/statusBar";
-import { AppPagination, paginationData } from "./pagination";
-import { GridColumn } from "../../styled/gridColumn";
-import { browserHistory } from "../../../utils/browser_history";
-import { InterfaceData } from "../../../utils/interfaces";
+import { AppPagination, calculatePaginationItems } from "./pagination";
+
+import { browserHistory } from "../../../utils/browserHistory";
+import {
+	requestScores,
+	requestCheckboxOptions,
+} from "../../../utils/backendRequests";
+import {
+	InterfaceScores,
+	InterfaceColumnBrowserProps,
+} from "../../../utils/interfaces";
+
+import { ROUTES } from "../../../utils/routes";
 
 interface State {
-	filteredData: InterfaceData[];
-	unfilteredData: InterfaceData[];
-	ligandOptions: ColumnBrowserProps[];
-	unfilteredLigandOptions: ColumnBrowserProps[];
-	receptorOptions: ColumnBrowserProps[];
-	unfilteredReceptorOptions: ColumnBrowserProps[];
-	tumorTypeOptions: ColumnBrowserProps[];
-	interactionTypeOptions: ColumnBrowserProps[];
+	ligandOptions: InterfaceColumnBrowserProps[];
+	receptorOptions: InterfaceColumnBrowserProps[];
+	interactionOptions: InterfaceColumnBrowserProps[];
+	tumorOptions: InterfaceColumnBrowserProps[];
+
+	listLigand: string[];
+	listReceptor: string[];
+	listInteraction: string[];
+	listTumor: string[];
+
+	scoreData: InterfaceScores[];
 	isFetchingData: boolean;
 	currentPageNumber: number;
 }
 
-const requestData = (list_ligand: string[], list_receptor: string[]) =>
-	axios.request({ method: "GET", url: API_DATA(list_ligand, list_receptor) });
-const requestMetadata = () =>
-	axios.request({ method: "GET", url: API_METADATA() });
-
-const grepValueFromOption = (options: ColumnBrowserProps[]) =>
-	options.filter((option) => option.isChecked).map((option) => option.value);
-
-export class Home extends React.Component<{}, State> {
+export class HomePage extends React.Component<{}, State> {
 	constructor(props: {}) {
 		super(props);
 
 		this.state = {
-			unfilteredData: [],
-			filteredData: [],
 			ligandOptions: [],
-			unfilteredLigandOptions: [],
 			receptorOptions: [],
-			unfilteredReceptorOptions: [],
-			tumorTypeOptions: [],
-			interactionTypeOptions: [],
-			isFetchingData: false,
+			interactionOptions: [],
+			tumorOptions: [],
+			listLigand: [],
+			listReceptor: [],
+			listInteraction: [],
+			listTumor: [],
+			scoreData: [],
+			isFetchingData: true,
 			currentPageNumber: 1,
 		};
 	}
 
 	componentDidMount() {
-		this.setState({ isFetchingData: true });
 		axios
-			.all([requestData([], []), requestMetadata()])
+			.all([requestCheckboxOptions(), requestScores([], [])])
 			.then((resp) =>
 				this.setState({
-					unfilteredData: resp[0].data["filteredData"],
-					filteredData: resp[0].data["filteredData"],
-					ligandOptions: resp[0].data["ligandOptions"],
-					unfilteredLigandOptions: resp[0].data["ligandOptions"],
-					receptorOptions: resp[0].data["receptorOptions"],
-					unfilteredReceptorOptions: resp[0].data["receptorOptions"],
-					tumorTypeOptions: resp[1].data["tumorTypeOptions"],
-					interactionTypeOptions:
-						resp[1].data["interactionTypeOptions"],
+					...resp[0].data,
+					listInteraction: resp[0].data["interactionOptions"].map(
+						(option: InterfaceColumnBrowserProps) => option.value
+					),
+					listTumor: resp[0].data["tumorOptions"].map(
+						(option: InterfaceColumnBrowserProps) => option.value
+					),
+					...resp[1].data,
 					isFetchingData: false,
 				})
 			)
-			.catch((_) => browserHistory.push(ROUTES.Error.route))
-			.finally(() => this.setState({ isFetchingData: false }));
+			.catch((_) => browserHistory.push(ROUTES.Error.push()));
 	}
 
-	updateLigandOrReceptor = (
-		ligandOptions: ColumnBrowserProps[],
-		receptorOptions: ColumnBrowserProps[],
-		updateIsLigand: boolean
+	handleFilter = (
+		options: InterfaceColumnBrowserProps[],
+		whichOption: {
+			ligand: boolean;
+			receptor: boolean;
+			interaction: boolean;
+			tumor: boolean;
+		}
 	) => {
-		let ligandList = grepValueFromOption(ligandOptions);
-		let receptorList = grepValueFromOption(receptorOptions);
+		let listOptions = options.map((option) => option.value);
 
-		// if no filtered ligand and no filtered receptor
-		// and filteredData is not same as unfilteredData
-		if (
-			ligandList.length === 0 &&
-			receptorList.length === 0 &&
-			this.state.filteredData.length !== this.state.unfilteredData.length // first mount case
-		) {
-			this.setState({
-				filteredData: this.state.unfilteredData,
-				ligandOptions: updateIsLigand
-					? ligandOptions
-					: this.state.unfilteredLigandOptions,
-				receptorOptions: updateIsLigand
-					? this.state.unfilteredReceptorOptions
-					: receptorOptions,
-				currentPageNumber: 1,
-			});
-		} else {
+		if (whichOption.ligand) {
 			this.setState({ isFetchingData: true }, () =>
-				requestData(ligandList, receptorList)
+				requestScores(listOptions, this.state.listReceptor)
 					.then((resp) =>
 						this.setState({
-							filteredData: resp.data["filteredData"],
+							scoreData: resp.data["scoreData"],
+							receptorOptions: resp.data["receptorOptions"],
+							listLigand: listOptions,
 							isFetchingData: false,
-							ligandOptions: updateIsLigand
-								? ligandOptions
-								: resp.data["ligandOptions"],
-							receptorOptions: updateIsLigand
-								? resp.data["receptorOptions"]
-								: receptorOptions,
 							currentPageNumber: 1,
 						})
 					)
-					.catch((_) => browserHistory.push(ROUTES.Error.route))
-					.finally(() => this.setState({ isFetchingData: false }))
+					.catch((_) => browserHistory.push(ROUTES.Error.push()))
 			);
+		} else if (whichOption.receptor) {
+			this.setState({ isFetchingData: true }, () =>
+				requestScores(this.state.listLigand, listOptions)
+					.then((resp) => {
+						this.setState({
+							scoreData: resp.data["scoreData"],
+							ligandOptions: resp.data["ligandOptions"],
+							listReceptor: listOptions,
+							isFetchingData: false,
+							currentPageNumber: 1,
+						});
+					})
+					.catch((_) => browserHistory.push(ROUTES.Error.push()))
+			);
+		} else if (whichOption.interaction) {
+			this.setState({
+				listInteraction:
+					listOptions.length === 0
+						? this.state.interactionOptions.map(
+								(option) => option.value
+						  )
+						: listOptions,
+			});
+		} else {
+			this.setState({
+				listTumor:
+					listOptions.length === 0
+						? this.state.tumorOptions.map((option) => option.value)
+						: listOptions,
+			});
 		}
 	};
 
 	render() {
-		return this.state.ligandOptions.length !== 0 ? (
+		let { start, end } = calculatePaginationItems(
+			this.state.currentPageNumber
+		);
+		return (
 			<>
 				<Grid.Row centered>
 					<GridColumn>
-						<ColumnBrowserGroup
-							{...this.state}
-							{...this}
-							updateTumorTypeOptions={(value) =>
-								this.setState({ tumorTypeOptions: value })
-							}
-							updateInteractionTypeOptions={(value) =>
-								this.setState({ interactionTypeOptions: value })
-							}
-						/>
+						<ColumnBrowserGroup {...this.state} {...this} />
 					</GridColumn>
 				</Grid.Row>
 
-				<Grid.Row centered>
-					<GridColumn>
-						<StatusBar {...this.state} />
-					</GridColumn>
-				</Grid.Row>
+				{this.state.scoreData.length !== 0 && (
+					<Grid.Row centered>
+						<GridColumn>
+							<StatusBar
+								totalItems={this.state.scoreData.length}
+								{...this.state}
+							/>
+						</GridColumn>
+					</Grid.Row>
+				)}
 				<Grid.Row />
 
-				{this.state.filteredData.length !== 0 &&
+				{this.state.scoreData.length !== 0 &&
 					!this.state.isFetchingData && (
 						<>
 							<Grid.Row centered>
 								<GridColumn>
 									<HeatMapCards
-										data={paginationData({ ...this.state })}
+										paginationData={this.state.scoreData.slice(
+											start,
+											end
+										)}
 										{...this.state}
 									/>
 								</GridColumn>
@@ -159,6 +174,7 @@ export class Home extends React.Component<{}, State> {
 								<GridColumn>
 									<AppPagination
 										{...this.state}
+										totalItems={this.state.scoreData.length}
 										handleOnPageChange={(
 											activePageNumber
 										) =>
@@ -172,10 +188,6 @@ export class Home extends React.Component<{}, State> {
 						</>
 					)}
 			</>
-		) : (
-			<Dimmer active inverted page>
-				<Loader size="huge" />
-			</Dimmer>
 		);
 	}
 }
