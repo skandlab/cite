@@ -1,0 +1,151 @@
+{
+	"heatmapProps": {
+		"indexBy": "tumorType",
+		"minValue": 0,
+		"maxValue": 100,
+		"colors": "reds",
+		"padding": 3,
+		"margin": { "top": 24, "right": 0, "bottom": 0, "left": 48 },
+		"axisTop": {
+			"orient": "top",
+			"tickSize": 5,
+			"tickPadding": 5,
+			"tickRotation": 0,
+			"legend": "",
+			"legendOffset": 36
+		},
+		"cellOpacity": 0.6,
+		"enableLabels": false,
+		"animate": false,
+		"hoverTarget": "cell",
+		"cellHoverOpacity": 0.6,
+		"cellHoverOthersOpacity": 0.25
+	},
+	"echartsProps": {
+		"grid": {
+			"top": 40,
+			"bottom": 40,
+			"left": 25,
+			"right": 25,
+			"containLabel": true
+		},
+		"xAxis": {
+			"nameLocation": "middle",
+			"nameGap": 25,
+			"nameTextStyle": {
+				"color": "#868686",
+				"fontSize": 14,
+				"padding": [8, 0, 0, 0],
+				"fontFamily": "serif",
+				"fontWeight": "bold"
+			},
+			"axisLabel": {
+				"show": true,
+				"interval": 0,
+				"color": "#8897A0"
+			},
+			"axisTick": {
+				"show": true,
+				"lineStyle": {
+					"color": "#8897A0"
+				}
+			},
+			"axisLine": {
+				"show": true,
+				"lineStyle": {
+					"color": "#ECECEC"
+				}
+			},
+			"splitLine": {
+				"show": true,
+				"lineStyle": {
+					"color": "#ECECEC"
+				}
+			}
+		},
+		"yAxis": {
+			"nameLocation": "middle",
+			"nameGap": 25,
+			"nameTextStyle": {
+				"color": "#868686",
+				"fontSize": 14,
+				"padding": [8, 0, 0, 0],
+				"fontFamily": "serif",
+				"fontWeight": "bold"
+			},
+			"axisLabel": {
+				"show": true,
+				"interval": 0,
+				"color": "#8897A0"
+			},
+			"axisTick": {
+				"show": true,
+				"lineStyle": {
+					"color": "#8897A0"
+				}
+			},
+			"axisLine": {
+				"show": true,
+				"lineStyle": {
+					"color": "#ECECEC"
+				}
+			},
+			"splitLine": {
+				"show": true,
+				"lineStyle": {
+					"color": "#ECECEC"
+				}
+			}
+		},
+		"tooltip": {
+			"trigger": "item",
+			"backgroundColor": "#69707D",
+			"extraCssText": "text-align: left"
+		}
+	},
+	"scatterplotProps": {
+		"toolbox": {
+			"feature": {
+				"dataZoom": {
+					"title": {
+						"zoom": "zoom in",
+						"back": "zoom out"
+					}
+				}
+			}
+		},
+		"series": {
+			"type": "scatter",
+			"symbolSize": 6,
+			"itemStyle": {
+				"color": "#E07F81",
+				"borderColor": "#E02529"
+			}
+		}
+	},
+	"barplotProps": {
+		"series": {
+			"type": "bar",
+			"itemStyle": {
+				"color": "#E05255"
+			}
+		}
+	},
+	"lineplotProps": {
+		"series": {
+			"type": "line",
+			"symbolSize": 6,
+			"label": {
+				"show": true,
+				"color": "#0036A9"
+			},
+			"itemStyle": {
+				"color": "#007AFF"
+			},
+			"lineStyle": {
+				"width": 4,
+				"color": "#007AFF"
+			}
+		}
+	}
+}
