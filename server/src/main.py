@@ -14,39 +14,107 @@ app = Blueprint(
 )
 
 
-REQUIRED_QUERY_PARAMETERS = ["list_ligand", "list_receptor"]
+REQUIRED_EXP_QUERY_PARAMETERS = ["genes", "tumortype"]
+REQUIRED_SCORES_QUERY_PARAMETERS = ["ligands", "receptors"]
 
 
-@app.route("/data", methods=["GET"])
-def data():
+@app.route("/exp", methods=["GET"])
+def endpoint_exp():
+    """
+    returns
+
+    List of Dictionary
+        - Dictionary
+            gene: str
+            tumorType: str
+            deconvolutedExpression: [
+                { name: Cancer, value: number },
+                { name: Stroma, value: number },
+                { name: Normal (Median), value: number },
+                { name: TumorBulk (Median), value: number },
+            ],
+            samplesExpression: [{name: sample_name, value: number[purity, expression]}]
+    """
+    query_params_present = [k for k in request.values.keys()]
+
+    for query_param in REQUIRED_EXP_QUERY_PARAMETERS:
+        if query_param not in query_params_present:
+            raise error.ValidationError(
+                "required query parameter not present: {}".format(query_param)
+            )
+
+    list_genes = request.values.get("genes").split(",")
+    tumor_type = request.values.get("tumortype")
+
+    result = []
+    for gene in list_genes:
+        dic = {"gene": gene, "tumorType": settings.DATA_TUMOR_ABBR[tumor_type]}
+        dic["barplot"] = [
+            {"name": name, "value": value}
+            for name, value in dao.deconv_exp_df.loc[(gene, tumor_type)].items()
+        ]
+
+        dic["lineplot"] = []
+        for __dictionary__ in dic["barplot"]:
+            name, value = __dictionary__["name"], __dictionary__["value"]
+            if name == "Cancer":
+                dic["lineplot"].append({"name": name, "value": [1, value]})
+            if name == "Stroma":
+                dic["lineplot"].append({"name": name, "value": [0, value]})
+
+        dic["scatterplot"] = [
+            {"name": name, "value": value}
+            for name, value in zip(
+                dao.mapping_tumor_samples[tumor_type],
+                dao.samples_exp_df.loc[
+                    dao.mapping_tumor_samples[tumor_type], ["cancer", gene]
+                ].values.tolist(),
+            )
+        ]
+        result.append(dic)
+
+    return jsonify(result)
+
+
+@app.route("/scores", methods=["GET"])
+def data_scores():
     """
     returns data for passed query
 
     structure of JSON:
-    - List of Dictionary
-        - Dictionary
-            ligand: str
-            receptor: str
-            values: List of Dictionary
-                - Dictionary
-                    tumor_type: str
-                    - [pair]: score of the pair
+    - Dictionary
+        ligandOptions: Dictionary
+            - Dictionary
+                value: str
+                text: str
+        receptorOptions: Dictionary
+            - Dictionary
+                value: str
+                text: str
+        scoreData - List of Dictionary
+            - Dictionary
+                ligand: str
+                receptor: str
+                values: List of Dictionary
+                    - Dictionary
+                        tumor_type: str
+                        - [pair]: score of the pair
     """
     query_params_present = [k for k in request.values.keys()]
 
-    for query_param in REQUIRED_QUERY_PARAMETERS:
+    for query_param in REQUIRED_SCORES_QUERY_PARAMETERS:
         if query_param not in query_params_present:
             raise error.ValidationError(
                 "required query parameter not present: {}".format(query_param)
             )
 
     list_ligand, list_receptor = (
-        request.values.get("list_ligand").split(","),
-        request.values.get("list_receptor").split(","),
+        request.values.get("ligands").split(","),
+        request.values.get("receptors").split(","),
     )
     return jsonify(service.get_score(list_ligand, list_receptor))
 
 
-@app.route("/metadata", methods=["GET"])
+@app.route("/options/checkbox", methods=["GET"])
 def metadata():
     return jsonify(dao.metadata)

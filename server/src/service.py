@@ -37,7 +37,7 @@ def get_score(
     filteredData = []
     alreadySelectedLigand = []
     alreadySelectedReceptor = []
-    for dic in dao.data:
+    for dic in dao.data_score:
         ligand, receptor = dic["ligand"], dic["receptor"]
         if ligand in list_ligand and receptor in list_receptor:
             if ligand not in alreadySelectedLigand:
@@ -50,5 +50,5 @@ def get_score(
     return {
         "ligandOptions": ligandOptions,
         "receptorOptions": receptorOptions,
-        "filteredData": filteredData,
+        "scoreData": filteredData,
     }

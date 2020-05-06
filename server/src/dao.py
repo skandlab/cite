@@ -1,8 +1,16 @@
+import pandas as pd
+import pickle
 import json
 from . import settings
 
-with open(settings.DATA_FILEPATH, "r") as f:
-    data = json.load(f)
+deconv_exp_df = pd.read_parquet(settings.DATA_DECONV_EXP_FILEPATH)
+samples_exp_df = pd.read_parquet(settings.DATA_SAMPLES_EXP_FILEPATH)
+
+with open(settings.DATA_MAPPING_TUMOR_SAMPLES, "rb") as f:
+    mapping_tumor_samples = pickle.load(f)
+
+with open(settings.DATA_SCORES_FILEPATH, "r") as f:
+    data_score = json.load(f)
 
 with open(settings.DATA_METADATA_FILEPATH, "r") as f:
     __tmp__ = json.load(f)
