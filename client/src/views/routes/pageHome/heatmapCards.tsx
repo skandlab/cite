@@ -2,9 +2,10 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Card, Statistic } from "semantic-ui-react";
-import { HeatMap } from "../../plots/heatmap";
+import { PlotHeatMap } from "../../plots/plotHeatmap";
 
 import { InterfaceScores } from "../../../utils/interfaces";
+import { ROUTES } from "../../../utils/routes";
 
 interface Props {
 	listInteraction: string[];
@@ -40,10 +41,20 @@ export const HeatMapCards = (props: Props) => (
 						</Statistic.Group>
 					</Card.Header>
 					<StyledHeatmapCardDescriptor>
-						<HeatMap
+						<PlotHeatMap
 							data={data.scoreMatrix}
 							pairKeys={props.listInteraction}
 							tumorKeys={props.listTumor}
+							onHeatMapClick={(yKey) =>
+								window.open(
+									ROUTES.Expression.push(
+										data.ligand,
+										data.receptor,
+										yKey
+									),
+									"_blank"
+								)
+							}
 						/>
 					</StyledHeatmapCardDescriptor>
 				</Card.Content>

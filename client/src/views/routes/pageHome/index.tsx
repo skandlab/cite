@@ -5,7 +5,7 @@ import { Grid } from "semantic-ui-react";
 import { GridColumn } from "../../styled/gridColumn";
 import { HeatMapCards } from "./heatmapCards";
 import { ColumnBrowserGroup } from "./columnBrowser/columnBrowserGroup";
-import { StatusBar } from "./statusBar/statusBar";
+import { StatusBar } from "./statusBar";
 import { AppPagination, calculatePaginationItems } from "./pagination";
 
 import { browserHistory } from "../../../utils/browserHistory";
@@ -19,6 +19,12 @@ import {
 } from "../../../utils/interfaces";
 
 import { ROUTES } from "../../../utils/routes";
+
+export interface InterfaceColumnBrowserConfig {
+	title: string;
+	options: string;
+	handler: { [key: string]: boolean };
+}
 
 interface State {
 	ligandOptions: InterfaceColumnBrowserProps[];
@@ -35,6 +41,21 @@ interface State {
 	isFetchingData: boolean;
 	currentPageNumber: number;
 }
+
+const ColumnBrowserConfigArray: InterfaceColumnBrowserConfig[] = [
+	{ title: "Ligand", options: "ligandOptions", handler: { ligand: true } },
+	{
+		title: "Receptor",
+		options: "receptorOptions",
+		handler: { receptor: true },
+	},
+	{
+		title: "Interaction type",
+		options: "interactionOptions",
+		handler: { interaction: true },
+	},
+	{ title: "Tumor type", options: "tumorOptions", handler: { tumor: true } },
+];
 
 export class HomePage extends React.Component<{}, State> {
 	constructor(props: {}) {
@@ -140,7 +161,11 @@ export class HomePage extends React.Component<{}, State> {
 			<>
 				<Grid.Row centered>
 					<GridColumn>
-						<ColumnBrowserGroup {...this.state} {...this} />
+						<ColumnBrowserGroup
+							ColumnBrowserConfigArray={ColumnBrowserConfigArray}
+							{...this.state}
+							{...this}
+						/>
 					</GridColumn>
 				</Grid.Row>
 

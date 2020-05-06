@@ -4,12 +4,14 @@ import { Card, Dimmer, Loader } from "semantic-ui-react";
 import { ColumnBrowser } from "./columnBrowser";
 
 import { InterfaceColumnBrowserProps } from "../../../../utils/interfaces";
+import { InterfaceColumnBrowserConfig } from "..";
 
 interface Props {
 	ligandOptions: InterfaceColumnBrowserProps[];
 	receptorOptions: InterfaceColumnBrowserProps[];
 	interactionOptions: InterfaceColumnBrowserProps[];
 	tumorOptions: InterfaceColumnBrowserProps[];
+	ColumnBrowserConfigArray: InterfaceColumnBrowserConfig[];
 	isFetchingData: boolean;
 	handleFilter: (
 		options: InterfaceColumnBrowserProps[],
@@ -22,29 +24,10 @@ interface Props {
 	) => void;
 }
 
-const ColumnBrowserConfigArray: {
-	title: string;
-	options: string;
-	handler: { [key: string]: boolean };
-}[] = [
-	{ title: "Ligand", options: "ligandOptions", handler: { ligand: true } },
-	{
-		title: "Receptor",
-		options: "receptorOptions",
-		handler: { receptor: true },
-	},
-	{
-		title: "Interaction type",
-		options: "interactionOptions",
-		handler: { interaction: true },
-	},
-	{ title: "Tumor type", options: "tumorOptions", handler: { tumor: true } },
-];
-
 export const ColumnBrowserGroup = (props: Props) =>
 	props.ligandOptions.length !== 0 ? (
 		<Card.Group centered doubling stackable>
-			{ColumnBrowserConfigArray.map((config) => (
+			{props.ColumnBrowserConfigArray.map((config) => (
 				<ColumnBrowser
 					{...props}
 					key={config.title}

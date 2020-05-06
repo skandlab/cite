@@ -12,21 +12,26 @@ import { URL_NAVBAR_LOGO, APP_TITLE } from "../../utils/constants";
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES_ARRAY, ROUTES } from "../../utils/routes";
 import { GridColumn } from "./gridColumn";
+import styled from "@emotion/styled";
 
 interface Props {
 	currentRoute: string;
 }
 
+const StyledImageMenuItem = styled(Menu.Item)`
+	padding-left: 0 !important;
+`;
+
 const CommonMenu = () => (
 	<>
-		<Menu.Item>
+		<StyledImageMenuItem>
 			<Image
 				size="mini"
 				src={URL_NAVBAR_LOGO}
 				alt="CaMP-logo"
 				onClick={() => browserHistory.push(ROUTES.Home.push())}
 			/>
-		</Menu.Item>
+		</StyledImageMenuItem>
 		<Menu.Item>
 			<Responsive maxWidth={1000}>
 				<Header as="h2">

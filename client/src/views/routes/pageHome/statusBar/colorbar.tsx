@@ -1,5 +1,5 @@
 import React from "react";
-import { HeatMap } from "../../../plots/heatmap";
+import { PlotHeatMap } from "../../../plots/plotHeatmap";
 import styled from "@emotion/styled";
 
 const data = [
@@ -25,7 +25,7 @@ const StyledColorBar = styled.div`
 
 export const ColorBar = () => (
 	<StyledColorBar>
-		<HeatMap
+		<PlotHeatMap
 			data={data as any}
 			pairKeys={[
 				"10",
@@ -51,6 +51,7 @@ export const ColorBar = () => (
 					tickRotation: 0,
 				},
 			}}
+			onHeatMapClick={(_) => _}
 		/>
 	</StyledColorBar>
 );
