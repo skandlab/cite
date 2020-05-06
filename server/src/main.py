@@ -23,17 +23,21 @@ def endpoint_exp():
     """
     returns
 
-    List of Dictionary
+    List of Dictionary, per gene
         - Dictionary
             gene: str
-            tumorType: str
-            deconvolutedExpression: [
+            tumorType: str, full form
+            barplot: [
                 { name: Cancer, value: number },
                 { name: Stroma, value: number },
                 { name: Normal (Median), value: number },
                 { name: TumorBulk (Median), value: number },
             ],
-            samplesExpression: [{name: sample_name, value: number[purity, expression]}]
+            scatterplot: [{name: sample_name, value: number[purity, expression]}]
+            lineplot: [
+                {name: cancer, value: number[1, expression]},
+                {name: stroma, value: number[0, expression]}
+            ]
     """
     query_params_present = [k for k in request.values.keys()]
 
@@ -77,7 +81,7 @@ def endpoint_exp():
 
 
 @app.route("/scores", methods=["GET"])
-def data_scores():
+def endpoint_score():
     """
     returns data for passed query
 
@@ -116,5 +120,5 @@ def data_scores():
 
 
 @app.route("/options/checkbox", methods=["GET"])
-def metadata():
-    return jsonify(dao.metadata)
+def endpoint_checkboxOptions():
+    return jsonify(dao.checkboxOptions)

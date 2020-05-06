@@ -14,7 +14,13 @@ with open(settings.DATA_SCORES_FILEPATH, "r") as f:
 
 with open(settings.DATA_METADATA_FILEPATH, "r") as f:
     __tmp__ = json.load(f)
-    list_ligand, list_receptor, list_tumor_type, list_interaction_type, metadata = (
+    (
+        list_ligand,
+        list_receptor,
+        list_tumor_type,
+        list_interaction_type,
+        checkboxOptions,
+    ) = (
         __tmp__["ligand"],
         __tmp__["receptor"],
         __tmp__["tumorType"],
