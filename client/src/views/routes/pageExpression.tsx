@@ -11,29 +11,13 @@ import { requestExp } from "../../utils/backendRequests";
 import { browserHistory } from "../../utils/browserHistory";
 
 import { ROUTER_PARAMS_EXPRESSION, ROUTES } from "../../utils/routes";
+import { InterfaceExpressionEndpoint } from "../../utils/interfaces";
 
 interface Props extends RouteComponentProps<ROUTER_PARAMS_EXPRESSION> {}
 
-interface InterfacePlotData {
-	gene: string;
-	tumorType: string;
-	scatterplot: {
-		name: string;
-		value: [number, number];
-	}[];
-	barplot: {
-		name: string;
-		value: number;
-	}[];
-	lineplot: {
-		name: string;
-		value: [number, number];
-	}[];
-}
-
 interface State {
 	isFetchingData: boolean;
-	dataArray: InterfacePlotData[];
+	dataArray: InterfaceExpressionEndpoint[];
 }
 
 const PlotCardGroup = styled(Card.Group)`
@@ -43,7 +27,7 @@ const PlotCardGroup = styled(Card.Group)`
 const PlotGroup = (props: {
 	title: string;
 	subHeader: string;
-	data: InterfacePlotData;
+	data: InterfaceExpressionEndpoint;
 }) => (
 	<Segment textAlign="center">
 		<Header as="h3">

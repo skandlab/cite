@@ -12,3 +12,20 @@ export interface InterfaceScores {
 		[key: string]: string;
 	}[];
 }
+
+export interface InterfaceExpressionEndpoint {
+	gene: string;
+	tumorType: string;
+	scatterplot: {
+		name: string;
+		value: [number, number];
+	}[];
+	barplot: {
+		name: string;
+		value: number;
+	}[];
+	lineplot: {
+		name: string;
+		value: [number, number];
+	}[];
+}
