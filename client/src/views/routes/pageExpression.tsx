@@ -10,9 +10,9 @@ import { GridColumn } from "../styled/gridColumn";
 import { requestExp } from "../../utils/backendRequests";
 import { browserHistory } from "../../utils/browserHistory";
 
-import { ROUTER_PARAMS_PURITY, ROUTES } from "../../utils/routes";
+import { ROUTER_PARAMS_EXPRESSION, ROUTES } from "../../utils/routes";
 
-interface Props extends RouteComponentProps<ROUTER_PARAMS_PURITY> {}
+interface Props extends RouteComponentProps<ROUTER_PARAMS_EXPRESSION> {}
 
 interface InterfacePlotData {
 	gene: string;

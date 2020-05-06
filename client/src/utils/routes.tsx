@@ -10,7 +10,7 @@ const PARAMS_EXPRESSION = {
 	receptorFromRoute: "",
 	tumorTypeFromRoute: "",
 };
-export type ROUTER_PARAMS_PURITY = typeof PARAMS_EXPRESSION;
+export type ROUTER_PARAMS_EXPRESSION = typeof PARAMS_EXPRESSION;
 
 export const ROUTES = {
 	Home: {
@@ -25,9 +25,7 @@ export const ROUTES = {
 		name: "Browse Purities",
 		show: false,
 		routes: [
-			PARAMS_EXPRESSION +
-				"/:" +
-				Object.keys(PARAMS_EXPRESSION).join("/:"),
+			ROUTE_EXPRESSION + "/:" + Object.keys(PARAMS_EXPRESSION).join("/:"),
 		],
 		push: (
 			ligandFromRoute: string = "",
