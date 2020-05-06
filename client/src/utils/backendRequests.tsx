@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/server";
+const API_URL = "/server";
 
 export const requestScores = (listLigand: string[], listReceptor: string[]) =>
 	axios.request({
