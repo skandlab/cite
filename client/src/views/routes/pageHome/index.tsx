@@ -169,16 +169,17 @@ export class HomePage extends React.Component<{}, State> {
 					</GridColumn>
 				</Grid.Row>
 
-				{this.state.scoreData.length !== 0 && (
-					<Grid.Row centered>
-						<GridColumn>
-							<StatusBar
-								totalItems={this.state.scoreData.length}
-								{...this.state}
-							/>
-						</GridColumn>
-					</Grid.Row>
-				)}
+				{this.state.scoreData.length !== 0 &&
+					!this.state.isFetchingData && (
+						<Grid.Row centered>
+							<GridColumn>
+								<StatusBar
+									totalItems={this.state.scoreData.length}
+									{...this.state}
+								/>
+							</GridColumn>
+						</Grid.Row>
+					)}
 				<Grid.Row />
 
 				{this.state.scoreData.length !== 0 &&
