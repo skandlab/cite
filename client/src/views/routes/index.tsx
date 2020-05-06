@@ -9,6 +9,7 @@ import { PageTeam } from "./pageTeam";
 
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES } from "../../utils/routes";
+import { ExpressionPage } from "./pageExpression";
 
 interface State {
 	currentRoute: string;
@@ -50,6 +51,11 @@ export class AppRouter extends React.Component<{}, State> {
 							exact
 							path={ROUTES.Error.routes}
 							component={ErrorPage}
+						/>
+						<Route
+							exact
+							path={ROUTES.Expression.routes}
+							component={ExpressionPage}
 						/>
 						<Route
 							exact

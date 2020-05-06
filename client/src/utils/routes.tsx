@@ -1,8 +1,16 @@
 const ROUTE_PREFIX = "/ui";
 
 const ROUTE_HOME = ROUTE_PREFIX;
+const ROUTE_EXPRESSION = ROUTE_PREFIX + "/expression";
 const ROUTE_TEAM = ROUTE_PREFIX + "/team";
 const ROUTE_ERROR = ROUTE_PREFIX + "/error";
+
+const PARAMS_EXPRESSION = {
+	ligandFromRoute: "",
+	receptorFromRoute: "",
+	tumorTypeFromRoute: "",
+};
+export type ROUTER_PARAMS_PURITY = typeof PARAMS_EXPRESSION;
 
 export const ROUTES = {
 	Home: {
@@ -12,6 +20,32 @@ export const ROUTES = {
 		push: () => ROUTE_HOME.replace(/\/+$/, ""),
 		match: (currentRoute: string) =>
 			currentRoute.replace(/\/+$/, "") === ROUTE_HOME,
+	},
+	Expression: {
+		name: "Browse Purities",
+		show: false,
+		routes: [
+			PARAMS_EXPRESSION +
+				"/:" +
+				Object.keys(PARAMS_EXPRESSION).join("/:"),
+		],
+		push: (
+			ligandFromRoute: string = "",
+			receptorFromRoute: string = "",
+			interactiontypeFromRoute: string = "",
+			tumorTypeFromRoute: string = ""
+		) =>
+			[
+				ROUTE_EXPRESSION,
+				ligandFromRoute,
+				receptorFromRoute,
+				interactiontypeFromRoute,
+				tumorTypeFromRoute,
+			]
+				.join("/")
+				.replace(/\/+$/, ""),
+		match: (currentRoute: string) =>
+			currentRoute.replace(/\/+$/, "").startsWith(ROUTE_EXPRESSION),
 	},
 	Team: {
 		name: "Team",
