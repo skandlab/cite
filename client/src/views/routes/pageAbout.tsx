@@ -7,7 +7,6 @@ import {
 	Label,
 	Segment,
 	Header,
-	ImageProps,
 	Container,
 } from "semantic-ui-react";
 import { GridColumn } from "../styled/gridColumn";
@@ -21,10 +20,6 @@ interface Props {
 	jobDescription: string;
 	email: string;
 }
-
-const AppImage = (props: ImageProps) => (
-	<Image src={props.src} alt={props.alt} centered fluid {...props} />
-);
 
 const StyledContainer = styled(Container)`
 	font-size: 20px;
@@ -72,10 +67,11 @@ export const PageAbout = () => (
 		<Grid.Row />
 		<Grid.Row>
 			<GridColumn>
-				<AppImage
+				<Image
 					src={require("../../assets/about_signaling.png")}
 					alt="cell-cell signaling interface"
 					size="huge"
+					centered
 				/>
 				<Segment padded="very">
 					<p>
@@ -93,38 +89,34 @@ export const PageAbout = () => (
 						</a>
 						).
 					</p>
-					<p>
-						<ul>
-							<li>
-								Crosstalk between ligands and receptors on
-								cancer and stromal cells was estimated in the
-								tumor microenvironment of 20 solid tumor types,
-								based on the cancer and stroma specific
-								expression.
-							</li>
-							<li>
-								To estimate the relative flow of signaling
-								between cancer and stromal cell compartments,
-								the Relative Crosstalk (RC) score was used.
-								Ligand-receptor complex activity was
-								approximated using the product of ligand and
-								receptor gene expression inferred for the given
-								compartments (in linear scale).
-							</li>
-							<li>
-								The RC score then estimates the relative complex
-								concentration given all four possible directions
-								of signaling and a normal tissue state, e.g. for
-								cancer-cancer (CC) signaling:
-								<AppImage
-									src={require("../../assets/about_formula.png")}
-									alt="relative cross-talk formula"
-									size="huge"
-									fluid={false}
-								/>
-							</li>
-						</ul>
-					</p>
+					<ul>
+						<li>
+							Crosstalk between ligands and receptors on cancer
+							and stromal cells was estimated in the tumor
+							microenvironment of 20 solid tumor types, based on
+							the cancer and stroma specific expression.
+						</li>
+						<li>
+							To estimate the relative flow of signaling between
+							cancer and stromal cell compartments, the Relative
+							Crosstalk (RC) score was used. Ligand-receptor
+							complex activity was approximated using the product
+							of ligand and receptor gene expression inferred for
+							the given compartments (in linear scale).
+						</li>
+						<li>
+							The RC score then estimates the relative complex
+							concentration given all four possible directions of
+							signaling and a normal tissue state, e.g. for
+							cancer-cancer (CC) signaling:
+							<Image
+								src={require("../../assets/about_formula.png")}
+								alt="relative cross-talk formula"
+								size="huge"
+								centered
+							/>
+						</li>
+					</ul>
 				</Segment>
 			</GridColumn>
 		</Grid.Row>
