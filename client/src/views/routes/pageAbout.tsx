@@ -28,14 +28,14 @@ const StyledContainer = styled(Container)`
 const MemberInfo = (props: Props) => (
 	<Card>
 		<Image src={props.imageUrl} wrapped ui={false} />
-		<Card.Content>
+		<Card.Content textAlign="left">
 			<Card.Header>{props.header}</Card.Header>
 			<Card.Meta>
 				<span className="date">{props.subHeader}</span>
 			</Card.Meta>
 			<Card.Description>{props.jobDescription}</Card.Description>
 		</Card.Content>
-		<Card.Content extra>
+		<Card.Content textAlign="left" extra>
 			<Label
 				as="a"
 				href={"mailto:" + props.email}
