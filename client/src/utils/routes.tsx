@@ -2,7 +2,7 @@ const ROUTE_PREFIX = "/ui";
 
 const ROUTE_HOME = ROUTE_PREFIX;
 const ROUTE_EXPRESSION = ROUTE_PREFIX + "/expression";
-const ROUTE_TEAM = ROUTE_PREFIX + "/team";
+const ROUTE_ABOUT = ROUTE_PREFIX + "/about";
 const ROUTE_ERROR = ROUTE_PREFIX + "/error";
 
 const PARAMS_EXPRESSION = {
@@ -45,13 +45,13 @@ export const ROUTES = {
 		match: (currentRoute: string) =>
 			currentRoute.replace(/\/+$/, "").startsWith(ROUTE_EXPRESSION),
 	},
-	Team: {
-		name: "Team",
+	About: {
+		name: "About",
 		show: true,
-		routes: [ROUTE_TEAM],
-		push: () => ROUTE_TEAM.replace(/\/+$/, ""),
+		routes: [ROUTE_ABOUT],
+		push: () => ROUTE_ABOUT.replace(/\/+$/, ""),
 		match: (currentRoute: string) =>
-			currentRoute.replace(/\/+$/, "").startsWith(ROUTE_TEAM),
+			currentRoute.replace(/\/+$/, "").startsWith(ROUTE_ABOUT),
 	},
 	Error: {
 		name: "Error",

@@ -5,7 +5,7 @@ import { Router, Switch, Route, Redirect } from "react-router-dom";
 import { Navbar } from "../styled/navbar";
 import { HomePage } from "./pageHome";
 import { ErrorPage } from "./pageError";
-import { PageTeam } from "./pageTeam";
+import { PageAbout } from "./pageAbout";
 
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES } from "../../utils/routes";
@@ -44,8 +44,8 @@ export class AppRouter extends React.Component<{}, State> {
 					<Switch>
 						<Route
 							exact
-							path={ROUTES.Team.routes}
-							component={PageTeam}
+							path={ROUTES.About.routes}
+							component={PageAbout}
 						/>
 						<Route
 							exact

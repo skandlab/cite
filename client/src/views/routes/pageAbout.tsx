@@ -53,7 +53,7 @@ const MemberInfo = (props: Props) => (
 	</Card>
 );
 
-export const PageTeam = () => (
+export const PageAbout = () => (
 	<>
 		<Grid.Row>
 			<GridColumn>
