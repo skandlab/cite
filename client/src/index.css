@@ -113,8 +113,9 @@ body {
 	font-size: 1rem !important;
 }
 .ui.xs.statistic > .label {
-	font-size: 0.7rem !important;
+	font-size: 0.8rem !important;
 	color: unset !important;
+	font-weight: normal !important;
 }
 
 .ui.menu.nohover .item:hover {

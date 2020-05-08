@@ -13,6 +13,10 @@ interface Props {
 	paginationData: InterfaceScores[];
 }
 
+const StyledHeatmapCardGroup = styled(Card.Group)`
+	justify-content: space-around !important;
+`;
+
 const StyledHeatmapCard = styled(Card)`
 	margin: 3em 0.8em !important;
 `;
@@ -22,7 +26,7 @@ const StyledHeatmapCardDescriptor = styled(Card.Description)`
 `;
 
 export const HeatMapCards = (props: Props) => (
-	<Card.Group centered doubling itemsPerRow={4}>
+	<StyledHeatmapCardGroup centered doubling>
 		{props.paginationData.map((data, index) => (
 			<StyledHeatmapCard key={index}>
 				<Card.Content>
@@ -60,5 +64,5 @@ export const HeatMapCards = (props: Props) => (
 				</Card.Content>
 			</StyledHeatmapCard>
 		))}
-	</Card.Group>
+	</StyledHeatmapCardGroup>
 );
