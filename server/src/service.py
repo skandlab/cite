@@ -30,6 +30,9 @@ isChecked = lambda item, list_items: True if item in list_items else False
 
 
 def get_score(params_list_ligand: List[str], params_list_receptor: List[str]):
+    if params_list_ligand == [""] and params_list_receptor == [""]:
+        return dao.default_scores
+
     list_ligand, list_receptor = __check_if_all__(
         params_list_ligand, params_list_receptor
     )

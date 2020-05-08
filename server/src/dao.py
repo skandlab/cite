@@ -27,3 +27,6 @@ with open(settings.DATA_METADATA_FILEPATH, "r") as f:
         __tmp__["interactionType"],
         __tmp__["metadata"],
     )
+
+with open(settings.DATA_DEFAULT_SCORES_FILEPATH, "r") as f:
+    default_scores = json.load(f)

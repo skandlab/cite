@@ -3,6 +3,7 @@ DATA_SAMPLES_EXP_FILEPATH = "data/samples_exp.parquet"
 DATA_MAPPING_TUMOR_SAMPLES = "data/mapping_tumor_samples.pickle"
 
 DATA_SCORES_FILEPATH = "data/scores.json"
+DATA_DEFAULT_SCORES_FILEPATH = "data/default.json"
 DATA_METADATA_FILEPATH = "data/metadata.json"
 
 DATA_TUMOR_ABBR = {
