@@ -237,55 +237,49 @@ export class HomePage extends React.Component<{}, State> {
 					</GridColumn>
 				</Grid.Row>
 
-				{this.state.scoreData.length !== 0 &&
-					!this.state.isFetchingData && (
+				{!this.state.isFetchingData && (
+					<Grid.Row centered>
+						<GridColumn>
+							<StatusBar
+								totalItems={this.state.scoreData.length}
+								{...this.state}
+							/>
+						</GridColumn>
+					</Grid.Row>
+				)}
+				<Grid.Row />
+
+				{!this.state.isFetchingData && (
+					<>
 						<Grid.Row centered>
 							<GridColumn>
-								<StatusBar
-									totalItems={this.state.scoreData.length}
-									{...this.state}
+								<HeatMapCards
+									paginationData={this.state.scoreData.slice(
+										start,
+										end
+									)}
+									listInteraction={
+										this.state.interaction.filteredList
+									}
+									listTumor={this.state.tumor.filteredList}
 								/>
 							</GridColumn>
 						</Grid.Row>
-					)}
-				<Grid.Row />
-
-				{this.state.scoreData.length !== 0 &&
-					!this.state.isFetchingData && (
-						<>
-							<Grid.Row centered>
-								<GridColumn>
-									<HeatMapCards
-										paginationData={this.state.scoreData.slice(
-											start,
-											end
-										)}
-										listInteraction={
-											this.state.interaction.filteredList
-										}
-										listTumor={
-											this.state.tumor.filteredList
-										}
-									/>
-								</GridColumn>
-							</Grid.Row>
-							<Grid.Row centered>
-								<GridColumn>
-									<AppPagination
-										{...this.state}
-										totalItems={this.state.scoreData.length}
-										handleOnPageChange={(
-											activePageNumber
-										) =>
-											this.setState({
-												currentPageNumber: activePageNumber,
-											})
-										}
-									/>
-								</GridColumn>
-							</Grid.Row>
-						</>
-					)}
+						<Grid.Row centered>
+							<GridColumn>
+								<AppPagination
+									{...this.state}
+									totalItems={this.state.scoreData.length}
+									handleOnPageChange={(activePageNumber) =>
+										this.setState({
+											currentPageNumber: activePageNumber,
+										})
+									}
+								/>
+							</GridColumn>
+						</Grid.Row>
+					</>
+				)}
 			</>
 		);
 	}
