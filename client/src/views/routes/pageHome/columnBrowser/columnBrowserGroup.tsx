@@ -1,20 +1,22 @@
 import React from "react";
 
 import { Card, Dimmer, Loader } from "semantic-ui-react";
-import { ColumnBrowser } from "./columnBrowser";
+import { ColumnBrowser, InterfaceFilteredOptionsProps } from "./columnBrowser";
 
-import { InterfaceColumnBrowserProps } from "../../../../utils/interfaces";
-import { InterfaceColumnBrowserConfig } from "..";
+import { InterfaceColumnBrowserItem } from "../../../../utils/interfaces";
+import { InterfaceColumnBrowser } from "..";
 
 interface Props {
-	ligandOptions: InterfaceColumnBrowserProps[];
-	receptorOptions: InterfaceColumnBrowserProps[];
-	interactionOptions: InterfaceColumnBrowserProps[];
-	tumorOptions: InterfaceColumnBrowserProps[];
-	ColumnBrowserConfigArray: InterfaceColumnBrowserConfig[];
+	ligand: InterfaceColumnBrowser;
+	receptor: InterfaceColumnBrowser;
+	interaction: InterfaceColumnBrowser;
+	tumor: InterfaceColumnBrowser;
+
+	// ColumnBrowserConfigArray: InterfaceColumnBrowserConfig[];
 	isFetchingData: boolean;
 	handleFilter: (
-		options: InterfaceColumnBrowserProps[],
+		filteredOptions: InterfaceFilteredOptionsProps[],
+		options: InterfaceColumnBrowserItem[],
 		whichOption: {
 			ligand: boolean;
 			receptor: boolean;
@@ -25,26 +27,63 @@ interface Props {
 }
 
 export const ColumnBrowserGroup = (props: Props) =>
-	props.ligandOptions.length !== 0 ? (
+	props.ligand.options.length !== 0 ||
+	props.receptor.options.length !== 0 ||
+	props.interaction.options.length !== 0 ||
+	props.tumor.options.length !== 0 ? (
 		<Card.Group centered doubling stackable>
-			{props.ColumnBrowserConfigArray.map((config) => (
-				<ColumnBrowser
-					{...props}
-					key={config.title}
-					title={config.title}
-					// @ts-ignore
-					options={props[config.options]}
-					handleFilter={(value) =>
-						props.handleFilter(value, {
-							ligand: false,
-							receptor: false,
-							interaction: false,
-							tumor: false,
-							...config.handler,
-						})
-					}
-				/>
-			))}
+			<ColumnBrowser
+				{...props.ligand}
+				{...props}
+				handleFilter={(value1, value2) =>
+					props.handleFilter(value1, value2, {
+						ligand: false,
+						receptor: false,
+						interaction: false,
+						tumor: false,
+						...props.ligand.handler,
+					})
+				}
+			/>
+			<ColumnBrowser
+				{...props.receptor}
+				{...props}
+				handleFilter={(value1, value2) =>
+					props.handleFilter(value1, value2, {
+						ligand: false,
+						receptor: false,
+						interaction: false,
+						tumor: false,
+						...props.receptor.handler,
+					})
+				}
+			/>
+			<ColumnBrowser
+				{...props.interaction}
+				{...props}
+				handleFilter={(value1, value2) =>
+					props.handleFilter(value1, value2, {
+						ligand: false,
+						receptor: false,
+						interaction: false,
+						tumor: false,
+						...props.interaction.handler,
+					})
+				}
+			/>
+			<ColumnBrowser
+				{...props.tumor}
+				{...props}
+				handleFilter={(value1, value2) =>
+					props.handleFilter(value1, value2, {
+						ligand: false,
+						receptor: false,
+						interaction: false,
+						tumor: false,
+						...props.tumor.handler,
+					})
+				}
+			/>
 		</Card.Group>
 	) : (
 		<Dimmer active inverted page>

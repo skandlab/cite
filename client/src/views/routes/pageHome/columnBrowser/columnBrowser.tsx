@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import styled from "@emotion/styled";
+
 import {
 	Item,
 	Checkbox,
@@ -10,18 +12,22 @@ import {
 	Dimmer,
 	Loader,
 } from "semantic-ui-react";
-import styled from "@emotion/styled";
 
-import { InterfaceColumnBrowserProps } from "../../../../utils/interfaces";
+import { InterfaceColumnBrowserItem } from "../../../../utils/interfaces";
 
-interface InterfaceFilteredOptionsProps extends InterfaceColumnBrowserProps {
+export interface InterfaceFilteredOptionsProps
+	extends InterfaceColumnBrowserItem {
 	orginalIndex: number;
 }
 
 interface Props {
 	title: string;
-	options: InterfaceColumnBrowserProps[];
-	handleFilter: (options: InterfaceColumnBrowserProps[]) => void;
+	filteredOptions: InterfaceFilteredOptionsProps[];
+	options: InterfaceColumnBrowserItem[];
+	handleFilter: (
+		filteredOptions: InterfaceFilteredOptionsProps[],
+		options: InterfaceColumnBrowserItem[]
+	) => void;
 	isFetchingData: boolean;
 }
 
@@ -31,114 +37,84 @@ const StyledItemGroup = styled(Item.Group)`
 	min-height: 160px;
 `;
 
-const StyledItem = styled(Item)`
+const StyledItem = styled.div<{ mute: boolean }>`
 	margin-top: 0 !important;
+	& label {
+		color: ${(props) => (props.mute ? "#b3b3b3" : "#4a4f59")} !important;
+	}
 `;
-
-const CheckboxItem = (props: {
+const CheckboxItem = ({
+	index,
+	option,
+	handleToggleCheckbox,
+}: {
 	index: number;
-	option: InterfaceColumnBrowserProps;
+	option: InterfaceColumnBrowserItem;
 	handleToggleCheckbox: Function;
 }) => (
-	<StyledItem
-		key={props.option.value}
-		meta={
-			props.option.description && (
-				<>
-					<small>{props.option.description}</small>
-					<br /> {/* TODO */}
-				</>
-			)
-		}
-		description={
-			<Checkbox
-				label={props.option.value}
-				checked={props.option.isChecked}
-				onChange={() =>
-					props.handleToggleCheckbox(
-						props.index,
-						props.option.isChecked
-					)
-				}
-			/>
-		}
-	/>
+	<StyledItem mute={option.mute}>
+		<Item
+			key={option.value}
+			meta={
+				option.description && (
+					<>
+						<small>{option.description}</small>
+						<br />
+					</>
+				)
+			}
+			description={
+				<Checkbox
+					label={option.value}
+					checked={option.isChecked}
+					onChange={() =>
+						handleToggleCheckbox(index, option.isChecked)
+					}
+				/>
+			}
+		/>
+	</StyledItem>
 );
 
-export const ColumnBrowser = (props: Props) => {
-	const [options, updateOptions] = useState(props.options);
-	const [filteredOptions, updateFilteredOptions] = useState<
-		InterfaceFilteredOptionsProps[]
-	>([]);
+export const ColumnBrowser = ({
+	title,
+	filteredOptions,
+	options,
+	handleFilter,
+	isFetchingData,
+}: Props) => {
 	const [inputText, updateInputText] = useState("");
 
-	const isFirstRunOptions = useRef(true);
-	const isFirstRunFilteredOptions = useRef(true);
-
-	useEffect(() => {
-		if (isFirstRunOptions.current) {
-			isFirstRunOptions.current = false;
-			return;
-		}
-
-		let tmp = props.options;
-		filteredOptions.forEach(
-			(option) => (tmp[option.orginalIndex].isChecked = true)
-		);
-		updateOptions(tmp);
-	}, [props.options]);
-	useEffect(() => {
-		if (isFirstRunFilteredOptions.current) {
-			isFirstRunFilteredOptions.current = false;
-			return;
-		}
-
-		props.handleFilter(filteredOptions);
-	}, [filteredOptions]);
-
-	/*
-	 * handle click on a checkbox
-	 * empty array means `all`
-	 */
 	const handleToggleCheckbox = (index: number, prevChecked: boolean) => {
-		if (!prevChecked) {
-			updateFilteredOptions([
-				...filteredOptions,
-				{
-					...options[index],
-					isChecked: !prevChecked,
-					orginalIndex: index,
-				},
-			]);
-			updateOptions([
-				...options.slice(0, index),
-				{ ...options[index], isChecked: !prevChecked },
-				...options.slice(index + 1, options.length),
-			]);
-		} else {
-			updateFilteredOptions([
-				...filteredOptions.slice(0, index),
-				...filteredOptions.slice(index + 1, filteredOptions.length),
-			]);
-			updateOptions([
-				...options.slice(0, filteredOptions[index].orginalIndex),
-				{
-					...options[filteredOptions[index].orginalIndex],
-					isChecked: !prevChecked,
-				},
-				...options.slice(
-					filteredOptions[index].orginalIndex + 1,
-					options.length
-				),
-			]);
-		}
+		let tmpFilteredOptions: InterfaceFilteredOptionsProps[] = prevChecked
+			? [
+					...filteredOptions.slice(0, index),
+					...filteredOptions.slice(index + 1, filteredOptions.length),
+			  ]
+			: [
+					...filteredOptions,
+					{
+						...options[index],
+						isChecked: !prevChecked,
+						orginalIndex: index,
+					},
+			  ];
+		let currentIndex = prevChecked
+			? filteredOptions[index].orginalIndex
+			: index;
+		let tmpOptions: InterfaceColumnBrowserItem[] = [
+			...options.slice(0, currentIndex),
+			{ ...options[currentIndex], isChecked: !prevChecked },
+			...options.slice(currentIndex + 1, options.length),
+		];
+		handleFilter(tmpFilteredOptions, tmpOptions);
 	};
 
 	return (
 		<Card>
 			<Card.Content>
 				<Card.Meta>
-					<Icon name="filter" /> {props.title}
+					<Icon name="filter" /> {title}
 				</Card.Meta>
 				<Card.Description>
 					<Form>
@@ -155,7 +131,7 @@ export const ColumnBrowser = (props: Props) => {
 					</Form>
 
 					<StyledItemGroup>
-						{!props.isFetchingData ? (
+						{!isFetchingData ? (
 							<div>
 								{filteredOptions
 									.filter((option) =>
@@ -166,7 +142,7 @@ export const ColumnBrowser = (props: Props) => {
 									.map(
 										(
 											option: InterfaceFilteredOptionsProps,
-											index
+											index: number
 										) => (
 											<CheckboxItem
 												key={option.value}
@@ -185,11 +161,11 @@ export const ColumnBrowser = (props: Props) => {
 											.startsWith(inputText.toLowerCase())
 									)
 									.map(
-										(option, index) =>
+										(option) =>
 											!option.isChecked && (
 												<CheckboxItem
 													key={option.value}
-													index={index}
+													index={option.index}
 													option={option}
 													handleToggleCheckbox={
 														handleToggleCheckbox
@@ -214,8 +190,12 @@ export const ColumnBrowser = (props: Props) => {
 					labelPosition="right"
 					onClick={() => {
 						// reset filter
-						updateOptions(props.options);
-						updateFilteredOptions([]);
+						let tmp = options;
+						filteredOptions.forEach((_, index) => {
+							tmp[index].isChecked = false;
+						});
+						handleFilter([], tmp);
+						updateInputText("");
 					}}
 				>
 					<Icon name="undo" />

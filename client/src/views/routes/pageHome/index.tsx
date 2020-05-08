@@ -15,61 +15,78 @@ import {
 } from "../../../utils/backendRequests";
 import {
 	InterfaceScores,
-	InterfaceColumnBrowserProps,
+	InterfaceColumnBrowserItem,
 } from "../../../utils/interfaces";
 
 import { ROUTES } from "../../../utils/routes";
+import { InterfaceFilteredOptionsProps } from "./columnBrowser/columnBrowser";
 
-export interface InterfaceColumnBrowserConfig {
+export interface InterfaceColumnBrowser {
 	title: string;
-	options: string;
-	handler: { [key: string]: boolean };
+	options: InterfaceColumnBrowserItem[];
+	filteredOptions: InterfaceFilteredOptionsProps[];
+	filteredList: string[];
+	handler: {
+		[key: string]: boolean;
+	};
 }
 
 interface State {
-	ligandOptions: InterfaceColumnBrowserProps[];
-	receptorOptions: InterfaceColumnBrowserProps[];
-	interactionOptions: InterfaceColumnBrowserProps[];
-	tumorOptions: InterfaceColumnBrowserProps[];
-
-	listLigand: string[];
-	listReceptor: string[];
-	listInteraction: string[];
-	listTumor: string[];
+	ligand: InterfaceColumnBrowser;
+	receptor: InterfaceColumnBrowser;
+	interaction: InterfaceColumnBrowser;
+	tumor: InterfaceColumnBrowser;
 
 	scoreData: InterfaceScores[];
 	isFetchingData: boolean;
 	currentPageNumber: number;
 }
 
-const ColumnBrowserConfigArray: InterfaceColumnBrowserConfig[] = [
-	{ title: "Ligand", options: "ligandOptions", handler: { ligand: true } },
-	{
-		title: "Receptor",
-		options: "receptorOptions",
-		handler: { receptor: true },
-	},
-	{
-		title: "Interaction type",
-		options: "interactionOptions",
-		handler: { interaction: true },
-	},
-	{ title: "Tumor type", options: "tumorOptions", handler: { tumor: true } },
-];
-
 export class HomePage extends React.Component<{}, State> {
 	constructor(props: {}) {
 		super(props);
 
 		this.state = {
-			ligandOptions: [],
-			receptorOptions: [],
-			interactionOptions: [],
-			tumorOptions: [],
-			listLigand: [],
-			listReceptor: [],
-			listInteraction: [],
-			listTumor: [],
+			ligand: {
+				title: "Ligand",
+				options: [],
+				filteredOptions: [],
+				filteredList: [],
+				handler: {
+					ligand: true,
+				},
+			},
+
+			receptor: {
+				title: "Receptor",
+				options: [],
+				filteredOptions: [],
+				filteredList: [],
+				handler: {
+					receptor: true,
+				},
+			},
+
+			interaction: {
+				title: "Interaction type",
+				options: [],
+				filteredOptions: [],
+				filteredList: [],
+				handler: {
+					interaction: true,
+				},
+			},
+
+			tumor: {
+				title: "Tumor type",
+				options: [],
+				filteredOptions: [],
+				filteredList: [],
+				handler: {
+					tumor: true,
+				},
+			},
+
 			scoreData: [],
 			isFetchingData: true,
 			currentPageNumber: 1,
@@ -81,14 +98,29 @@ export class HomePage extends React.Component<{}, State> {
 			.all([requestCheckboxOptions(), requestScores([], [])])
 			.then((resp) =>
 				this.setState({
-					...resp[0].data,
-					listInteraction: resp[0].data["interactionOptions"].map(
-						(option: InterfaceColumnBrowserProps) => option.value
-					),
-					listTumor: resp[0].data["tumorOptions"].map(
-						(option: InterfaceColumnBrowserProps) => option.value
-					),
-					...resp[1].data,
+					ligand: {
+						...this.state.ligand,
+						options: resp[1].data["ligandOptions"],
+					},
+					receptor: {
+						...this.state.receptor,
+						options: resp[1].data["receptorOptions"],
+					},
+					interaction: {
+						...this.state.interaction,
+						options: resp[0].data["interactionOptions"],
+						filteredList: resp[0].data["interactionOptions"].map(
+							(option: InterfaceColumnBrowserItem) => option.value
+						),
+					},
+					tumor: {
+						...this.state.tumor,
+						options: resp[0].data["tumorOptions"],
+						filteredList: resp[0].data["tumorOptions"].map(
+							(option: InterfaceColumnBrowserItem) => option.value
+						),
+					},
+					scoreData: resp[1].data["scoreData"],
 					isFetchingData: false,
 				})
 			)
@@ -96,7 +128,8 @@ export class HomePage extends React.Component<{}, State> {
 	}
 
 	handleFilter = (
-		options: InterfaceColumnBrowserProps[],
+		filteredOptions: InterfaceFilteredOptionsProps[],
+		options: InterfaceColumnBrowserItem[],
 		whichOption: {
 			ligand: boolean;
 			receptor: boolean;
@@ -104,51 +137,87 @@ export class HomePage extends React.Component<{}, State> {
 			tumor: boolean;
 		}
 	) => {
-		let listOptions = options.map((option) => option.value);
+		let listOptions = filteredOptions.map((option) => option.value);
 
 		if (whichOption.ligand) {
-			this.setState({ isFetchingData: true }, () =>
-				requestScores(listOptions, this.state.listReceptor)
-					.then((resp) =>
-						this.setState({
-							scoreData: resp.data["scoreData"],
-							receptorOptions: resp.data["receptorOptions"],
-							listLigand: listOptions,
-							isFetchingData: false,
-							currentPageNumber: 1,
-						})
-					)
-					.catch((_) => browserHistory.push(ROUTES.Error.push()))
+			this.setState(
+				{
+					isFetchingData: true,
+				},
+				() =>
+					requestScores(listOptions, this.state.receptor.filteredList)
+						.then((resp) =>
+							this.setState({
+								scoreData: resp.data["scoreData"],
+								ligand: {
+									...this.state.ligand,
+									options: resp.data["ligandOptions"],
+									filteredOptions: filteredOptions,
+									filteredList: listOptions,
+								},
+								receptor: {
+									...this.state.receptor,
+									options: resp.data["receptorOptions"],
+								},
+								isFetchingData: false,
+								currentPageNumber: 1,
+							})
+						)
+						.catch((_) => browserHistory.push(ROUTES.Error.push()))
 			);
 		} else if (whichOption.receptor) {
-			this.setState({ isFetchingData: true }, () =>
-				requestScores(this.state.listLigand, listOptions)
-					.then((resp) => {
-						this.setState({
-							scoreData: resp.data["scoreData"],
-							ligandOptions: resp.data["ligandOptions"],
-							listReceptor: listOptions,
-							isFetchingData: false,
-							currentPageNumber: 1,
-						});
-					})
-					.catch((_) => browserHistory.push(ROUTES.Error.push()))
+			this.setState(
+				{
+					isFetchingData: true,
+				},
+				() =>
+					requestScores(this.state.ligand.filteredList, listOptions)
+						.then((resp) =>
+							this.setState({
+								scoreData: resp.data["scoreData"],
+								ligand: {
+									...this.state.ligand,
+									options: resp.data["ligandOptions"],
+								},
+								receptor: {
+									...this.state.receptor,
+									options: resp.data["receptorOptions"],
+									filteredOptions: filteredOptions,
+									filteredList: listOptions,
+								},
+								isFetchingData: false,
+								currentPageNumber: 1,
+							})
+						)
+						.catch((_) => browserHistory.push(ROUTES.Error.push()))
 			);
 		} else if (whichOption.interaction) {
 			this.setState({
-				listInteraction:
-					listOptions.length === 0
-						? this.state.interactionOptions.map(
-								(option) => option.value
-						  )
-						: listOptions,
+				interaction: {
+					...this.state.interaction,
+					options: options,
+					filteredOptions: filteredOptions,
+					filteredList:
+						filteredOptions.length === 0
+							? this.state.interaction.options.map(
+									(option) => option.value
+							  )
+							: listOptions,
+				},
 			});
 		} else {
 			this.setState({
-				listTumor:
-					listOptions.length === 0
-						? this.state.tumorOptions.map((option) => option.value)
-						: listOptions,
+				tumor: {
+					...this.state.tumor,
+					options: options,
+					filteredOptions: filteredOptions,
+					filteredList:
+						filteredOptions.length === 0
+							? this.state.tumor.options.map(
+									(option) => option.value
+							  )
+							: listOptions,
+				},
 			});
 		}
 	};
@@ -162,9 +231,8 @@ export class HomePage extends React.Component<{}, State> {
 				<Grid.Row centered>
 					<GridColumn>
 						<ColumnBrowserGroup
-							ColumnBrowserConfigArray={ColumnBrowserConfigArray}
 							{...this.state}
-							{...this}
+							handleFilter={this.handleFilter}
 						/>
 					</GridColumn>
 				</Grid.Row>
@@ -192,7 +260,12 @@ export class HomePage extends React.Component<{}, State> {
 											start,
 											end
 										)}
-										{...this.state}
+										listInteraction={
+											this.state.interaction.filteredList
+										}
+										listTumor={
+											this.state.tumor.filteredList
+										}
 									/>
 								</GridColumn>
 							</Grid.Row>

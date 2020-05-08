@@ -1,6 +1,8 @@
-export interface InterfaceColumnBrowserProps {
+export interface InterfaceColumnBrowserItem {
+	index: number;
 	value: string;
 	isChecked: boolean;
+	mute: boolean;
 	description?: string;
 }
 
