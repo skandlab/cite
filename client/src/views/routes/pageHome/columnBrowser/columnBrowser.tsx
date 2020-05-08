@@ -55,22 +55,18 @@ const CheckboxItem = ({
 	<StyledItem mute={option.mute}>
 		<Item
 			key={option.value}
-			meta={
-				option.description && (
-					<>
-						<small>{option.description}</small>
-						<br />
-					</>
-				)
-			}
+			extra={option.description && <small>{option.description}</small>}
 			description={
-				<Checkbox
-					label={option.value}
-					checked={option.isChecked}
-					onChange={() =>
-						handleToggleCheckbox(index, option.isChecked)
-					}
-				/>
+				<>
+					<Checkbox
+						label={option.value}
+						checked={option.isChecked}
+						onChange={() =>
+							handleToggleCheckbox(index, option.isChecked)
+						}
+					/>
+					<br />
+				</>
 			}
 		/>
 	</StyledItem>

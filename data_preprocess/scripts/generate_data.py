@@ -16,6 +16,29 @@ INTERACTION_TYPE_DESCRIPTION = {
     "ss": "stroma-stroma",
 }
 
+TUMOR_ABBR = {
+    "BLCA": "Bladder Urothelial Carcinoma",
+    "BRCA": "Breast invasive carcinoma",
+    "CESC": "Cervical squamous cell carcinoma and endocervical adenocarcinoma",
+    "CRC": "Colorectal carcinoma",
+    "ESCA": "Esophageal carcinoma",
+    "GBM": "Glioblastoma multiforme",
+    "HNSC": "Head and Neck squamous cell carcinoma",
+    "KIRC": "Kidney renal clear cell carcinoma",
+    "KIRP": "Kidney renal papillary cell carcinoma",
+    "LGG": "Brain Lower Grade Glioma",
+    "LIHC": "Liver hepatocellular carcinoma",
+    "LUAD": "Lung adenocarcinoma",
+    "LUSC": "Lung squamous cell carcinoma",
+    "OV": "Ovarian serous cystadenocarcinoma",
+    "PAAD": "Pancreatic adenocarcinoma",
+    "PRAD": "Pancreatic adenocarcinoma",
+    "SKCM": "Skin Cutaneous Melanoma",
+    "STAD": "Stomach adenocarcinoma",
+    "THCA": "Thyroid carcinoma",
+    "UCEC": "Uterine Corpus Endometrial Carcinoma",
+}
+
 df = pd.read_csv(
     INPUT_SCORE_FILE,
     usecols=["ligand", "receptor", "tumorType", "cc", "cs", "nn", "sc", "ss"],
@@ -29,6 +52,11 @@ list_tumor_type, list_ligand, list_receptor, list_interaction_type = (
 )
 list_tumor_type = [tumorType for tumorType in list_tumor_type if tumorType != "MEDIAN"]
 
+list_ligand.sort()
+list_receptor.sort()
+list_receptor.sort()
+list_interaction_type.sort()
+
 with open(OUTPUT_METADATA_FILE, "w") as f:
     json.dump(
         {
@@ -38,23 +66,37 @@ with open(OUTPUT_METADATA_FILE, "w") as f:
             "interactionType": list_interaction_type,
             "metadata": {
                 "ligandOptions": [
-                    {"isChecked": False, "value": ligand} for ligand in list_ligand
+                    {"index": index, "mute": False, "isChecked": False, "value": ligand}
+                    for index, ligand in enumerate(list_ligand)
                 ],
                 "receptorOptions": [
-                    {"isChecked": False, "value": receptor}
-                    for receptor in list_receptor
+                    {
+                        "index": index,
+                        "mute": False,
+                        "isChecked": False,
+                        "value": receptor,
+                    }
+                    for index, receptor in enumerate(list_receptor)
                 ],
                 "tumorOptions": [
-                    {"isChecked": False, "value": tumor_type}
-                    for tumor_type in list_tumor_type
+                    {
+                        "index": index,
+                        "mute": False,
+                        "isChecked": False,
+                        "value": tumor_type,
+                        "description": TUMOR_ABBR[tumor_type],
+                    }
+                    for index, tumor_type in enumerate(list_tumor_type)
                 ],
                 "interactionOptions": [
                     {
+                        "index": index,
+                        "mute": False,
                         "isChecked": False,
                         "value": interaction_type,
                         "description": INTERACTION_TYPE_DESCRIPTION[interaction_type],
                     }
-                    for interaction_type in list_interaction_type
+                    for index, interaction_type in enumerate(list_interaction_type)
                 ],
             },
         },

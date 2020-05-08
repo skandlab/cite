@@ -6,7 +6,6 @@ DATA_SCORES_FILEPATH = "data/scores.json"
 DATA_METADATA_FILEPATH = "data/metadata.json"
 
 DATA_TUMOR_ABBR = {
-    "All": "",
     "BLCA": "Bladder Urothelial Carcinoma",
     "BRCA": "Breast invasive carcinoma",
     "CESC": "Cervical squamous cell carcinoma and endocervical adenocarcinoma",
