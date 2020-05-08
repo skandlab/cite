@@ -15,7 +15,6 @@ app = Blueprint(
 
 
 REQUIRED_EXP_QUERY_PARAMETERS = ["genes", "tumortype"]
-REQUIRED_SCORES_QUERY_PARAMETERS = ["ligands", "receptors"]
 
 
 @app.route("/exp", methods=["GET"])
@@ -78,6 +77,9 @@ def endpoint_exp():
         result.append(dic)
 
     return jsonify(result)
+
+
+REQUIRED_SCORES_QUERY_PARAMETERS = ["ligands", "receptors"]
 
 
 @app.route("/scores", methods=["GET"])

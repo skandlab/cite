@@ -27,3 +27,6 @@ with open(settings.DATA_METADATA_FILEPATH, "r") as f:
         __tmp__["interactionType"],
         __tmp__["metadata"],
     )
+
+list_ligand.sort()
+list_receptor.sort()
