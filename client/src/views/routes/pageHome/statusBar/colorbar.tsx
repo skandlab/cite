@@ -48,7 +48,7 @@ export const ColorBar = () => (
 					tickSize: 3,
 					tickPadding: 3,
 					tickRotation: 0,
-					legend: "Relative Cross-talk Score",
+					legend: "Relative Crosstalk Score",
 					legendPosition: "middle",
 					legendOffset: 32,
 				},
