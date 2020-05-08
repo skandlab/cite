@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Statistic, Form } from "semantic-ui-react";
+import { Menu, Statistic, Form, Card } from "semantic-ui-react";
 import { ColorBar } from "./colorbar";
 import { calculatePaginationItems } from "../pagination";
 
@@ -16,27 +16,31 @@ export const StatusBar = (props: Props) => {
 	return (
 		<Menu className="nohover" secondary borderless>
 			<Menu.Item>
-				<Form>
-					<Form.Group inline>
-						<Form.Field>
-							<label>Ligand-Receptor Combinations:</label>
-						</Form.Field>
-						<Form.Field>
-							<Statistic
-								label={<small>Total</small>}
-								value={props.totalItems}
-								size="mini"
-							/>
-						</Form.Field>
-						<Form.Field>
-							<Statistic
-								label={<small>Showing</small>}
-								value={start + "-" + end}
-								size="mini"
-							/>
-						</Form.Field>
-					</Form.Group>
-				</Form>
+				<Card>
+					<Card.Content textAlign="center">
+						<Form widths="equal">
+							<Form.Group inline>
+								<Form.Field>
+									<Statistic
+										label={<small>Total</small>}
+										value={props.totalItems}
+										size="mini"
+									/>
+								</Form.Field>
+								<Form.Field>
+									<Statistic
+										label={<small>Showing</small>}
+										value={start + "-" + end}
+										size="mini"
+									/>
+								</Form.Field>
+							</Form.Group>
+							<Form.Field>
+								<label>Ligand-Receptor Combinations</label>
+							</Form.Field>
+						</Form>
+					</Card.Content>
+				</Card>
 			</Menu.Item>
 			<Menu.Menu position="right">
 				<Menu.Item>

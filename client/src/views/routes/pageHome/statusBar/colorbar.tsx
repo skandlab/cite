@@ -41,14 +41,16 @@ export const ColorBar = () => (
 			]}
 			tumorKeys={["colorbar"]}
 			heatmapOptions={{
-				forceSquare: true,
 				isInteractive: false,
-				margin: { top: 0, right: 0, bottom: 24, left: 0 },
+				margin: { top: 0, right: 0, bottom: 40, left: 0 },
 				axisTop: null,
 				axisBottom: {
 					tickSize: 3,
 					tickPadding: 3,
 					tickRotation: 0,
+					legend: "Relative Cross-talk Score",
+					legendPosition: "middle",
+					legendOffset: 32,
 				},
 			}}
 			onHeatMapClick={(_) => _}
