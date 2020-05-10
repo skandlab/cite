@@ -38,18 +38,28 @@ const StyledCardHeader = styled(Card.Meta)`
 	justify-content: space-between;
 `;
 
-const StyledItemGroup = styled(Item.Group)`
-	overflow-y: scroll;
-	height: 160px;
-	min-height: 160px;
+const StyledFormGroup = styled(Form.Group)`
+	margin-bottom: 0 !important;
 `;
 
-const StyledItem = styled.div<{ mute: boolean }>`
+const StyledItemGroup = styled(Item.Group)`
+	overflow-y: scroll;
+	height: 224px;
+	min-height: 224px;
 	margin-top: 0 !important;
+`;
+
+const StyledItem = styled(Item)<{ mute: boolean }>`
 	& label {
 		color: ${(props) => (props.mute ? "#b3b3b3" : "#4a4f59")} !important;
 	}
 `;
+
+const StyledItemExtra = styled(Item.Extra)`
+	margin-bottom: 16px;
+	line-height: 1em;
+`;
+
 const CheckboxItem = ({
 	index,
 	option,
@@ -60,22 +70,22 @@ const CheckboxItem = ({
 	handleToggleCheckbox: Function;
 }) => (
 	<StyledItem mute={option.mute}>
-		<Item
-			key={option.value}
-			extra={option.description && <small>{option.description}</small>}
-			description={
-				<>
-					<Checkbox
-						label={option.value}
-						checked={option.isChecked}
-						onChange={() =>
-							handleToggleCheckbox(index, option.isChecked)
-						}
-					/>
-					<br />
-				</>
-			}
-		/>
+		<Item.Content>
+			<Item.Description>
+				<Checkbox
+					label={option.value}
+					checked={option.isChecked}
+					onChange={() =>
+						handleToggleCheckbox(index, option.isChecked)
+					}
+				/>
+			</Item.Description>
+			{option.description && (
+				<StyledItemExtra key={option.value}>
+					<small>{option.description}</small>
+				</StyledItemExtra>
+			)}
+		</Item.Content>
 	</StyledItem>
 );
 
@@ -137,7 +147,7 @@ export const ColumnBrowser = ({
 				</StyledCardHeader>
 				<Card.Description>
 					<Form>
-						<Form.Group widths="equal">
+						<StyledFormGroup widths="equal">
 							<Form.Input
 								icon="search"
 								iconPosition="left"
@@ -146,7 +156,7 @@ export const ColumnBrowser = ({
 									updateInputText(value)
 								}
 							/>
-						</Form.Group>
+						</StyledFormGroup>
 					</Form>
 
 					<StyledItemGroup>
