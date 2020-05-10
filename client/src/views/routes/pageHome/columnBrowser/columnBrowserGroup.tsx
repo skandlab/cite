@@ -44,6 +44,7 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.ligand.handler,
 					})
 				}
+				toShowPopUp={true}
 			/>
 			<ColumnBrowser
 				{...props.receptor}
@@ -57,6 +58,7 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.receptor.handler,
 					})
 				}
+				toShowPopUp={true}
 			/>
 			<ColumnBrowser
 				{...props.interaction}
@@ -70,6 +72,7 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.interaction.handler,
 					})
 				}
+				toShowPopUp={false}
 			/>
 			<ColumnBrowser
 				{...props.tumor}
@@ -83,6 +86,7 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.tumor.handler,
 					})
 				}
+				toShowPopUp={false}
 			/>
 		</Card.Group>
 	) : (
