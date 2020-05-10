@@ -26,8 +26,6 @@ services:
         ports:
             - "80:80"
             - "443:443"
-        volumes:
-            - $PWD/static:/home/tumeric_user/static/image
         networks:
             tumeric_network:
         container_name: tumeric_nginx
@@ -39,4 +37,3 @@ networks:
         name: tumeric_network
 volumes:
     data:
-    static:
