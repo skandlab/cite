@@ -49,9 +49,10 @@ const StyledItemGroup = styled(Item.Group)`
 	margin-top: 0 !important;
 `;
 
-const StyledItem = styled(Item)<{ mute: boolean }>`
+const StyledItem = styled(Item)<{ mute: string | undefined }>`
 	& label {
-		color: ${(props) => (props.mute ? "#b3b3b3" : "#4a4f59")} !important;
+		color: ${(props) =>
+			props.mute !== undefined ? "#b3b3b3" : "#4a4f59"} !important;
 	}
 `;
 
@@ -69,7 +70,7 @@ const CheckboxItem = ({
 	option: InterfaceColumnBrowserItem;
 	handleToggleCheckbox: Function;
 }) => (
-	<StyledItem mute={option.mute}>
+	<StyledItem mute={option.mute ? "" : undefined}>
 		<Item.Content>
 			<Item.Description>
 				<Checkbox
@@ -220,9 +221,10 @@ export const ColumnBrowser = ({
 					onClick={() => {
 						// reset filter
 						let tmp = options;
-						filteredOptions.forEach((_, index) => {
-							tmp[index].isChecked = false;
-						});
+						filteredOptions.forEach(
+							(option) =>
+								(tmp[option.orginalIndex].isChecked = false)
+						);
 						handleFilter([], tmp);
 						updateInputText("");
 					}}
