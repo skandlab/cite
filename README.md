@@ -38,10 +38,10 @@
 
 ```bash
 git clone https://github.com/bigfoot31/tumeric
-cp -r certs camp
-cp -r data camp
-cp -r static camp
-cd camp
+cp -r certs tumeric
+cp -r data tumeric
+cp -r static tumeric
+cd tumeric
 docker-compose build
 docker-compose up -d
 ```
