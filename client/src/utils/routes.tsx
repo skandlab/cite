@@ -19,7 +19,8 @@ export const ROUTES = {
 		routes: [ROUTE_HOME],
 		push: () => ROUTE_HOME.replace(/\/+$/, ""),
 		match: (currentRoute: string) =>
-			currentRoute.replace(/\/+$/, "") === ROUTE_HOME,
+			currentRoute.replace(/\/+$/, "") === ROUTE_HOME ||
+			currentRoute.replace(/\/+$/, "") === "",
 	},
 	Expression: {
 		name: "Browse Purities",
