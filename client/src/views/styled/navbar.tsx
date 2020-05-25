@@ -8,7 +8,11 @@ import {
 	Dropdown,
 } from "semantic-ui-react";
 
-import { URL_NAVBAR_LOGO, APP_TITLE } from "../../utils/constants";
+import {
+	URL_NAVBAR_LOGO,
+	APP_TITLE,
+	APP_DESCRIPTION,
+} from "../../utils/constants";
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES_ARRAY, ROUTES } from "../../utils/routes";
 import { GridColumn } from "./gridColumn";
@@ -40,12 +44,12 @@ const CommonMenu = () => (
 			</Responsive>
 			<Responsive maxWidth={1200} minWidth={1000}>
 				<Header as="h3">
-					<b>{APP_TITLE}</b>
+					<b>{APP_TITLE}</b> - <small>{APP_DESCRIPTION}</small>
 				</Header>
 			</Responsive>
 			<Responsive minWidth={1200}>
 				<Header as="h2">
-					<b>{APP_TITLE}</b>
+					<b>{APP_TITLE}</b> - <small>{APP_DESCRIPTION}</small>
 				</Header>
 			</Responsive>
 		</Menu.Item>
