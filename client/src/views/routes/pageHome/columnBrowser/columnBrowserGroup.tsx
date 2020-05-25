@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Card, Dimmer, Loader } from "semantic-ui-react";
+import { Card, Dimmer, Loader, Icon } from "semantic-ui-react";
 import { ColumnBrowser, InterfaceFilteredOptionsProps } from "./columnBrowser";
 
 import { InterfaceColumnBrowserItem } from "../../../../utils/interfaces";
 import { InterfaceColumnBrowser } from "..";
+import { ROUTES } from "../../../../utils/routes";
 
 interface Props {
 	ligand: InterfaceColumnBrowser;
@@ -44,7 +45,12 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.ligand.handler,
 					})
 				}
-				toShowPopUp={true}
+				popupContent={
+					<p>
+						if no associated heatmap present then gene will be
+						dimmed
+					</p>
+				}
 			/>
 			<ColumnBrowser
 				{...props.receptor}
@@ -58,7 +64,12 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.receptor.handler,
 					})
 				}
-				toShowPopUp={true}
+				popupContent={
+					<p>
+						if no associated heatmap present then gene will be
+						dimmed
+					</p>
+				}
 			/>
 			<ColumnBrowser
 				{...props.interaction}
@@ -72,7 +83,26 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.interaction.handler,
 					})
 				}
-				toShowPopUp={false}
+				popupContent={
+					<p>
+						read more on interaction type in{" "}
+						<a
+							href={ROUTES.About.push()}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							about page
+						</a>
+						<sup>
+							{" "}
+							<Icon
+								name="external alternate"
+								size="small"
+								fitted
+							/>
+						</sup>
+					</p>
+				}
 			/>
 			<ColumnBrowser
 				{...props.tumor}
@@ -86,7 +116,7 @@ export const ColumnBrowserGroup = (props: Props) =>
 						...props.tumor.handler,
 					})
 				}
-				toShowPopUp={false}
+				popupContent={null}
 			/>
 		</Card.Group>
 	) : (

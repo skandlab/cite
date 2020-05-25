@@ -12,6 +12,7 @@ import {
 	Dimmer,
 	Loader,
 	Popup,
+	SemanticShorthandContent,
 } from "semantic-ui-react";
 
 import { InterfaceColumnBrowserItem } from "../../../../utils/interfaces";
@@ -30,7 +31,7 @@ interface Props {
 		options: InterfaceColumnBrowserItem[]
 	) => void;
 	isFetchingData: boolean;
-	toShowPopUp: boolean;
+	popupContent: SemanticShorthandContent;
 }
 
 const StyledCardHeader = styled(Card.Meta)`
@@ -96,7 +97,7 @@ export const ColumnBrowser = ({
 	options,
 	handleFilter,
 	isFetchingData,
-	toShowPopUp,
+	popupContent,
 }: Props) => {
 	const [inputText, updateInputText] = useState("");
 
@@ -132,16 +133,12 @@ export const ColumnBrowser = ({
 					<span>
 						<Icon name="filter" /> {title}
 					</span>
-					{toShowPopUp && (
+					{popupContent && (
 						<Popup
 							size="small"
 							inverted
-							content={
-								<p>
-									if no associated heatmap present then gene
-									will be dimmed
-								</p>
-							}
+							hoverable
+							content={popupContent}
 							trigger={<Icon name="info circle" />}
 						/>
 					)}
