@@ -1,6 +1,6 @@
-export const APP_TITLE = "SITE";
+export const APP_TITLE = "CITE";
 export const APP_DESCRIPTION =
-	"Signaling Interactions within Tumor microEnvironment";
+	"Crosstalk Interactions within Tumor microEnvironment";
 
 export const URL_NAVBAR_LOGO = require("../assets/logo.svg");
 
