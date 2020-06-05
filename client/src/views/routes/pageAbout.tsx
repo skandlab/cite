@@ -64,15 +64,7 @@ export const PageAbout = () => (
 						receptor-ligand signaling interactions within the tumor
 						microenvironment (TME). The cancer and stromal cell
 						specific expression was calculated by deconvolution of
-						bulk tumor expression obtained from TCGA (
-						<a
-							href="https://www.biorxiv.org/content/10.1101/835512v1"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Ghoshdastider, 2019
-						</a>
-						).
+						bulk tumor expression obtained from TCGA.
 					</p>
 					<ul>
 						<li>
