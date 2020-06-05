@@ -52,21 +52,6 @@ export const PageAbout = () => (
 	<>
 		<Grid.Row>
 			<GridColumn>
-				<StyledContainer textAlign="center">
-					<q>
-						<em>
-							This database could aid in target discovery
-							approaches by providing signaling interactions of
-							cancer cells with their environment as they exist
-							inside human tumors.
-						</em>
-					</q>
-				</StyledContainer>
-			</GridColumn>
-		</Grid.Row>
-		<Grid.Row />
-		<Grid.Row>
-			<GridColumn>
 				<Image
 					src={require("../../assets/about_signaling.png")}
 					alt="cell-cell signaling interface"
