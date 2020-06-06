@@ -32,7 +32,7 @@ const CommonMenu = () => (
 			<Image
 				size="mini"
 				src={URL_NAVBAR_LOGO}
-				alt="Tumeric-logo"
+				alt="site-logo"
 				onClick={() => browserHistory.push(ROUTES.Home.push())}
 			/>
 		</StyledImageMenuItem>
@@ -43,7 +43,7 @@ const CommonMenu = () => (
 				</Header>
 			</Responsive>
 			<Responsive maxWidth={1200} minWidth={1000}>
-				<Header as="h3">
+				<Header as="h2">
 					<b>{APP_TITLE}</b> - <small>{APP_DESCRIPTION}</small>
 				</Header>
 			</Responsive>
