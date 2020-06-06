@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`initial render 1`] = `
+<DocumentFragment>
+  <div
+    class="ui card"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="meta css-106mbhu"
+      >
+        <span>
+          <i
+            aria-hidden="true"
+            class="filter icon"
+          />
+           Interaction type
+        </span>
+        <i
+          aria-hidden="true"
+          class="info circle icon"
+        />
+      </div>
+      <div
+        class="description"
+      >
+        <form
+          class="ui form css-1rrhbx0"
+        >
+          <div
+            class="field"
+          >
+            <div
+              class="ui left icon input"
+              data-testid="filterInput"
+            >
+              <input
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+        </form>
+        <div
+          class="ui items css-p5nlxd"
+          data-testid="checkbox-list"
+        >
+          <div
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="cc"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    cc
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="cs"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    cs
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="nn"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    nn
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="extra content"
+    >
+      <button
+        class="ui mini icon disabled right labeled button"
+        data-testid="resetButton"
+        disabled=""
+        tabindex="-1"
+      >
+        <i
+          aria-hidden="true"
+          class="undo icon"
+        />
+        Reset Filter
+      </button>
+      <div
+        class="ui right floated statistic xs"
+        data-testid="statistic"
+      >
+        <div
+          class="value"
+        >
+          0 / 3
+        </div>
+        <div
+          class="label"
+        >
+          showing
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`one item is checked 1`] = `
+<DocumentFragment>
+  <div
+    class="ui card"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="meta css-106mbhu"
+      >
+        <span>
+          <i
+            aria-hidden="true"
+            class="filter icon"
+          />
+           Interaction type
+        </span>
+      </div>
+      <div
+        class="description"
+      >
+        <form
+          class="ui form css-1rrhbx0"
+        >
+          <div
+            class="field"
+          >
+            <div
+              class="ui left icon input"
+              data-testid="filterInput"
+            >
+              <input
+                type="text"
+                value=""
+              />
+              <i
+                aria-hidden="true"
+                class="search icon"
+              />
+            </div>
+          </div>
+        </form>
+        <div
+          class="ui items css-p5nlxd"
+          data-testid="checkbox-list"
+        >
+          <div
+            class="item css-123mvh4"
+            mute=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="cc"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    cc
+                  </label>
+                </div>
+              </div>
+              <div
+                class="extra css-fv2hk0"
+              >
+                <small>
+                  cancer-cancer
+                </small>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-123mvh4"
+            mute=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="cs"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    cs
+                  </label>
+                </div>
+              </div>
+              <div
+                class="extra css-fv2hk0"
+              >
+                <small>
+                  cancer-stroma
+                </small>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checked checkbox"
+                  data-testid="nn"
+                >
+                  <input
+                    checked=""
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    nn
+                  </label>
+                </div>
+              </div>
+              <div
+                class="extra css-fv2hk0"
+              >
+                <small>
+                  normal-normal
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="extra content"
+    >
+      <button
+        class="ui mini icon right labeled button"
+        data-testid="resetButton"
+      >
+        <i
+          aria-hidden="true"
+          class="undo icon"
+        />
+        Reset Filter
+      </button>
+      <div
+        class="ui right floated statistic xs"
+        data-testid="statistic"
+      >
+        <div
+          class="value"
+        >
+          1 / 3
+        </div>
+        <div
+          class="label"
+        >
+          showing
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
