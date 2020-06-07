@@ -7,11 +7,67 @@ import { PlotHeatMap } from "../../plots/plotHeatmap";
 import { InterfaceScores } from "../../../utils/interfaces";
 import { ROUTES } from "../../../utils/routes";
 
-interface Props {
-	listInteraction: string[];
-	listTumor: string[];
+interface HeatMapCardsProps {
+	xAxisFilterKeys: string[];
+	yAxisFilterKeys: string[];
 	paginationData: InterfaceScores[];
 }
+
+export const HeatMapCards = (props: HeatMapCardsProps) => {
+	return props.paginationData.length !== 0 ? (
+		<StyledHeatmapCardGroup centered doubling>
+			{props.paginationData.map((data, index) => (
+				<HeatMapCard key={index} index={index} data={data} {...props} />
+			))}
+		</StyledHeatmapCardGroup>
+	) : (
+		<StyledContainer textAlign="center">
+			<em>No Ligand-Receptor combination found.</em>
+		</StyledContainer>
+	);
+};
+
+interface HeatMapCardProps {
+	data: InterfaceScores;
+	index: number;
+	xAxisFilterKeys: string[];
+	yAxisFilterKeys: string[];
+}
+
+const HeatMapCard = ({ index, data, ...restProps }: HeatMapCardProps) => {
+	const onHeatMapClick = (yKey: string) =>
+		window.open(ROUTES.Expression.push(ligand, receptor, yKey), "_blank");
+
+	const { ligand, receptor, scoreMatrix } = data;
+
+	return (
+		<StyledHeatmapCard key={index}>
+			<Card.Content>
+				<Card.Header>
+					<Statistic.Group widths={2}>
+						<Statistic
+							className="xs"
+							label="Ligand"
+							value={ligand}
+						/>
+						<Statistic
+							className="xs"
+							label="Receptor"
+							value={receptor}
+						/>
+					</Statistic.Group>
+				</Card.Header>
+				<StyledHeatmapCardDescriptor>
+					<PlotHeatMap
+						{...restProps}
+						data={scoreMatrix}
+						onHeatMapClick={onHeatMapClick}
+					/>
+				</StyledHeatmapCardDescriptor>
+			</Card.Content>
+		</StyledHeatmapCard>
+	);
+};
 
 const StyledHeatmapCardGroup = styled(Card.Group)`
 	justify-content: space-around !important;
@@ -29,50 +85,3 @@ const StyledContainer = styled(Container)`
 	font-size: 20px;
 	height: 30vh;
 `;
-
-export const HeatMapCards = (props: Props) =>
-	props.paginationData.length !== 0 ? (
-		<StyledHeatmapCardGroup centered doubling>
-			{props.paginationData.map((data, index) => (
-				<StyledHeatmapCard key={index}>
-					<Card.Content>
-						<Card.Header>
-							<Statistic.Group widths={2}>
-								<Statistic
-									className="xs"
-									label="Ligand"
-									value={data.ligand}
-								/>
-								<Statistic
-									className="xs"
-									label="Receptor"
-									value={data.receptor}
-								/>
-							</Statistic.Group>
-						</Card.Header>
-						<StyledHeatmapCardDescriptor>
-							<PlotHeatMap
-								data={data.scoreMatrix}
-								pairKeys={props.listInteraction}
-								tumorKeys={props.listTumor}
-								onHeatMapClick={(yKey) =>
-									window.open(
-										ROUTES.Expression.push(
-											data.ligand,
-											data.receptor,
-											yKey
-										),
-										"_blank"
-									)
-								}
-							/>
-						</StyledHeatmapCardDescriptor>
-					</Card.Content>
-				</StyledHeatmapCard>
-			))}
-		</StyledHeatmapCardGroup>
-	) : (
-		<StyledContainer textAlign="center">
-			<em>No Ligand-Receptor combination found.</em>
-		</StyledContainer>
-	);
