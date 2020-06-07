@@ -2,10 +2,10 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Card, Statistic, Container } from "semantic-ui-react";
-import { PlotHeatMap } from "../../plots/plotHeatmap";
+import { PlotHeatMap } from "../plots/plotHeatmap";
 
-import { InterfaceScores } from "../../../utils/interfaces";
-import { ROUTES } from "../../../utils/routes";
+import { InterfaceScores } from "../../utils/interfaces";
+import { ROUTES } from "../../utils/routes";
 
 interface HeatMapCardsProps {
 	xAxisFilterKeys: string[];
