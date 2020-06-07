@@ -1,5 +1,5 @@
 import React from "react";
-import { PlotHeatMap } from "../../../plots/plotHeatmap";
+import { PlotHeatMap } from "../../plots/plotHeatmap";
 import styled from "@emotion/styled";
 
 const data = [
