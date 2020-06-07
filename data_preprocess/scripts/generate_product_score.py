@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 INPUT_DATA_FILE = "source/deconv_logx+1nt_pct1.csv"
-INPUT_INTERACTION_FILE = "source/1380_pairs.txt"
-OUTPUT_FILE = "source/product_score.csv"
+INPUT_INTERACTION_FILE = "source/pairs_v2.txt"
+OUTPUT_FILE = "source/productScore_v2.csv"
 
 df = pd.read_csv(INPUT_DATA_FILE)
 
