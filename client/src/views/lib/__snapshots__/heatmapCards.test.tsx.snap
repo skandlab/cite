@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render tests with data 1`] = `
+<DocumentFragment>
+  <div
+    class="ui centered doubling cards css-1iidtr2"
+  >
+    <div
+      class="ui card css-1q0psf9"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          <div
+            class="ui two statistics"
+          >
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                BCAM
+              </div>
+              <div
+                class="label"
+              >
+                Ligand
+              </div>
+            </div>
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                NOX1
+              </div>
+              <div
+                class="label"
+              >
+                Receptor
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="description css-1vhobuo"
+        >
+          <div
+            style="width: 100%; height: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui card css-1q0psf9"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          <div
+            class="ui two statistics"
+          >
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                EGFR
+              </div>
+              <div
+                class="label"
+              >
+                Ligand
+              </div>
+            </div>
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                NOX1
+              </div>
+              <div
+                class="label"
+              >
+                Receptor
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="description css-1vhobuo"
+        >
+          <div
+            style="width: 100%; height: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui card css-1q0psf9"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          <div
+            class="ui two statistics"
+          >
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                BCAM
+              </div>
+              <div
+                class="label"
+              >
+                Ligand
+              </div>
+            </div>
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                KRAS
+              </div>
+              <div
+                class="label"
+              >
+                Receptor
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="description css-1vhobuo"
+        >
+          <div
+            style="width: 100%; height: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="ui card css-1q0psf9"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="header"
+        >
+          <div
+            class="ui two statistics"
+          >
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                EGFR
+              </div>
+              <div
+                class="label"
+              >
+                Ligand
+              </div>
+            </div>
+            <div
+              class="ui statistic xs"
+            >
+              <div
+                class="value"
+              >
+                KRAS
+              </div>
+              <div
+                class="label"
+              >
+                Receptor
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="description css-1vhobuo"
+        >
+          <div
+            style="width: 100%; height: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`render tests without data 1`] = `
+<DocumentFragment>
+  <div
+    class="ui center aligned container css-khn4ns"
+  >
+    <em>
+      No Ligand-Receptor combination found.
+    </em>
+  </div>
+</DocumentFragment>
+`;

@@ -10,14 +10,20 @@ import { ROUTES } from "../../utils/routes";
 interface HeatMapCardsProps {
 	xAxisFilterKeys: string[];
 	yAxisFilterKeys: string[];
-	paginationData: InterfaceScores[];
+	data: InterfaceScores[];
 }
 
 export const HeatMapCards = (props: HeatMapCardsProps) => {
-	return props.paginationData.length !== 0 ? (
+	const { data, ...restProps } = props;
+	return data.length !== 0 ? (
 		<StyledHeatmapCardGroup centered doubling>
-			{props.paginationData.map((data, index) => (
-				<HeatMapCard key={index} index={index} data={data} {...props} />
+			{data.map((_data, index) => (
+				<HeatMapCard
+					key={index}
+					index={index}
+					data={_data}
+					{...restProps}
+				/>
 			))}
 		</StyledHeatmapCardGroup>
 	) : (
