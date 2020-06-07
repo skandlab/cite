@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Form, Statistic } from "semantic-ui-react";
-import { calculatePaginationItems } from "../../routes/pageHome/pagination";
+import { calculatePaginationItems } from "../pagination";
 
 interface Props {
 	totalItems: number;
