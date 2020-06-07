@@ -12,7 +12,6 @@ export function calculatePaginationItems(pageNumber: number) {
 
 interface Props {
 	totalItems: number;
-	currentPageNumber: number;
 	handleOnPageChange: (activePageNumber: number) => void;
 }
 
