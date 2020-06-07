@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Pagination } from "semantic-ui-react";
+import { Container, Pagination, PaginationProps } from "semantic-ui-react";
 
 const CardsPerPage: number = 12;
 
@@ -17,7 +17,13 @@ interface Props {
 }
 
 export const AppPagination = (props: Props) => {
+	const onPageChange = (
+		_: React.SyntheticEvent,
+		{ activePage }: PaginationProps
+	) => props.handleOnPageChange(activePage as number);
+
 	const totalPages = Math.max(Math.ceil(props.totalItems / CardsPerPage), 1);
+
 	return (
 		<Container textAlign="center">
 			<Pagination
@@ -26,9 +32,7 @@ export const AppPagination = (props: Props) => {
 				secondary
 				defaultActivePage={1}
 				totalPages={totalPages}
-				onPageChange={(_, { activePage }) =>
-					props.handleOnPageChange(activePage as number)
-				}
+				onPageChange={onPageChange}
 			/>
 		</Container>
 	);
