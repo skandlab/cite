@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/dom";
 import "@testing-library/jest-dom/extend-expect";
 import { screen } from "@testing-library/dom";
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { HeatMapCards } from "./heatmapCards";
 import { InterfaceScores } from "../../utils/interfaces";
 
