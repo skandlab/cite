@@ -27,7 +27,7 @@ export const ColorBar = () => (
 	<StyledColorBar>
 		<PlotHeatMap
 			data={data as any}
-			pairKeys={[
+			xAxisFilterKeys={[
 				"10",
 				"20",
 				"30",
@@ -39,7 +39,7 @@ export const ColorBar = () => (
 				"90",
 				"100",
 			]}
-			tumorKeys={["colorbar"]}
+			yAxisFilterKeys={["colorbar"]}
 			heatmapOptions={{
 				isInteractive: false,
 				margin: { top: 0, right: 0, bottom: 40, left: 0 },
