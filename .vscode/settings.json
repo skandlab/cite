@@ -1,12 +1,12 @@
 {
-  "python.formatting.provider": "black",
-  "python.pythonPath": "server/.venv/bin/python3",
-  "python.autoComplete.extraPaths": ["server"],
-  "autofold.types": [{ "ext": ".py", "level": 1 }],
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    "theme.config": "less"
-  }
+	"python.formatting.provider": "black",
+	"python.pythonPath": "server/.venv/bin/python3",
+	"python.autoComplete.extraPaths": ["server"],
+	"autofold.types": [{ "ext": ".py", "level": 1 }],
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"theme.config": "less"
+	}
 }
