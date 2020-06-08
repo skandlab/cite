@@ -7,6 +7,7 @@ exports[`render tests with data 1`] = `
   >
     <div
       class="ui card css-1q0psf9"
+      data-testid="displayCard"
     >
       <div
         class="content"
@@ -58,6 +59,7 @@ exports[`render tests with data 1`] = `
     </div>
     <div
       class="ui card css-1q0psf9"
+      data-testid="displayCard"
     >
       <div
         class="content"
@@ -109,6 +111,7 @@ exports[`render tests with data 1`] = `
     </div>
     <div
       class="ui card css-1q0psf9"
+      data-testid="displayCard"
     >
       <div
         class="content"
@@ -160,6 +163,7 @@ exports[`render tests with data 1`] = `
     </div>
     <div
       class="ui card css-1q0psf9"
+      data-testid="displayCard"
     >
       <div
         class="content"

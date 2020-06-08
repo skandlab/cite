@@ -47,7 +47,7 @@ const HeatMapCard = ({ index, data, ...restProps }: HeatMapCardProps) => {
 	const { ligand, receptor, scoreMatrix } = data;
 
 	return (
-		<StyledHeatmapCard key={index}>
+		<StyledHeatmapCard key={index} data-testid="displayCard">
 			<Card.Content>
 				<Card.Header>
 					<Statistic.Group widths={2}>
