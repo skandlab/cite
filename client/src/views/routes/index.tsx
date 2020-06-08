@@ -55,7 +55,7 @@ export class AppRouter extends React.Component<{}, State> {
 						<Route
 							exact
 							path={ROUTES.Expression.routes}
-							component={ExpressionPage}
+							render={(props) => <ExpressionPage {...props} />}
 						/>
 						<Route
 							exact
