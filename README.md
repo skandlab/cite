@@ -7,7 +7,7 @@
             | $$   |  $$$$$$/| $$ \/  | $$| $$$$$$$$| $$  | $$ /$$$$$$|  $$$$$$/
             |__/    \______/ |__/     |__/|________/|__/  |__/|______/ \______/
 
-# TUMERIC [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
+# SITE [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
 
 ### Authors
 
@@ -37,11 +37,11 @@
 #### process
 
 ```bash
-git clone https://github.com/bigfoot31/tumeric
-cp -r certs tumeric
-cp -r data tumeric
-cp -r static tumeric
-cd tumeric
+git clone https://github.com/bigfoot31/site
+cp -r certs site
+cp -r data site
+cp -r static site
+cd site
 docker-compose build
 docker-compose up -d
 ```

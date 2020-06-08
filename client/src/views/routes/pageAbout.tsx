@@ -9,7 +9,7 @@ import {
 	Header,
 	Container,
 } from "semantic-ui-react";
-import { GridColumn } from "../styled/gridColumn";
+import { GridColumn } from "../lib/gridColumn";
 import { Members } from "../../utils/constants";
 import styled from "@emotion/styled";
 
@@ -60,7 +60,7 @@ export const PageAbout = () => (
 				/>
 				<Segment padded="very">
 					<p>
-						<b>TUMERIC</b> is a freely available database of curated
+						<b>SITE</b> is a freely available database of curated
 						receptor-ligand signaling interactions within the tumor
 						microenvironment (TME). The cancer and stromal cell
 						specific expression was calculated by deconvolution of

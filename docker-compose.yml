@@ -1,39 +1,39 @@
 version: "3.7"
 services:
-    tumeric_server:
+    site_server:
         # build using dockerfile
         build:
             context: ./server
             args:
-                - USER=tumeric_user
-        image: tumeric_server:$VERSION
+                - USER=site_user
+        image: site_server:$VERSION
         expose:
             - 5000
         volumes:
-            - $PWD/data:/home/tumeric_user/data
+            - $PWD/data:/home/site_user/data
         networks:
-            tumeric_network:
-        container_name: tumeric_server
+            site_network:
+        container_name: site_server
         restart: always
-    tumeric_nginx:
+    site_nginx:
         # build using dockerfile
         build:
             context: .
             dockerfile: nginx/dockerfile
             args:
-                - USER=tumeric_user
-        image: tumeric_nginx:$VERSION
+                - USER=site_user
+        image: site_nginx:$VERSION
         ports:
             - "80:80"
             - "443:443"
         networks:
-            tumeric_network:
-        container_name: tumeric_nginx
+            site_network:
+        container_name: site_nginx
         restart: always
         depends_on:
-            - tumeric_server
+            - site_server
 networks:
-    tumeric_network:
-        name: tumeric_network
+    site_network:
+        name: site_network
 volumes:
     data:
