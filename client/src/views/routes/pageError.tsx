@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import { Grid, Header, Icon, Button, Segment } from "semantic-ui-react";
-import { GridColumn } from "../styled/gridColumn";
+import { GridColumn } from "../lib/gridColumn";
 
 import { browserHistory } from "../../utils/browserHistory";
 

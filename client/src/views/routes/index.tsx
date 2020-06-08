@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "semantic-ui-react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 
-import { Navbar } from "../styled/navbar";
+import { Navbar } from "../lib/navbar";
 import { HomePage } from "./pageHome";
 import { ErrorPage } from "./pageError";
 import { PageAbout } from "./pageAbout";
