@@ -9,7 +9,7 @@ import {
 	Header,
 	Container,
 } from "semantic-ui-react";
-import { GridColumn } from "../lib/gridColumn";
+import { GridColumn } from "../containers/gridColumn";
 import { Members } from "../../utils/constants";
 import styled from "@emotion/styled";
 

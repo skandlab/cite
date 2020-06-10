@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "@emotion/styled";
 import {
 	Grid,
 	Menu,
@@ -13,10 +14,9 @@ import {
 	APP_TITLE,
 	APP_DESCRIPTION,
 } from "../../utils/constants";
+import { GridColumn } from "./gridColumn";
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES_ARRAY, ROUTES } from "../../utils/routes";
-import { GridColumn } from "./gridColumn";
-import styled from "@emotion/styled";
 
 interface Props {
 	currentRoute: string;

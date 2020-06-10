@@ -3,7 +3,7 @@ import {
 	echartsProps,
 	scatterplotProps,
 	lineplotProps,
-} from "./plotsConfig.json";
+} from "./__plotConfig__.json";
 import { PlotEchartsBasic } from "./plotEchartsBasic";
 
 interface Props {
