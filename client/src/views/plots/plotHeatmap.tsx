@@ -1,25 +1,24 @@
 import React from "react";
-import { ResponsiveHeatMap } from "@nivo/heatmap";
-import { heatmapProps } from "../plots/plotsConfig.json";
+import { ResponsiveHeatMap, HeatMapSvgProps } from "@nivo/heatmap";
+import { heatmapProps } from "../plots/__plotConfig__.json";
+
+export type HeatMapDataType = {
+	xyValues: { [key: string]: string }[];
+	keys: string[];
+	indexBy: string;
+};
 
 interface Props {
-	data: { tumorType: string; [key: string]: string }[];
-	xAxisFilterKeys: string[];
-	yAxisFilterKeys: string[];
-	heatmapOptions?: {
-		[key: string]: any;
-	};
+	data: HeatMapDataType;
 	onHeatMapClick: (yKey: string) => void;
 }
 
-export const PlotHeatMap = (props: Props) => (
-	// @ts-ignore
+export const PlotHeatMap = ({ data, onHeatMapClick }: Props) => (
 	<ResponsiveHeatMap
-		data={props.data.filter((prop) =>
-			props.yAxisFilterKeys.includes(prop.tumorType)
-		)}
-		keys={props.xAxisFilterKeys}
-		onClick={(e) => props.onHeatMapClick(e.yKey as string)}
-		{...{ ...heatmapProps, ...props.heatmapOptions }}
+		data={data.xyValues}
+		indexBy={data.indexBy}
+		keys={data.keys}
+		onClick={(e) => onHeatMapClick(e.yKey as string)}
+		{...(heatmapProps as HeatMapSvgProps)}
 	/>
 );
