@@ -1,0 +1,3093 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot tests nothing checked 1`] = `
+<DocumentFragment>
+  <div
+    class="centered row"
+  >
+    <div
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+    >
+      <div
+        class="ui centered cards"
+      >
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Ligands
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="0_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="0_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="A2M"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          A2M
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="AANAT"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          AANAT
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ADAM12"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM12
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ADAM15"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM15
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ADAM17"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM17
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon disabled right labeled button"
+              data-testid="0_resetButton"
+              disabled=""
+              tabindex="-1"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="0_statistic"
+            >
+              <div
+                class="value"
+              >
+                0 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Receptors
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="1_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="1_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACKR2"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR2
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACKR3"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR3
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACKR4"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR4
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACVR1"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACVR1
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACVR1B"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACVR1B
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon disabled right labeled button"
+              data-testid="1_resetButton"
+              disabled=""
+              tabindex="-1"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="1_statistic"
+            >
+              <div
+                class="value"
+              >
+                0 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Interaction type
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="2_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="2_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="cc"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          cc
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        cancer-cancer
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="cs"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          cs
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        cancer-stroma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="nn"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          nn
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        normal-normal
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="sc"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          sc
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        stroma-cancer
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ss"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ss
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        stroma-stroma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon disabled right labeled button"
+              data-testid="2_resetButton"
+              disabled=""
+              tabindex="-1"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="2_statistic"
+            >
+              <div
+                class="value"
+              >
+                0 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Tumor type
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="3_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="3_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="BLCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          BLCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Bladder Urothelial Carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="BRCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          BRCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Breast invasive carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="CESC"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          CESC
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Cervical squamous cell carcinoma and endocervical adenocarcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="CRC"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          CRC
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Colorectal carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ESCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ESCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Esophageal carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="GBM"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          GBM
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Glioblastoma multiforme
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon disabled right labeled button"
+              data-testid="3_resetButton"
+              disabled=""
+              tabindex="-1"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="3_statistic"
+            >
+              <div
+                class="value"
+              >
+                0 / 6
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui borderless secondary nohover menu"
+      >
+        <div
+          class="item"
+        >
+          <div
+            class="ui card"
+          >
+            <div
+              class="center aligned content"
+            >
+              <form
+                class="ui equal width form"
+              >
+                <div
+                  class="inline fields"
+                >
+                  <div
+                    class="field"
+                  >
+                    <div
+                      class="ui mini statistic"
+                    >
+                      <div
+                        class="value"
+                      >
+                        25
+                      </div>
+                      <small>
+                        Total
+                      </small>
+                    </div>
+                  </div>
+                  <div
+                    class="field"
+                  >
+                    <div
+                      class="ui mini statistic"
+                    >
+                      <div
+                        class="value"
+                      >
+                        1-12
+                      </div>
+                      <small>
+                        Showing
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="field"
+                >
+                  <label>
+                    Ligand-Receptor Combinations
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="right menu"
+        >
+          <div
+            class="item"
+          >
+            <div
+              class="css-1au1m76"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="row"
+  />
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui centered doubling cards css-1iidtr2"
+      >
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    A2M
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR2
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    A2M
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR3
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    A2M
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR4
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    A2M
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACVR1
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    A2M
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACVR1B
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    AANAT
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR2
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    AANAT
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR3
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    AANAT
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR4
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    AANAT
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACVR1
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    AANAT
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACVR1B
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ADAM12
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR2
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ADAM12
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR3
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui center aligned container"
+      >
+        <div
+          aria-label="Pagination Navigation"
+          class="ui pagination pointing secondary pagination menu"
+          role="navigation"
+        >
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="First item"
+            class="item"
+            tabindex="0"
+            type="firstItem"
+            value="1"
+          >
+            «
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Previous item"
+            class="item"
+            tabindex="0"
+            type="prevItem"
+            value="1"
+          >
+            ⟨
+          </a>
+          <a
+            aria-current="true"
+            aria-disabled="false"
+            class="active item"
+            tabindex="0"
+            type="pageItem"
+            value="1"
+          >
+            1
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            class="item"
+            tabindex="0"
+            type="pageItem"
+            value="2"
+          >
+            2
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            class="item"
+            tabindex="0"
+            type="pageItem"
+            value="3"
+          >
+            3
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Next item"
+            class="item"
+            tabindex="0"
+            type="nextItem"
+            value="2"
+          >
+            ⟩
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Last item"
+            class="item"
+            tabindex="0"
+            type="lastItem"
+            value="3"
+          >
+            »
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`snapshot tests one per group is checked 1`] = `
+<DocumentFragment>
+  <div
+    class="centered row"
+  >
+    <div
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+    >
+      <div
+        class="ui centered cards"
+      >
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+            style=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Ligands
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="0_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="0_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checked checkbox"
+                        data-testid="ADAM15"
+                      >
+                        <input
+                          checked=""
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM15
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="A2M"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          A2M
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="AANAT"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          AANAT
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ADAM12"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM12
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ADAM17"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ADAM17
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon right labeled button"
+              data-testid="0_resetButton"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="0_statistic"
+            >
+              <div
+                class="value"
+              >
+                1 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+            style=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Receptors
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="1_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="1_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checked checkbox"
+                        data-testid="ACKR4"
+                      >
+                        <input
+                          checked=""
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR4
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACKR2"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR2
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACKR3"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACKR3
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACVR1"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACVR1
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ACVR1B"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ACVR1B
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon right labeled button"
+              data-testid="1_resetButton"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="1_statistic"
+            >
+              <div
+                class="value"
+              >
+                1 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+            style=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Interaction type
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="2_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="2_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checked checkbox"
+                        data-testid="cs"
+                      >
+                        <input
+                          checked=""
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          cs
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        cancer-stroma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="cc"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          cc
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        cancer-cancer
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="nn"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          nn
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        normal-normal
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="sc"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          sc
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        stroma-cancer
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ss"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ss
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        stroma-stroma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon right labeled button"
+              data-testid="2_resetButton"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="2_statistic"
+            >
+              <div
+                class="value"
+              >
+                1 / 5
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ui card"
+        >
+          <div
+            class="ui inverted dimmer"
+            style=""
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="ui inverted loader"
+              />
+            </div>
+          </div>
+          <div
+            class="content"
+          >
+            <div
+              class="meta css-106mbhu"
+            >
+              <span>
+                <i
+                  aria-hidden="true"
+                  class="filter icon"
+                />
+                 Tumor type
+              </span>
+            </div>
+            <div
+              class="description"
+            >
+              <form
+                class="ui form css-1rrhbx0"
+              >
+                <div
+                  class="field"
+                >
+                  <div
+                    class="ui left icon input"
+                    data-testid="3_filterInput"
+                  >
+                    <input
+                      type="text"
+                      value=""
+                    />
+                    <i
+                      aria-hidden="true"
+                      class="search icon"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ui items css-p5nlxd"
+                data-testid="3_checkbox-list"
+              >
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checked checkbox"
+                        data-testid="CESC"
+                      >
+                        <input
+                          checked=""
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          CESC
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Cervical squamous cell carcinoma and endocervical adenocarcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="BLCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          BLCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Bladder Urothelial Carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="BRCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          BRCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Breast invasive carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="CRC"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          CRC
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Colorectal carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="ESCA"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          ESCA
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Esophageal carcinoma
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="item css-1l92o6s"
+                >
+                  <div
+                    class="content"
+                  >
+                    <div
+                      class="description"
+                    >
+                      <div
+                        class="ui checkbox"
+                        data-testid="GBM"
+                      >
+                        <input
+                          class="hidden"
+                          readonly=""
+                          tabindex="0"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label>
+                          GBM
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="extra css-fv2hk0"
+                    >
+                      <small>
+                        Glioblastoma multiforme
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="extra content"
+          >
+            <button
+              class="ui mini icon right labeled button"
+              data-testid="3_resetButton"
+            >
+              <i
+                aria-hidden="true"
+                class="undo icon"
+              />
+              Reset Filter
+            </button>
+            <div
+              class="ui right floated statistic xs"
+              data-testid="3_statistic"
+            >
+              <div
+                class="value"
+              >
+                1 / 6
+              </div>
+              <div
+                class="label"
+              >
+                showing
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui borderless secondary nohover menu"
+      >
+        <div
+          class="item"
+        >
+          <div
+            class="ui card"
+          >
+            <div
+              class="center aligned content"
+            >
+              <form
+                class="ui equal width form"
+              >
+                <div
+                  class="inline fields"
+                >
+                  <div
+                    class="field"
+                  >
+                    <div
+                      class="ui mini statistic"
+                    >
+                      <div
+                        class="value"
+                      >
+                        1
+                      </div>
+                      <small>
+                        Total
+                      </small>
+                    </div>
+                  </div>
+                  <div
+                    class="field"
+                  >
+                    <div
+                      class="ui mini statistic"
+                    >
+                      <div
+                        class="value"
+                      >
+                        1-1
+                      </div>
+                      <small>
+                        Showing
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="field"
+                >
+                  <label>
+                    Ligand-Receptor Combinations
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="right menu"
+        >
+          <div
+            class="item"
+          >
+            <div
+              class="css-1au1m76"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="row"
+  />
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui centered doubling cards css-1iidtr2"
+      >
+        <div
+          class="ui card css-1q0psf9"
+          data-testid="displayCard"
+        >
+          <div
+            class="content"
+          >
+            <div
+              class="header"
+            >
+              <div
+                class="ui two statistics"
+              >
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ADAM15
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Ligand
+                  </div>
+                </div>
+                <div
+                  class="ui statistic xs"
+                >
+                  <div
+                    class="value"
+                  >
+                    ACKR4
+                  </div>
+                  <div
+                    class="label"
+                  >
+                    Receptor
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="description css-1vhobuo"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="column"
+    >
+      <div
+        class="ui center aligned container"
+      >
+        <div
+          aria-label="Pagination Navigation"
+          class="ui pagination pointing secondary pagination menu"
+          role="navigation"
+        >
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="First item"
+            class="item"
+            tabindex="0"
+            type="firstItem"
+            value="1"
+          >
+            «
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Previous item"
+            class="item"
+            tabindex="0"
+            type="prevItem"
+            value="1"
+          >
+            ⟨
+          </a>
+          <a
+            aria-current="true"
+            aria-disabled="false"
+            class="active item"
+            tabindex="0"
+            type="pageItem"
+            value="1"
+          >
+            1
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Next item"
+            class="item"
+            tabindex="0"
+            type="nextItem"
+            value="1"
+          >
+            ⟩
+          </a>
+          <a
+            aria-current="false"
+            aria-disabled="false"
+            aria-label="Last item"
+            class="item"
+            tabindex="0"
+            type="lastItem"
+            value="1"
+          >
+            »
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

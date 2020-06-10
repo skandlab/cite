@@ -19,7 +19,7 @@ const defaultRender = (totalItems: number) =>
 		/>
 	);
 
-describe("basic renders", () => {
+describe("snapshot testing", () => {
 	test("page 1", () => {
 		defaultRender(10);
 		expect(getTag_a()).toHaveLength(5);

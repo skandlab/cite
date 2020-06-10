@@ -1,10 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`initial render 1`] = `
+exports[`snapshot testing initial render 1`] = `
 <DocumentFragment>
   <div
     class="ui card"
   >
+    <div
+      class="ui inverted dimmer"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="ui inverted loader"
+        />
+      </div>
+    </div>
     <div
       class="content"
     >
@@ -34,7 +45,7 @@ exports[`initial render 1`] = `
           >
             <div
               class="ui left icon input"
-              data-testid="filterInput"
+              data-testid="0_filterInput"
             >
               <input
                 type="text"
@@ -49,7 +60,7 @@ exports[`initial render 1`] = `
         </form>
         <div
           class="ui items css-p5nlxd"
-          data-testid="checkbox-list"
+          data-testid="0_checkbox-list"
         >
           <div
             class="item css-1l92o6s"
@@ -127,6 +138,33 @@ exports[`initial render 1`] = `
                   />
                   <label>
                     nn
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checkbox"
+                  data-testid="sc"
+                >
+                  <input
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    sc
                   </label>
                 </div>
               </div>
@@ -140,7 +178,7 @@ exports[`initial render 1`] = `
     >
       <button
         class="ui mini icon disabled right labeled button"
-        data-testid="resetButton"
+        data-testid="0_resetButton"
         disabled=""
         tabindex="-1"
       >
@@ -152,12 +190,12 @@ exports[`initial render 1`] = `
       </button>
       <div
         class="ui right floated statistic xs"
-        data-testid="statistic"
+        data-testid="0_statistic"
       >
         <div
           class="value"
         >
-          0 / 3
+          0 / 4
         </div>
         <div
           class="label"
@@ -170,11 +208,22 @@ exports[`initial render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`one item is checked 1`] = `
+exports[`snapshot testing one item is checked 1`] = `
 <DocumentFragment>
   <div
     class="ui card"
   >
+    <div
+      class="ui inverted dimmer"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="ui inverted loader"
+        />
+      </div>
+    </div>
     <div
       class="content"
     >
@@ -188,6 +237,10 @@ exports[`one item is checked 1`] = `
           />
            Interaction type
         </span>
+        <i
+          aria-hidden="true"
+          class="info circle icon"
+        />
       </div>
       <div
         class="description"
@@ -200,7 +253,7 @@ exports[`one item is checked 1`] = `
           >
             <div
               class="ui left icon input"
-              data-testid="filterInput"
+              data-testid="0_filterInput"
             >
               <input
                 type="text"
@@ -215,11 +268,38 @@ exports[`one item is checked 1`] = `
         </form>
         <div
           class="ui items css-p5nlxd"
-          data-testid="checkbox-list"
+          data-testid="0_checkbox-list"
         >
           <div
-            class="item css-123mvh4"
-            mute=""
+            class="item css-1l92o6s"
+          >
+            <div
+              class="content"
+            >
+              <div
+                class="description"
+              >
+                <div
+                  class="ui checked checkbox"
+                  data-testid="sc"
+                >
+                  <input
+                    checked=""
+                    class="hidden"
+                    readonly=""
+                    tabindex="0"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label>
+                    sc
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="item css-1l92o6s"
           >
             <div
               class="content"
@@ -243,18 +323,10 @@ exports[`one item is checked 1`] = `
                   </label>
                 </div>
               </div>
-              <div
-                class="extra css-fv2hk0"
-              >
-                <small>
-                  cancer-cancer
-                </small>
-              </div>
             </div>
           </div>
           <div
-            class="item css-123mvh4"
-            mute=""
+            class="item css-1l92o6s"
           >
             <div
               class="content"
@@ -278,13 +350,6 @@ exports[`one item is checked 1`] = `
                   </label>
                 </div>
               </div>
-              <div
-                class="extra css-fv2hk0"
-              >
-                <small>
-                  cancer-stroma
-                </small>
-              </div>
             </div>
           </div>
           <div
@@ -297,11 +362,10 @@ exports[`one item is checked 1`] = `
                 class="description"
               >
                 <div
-                  class="ui checked checkbox"
+                  class="ui checkbox"
                   data-testid="nn"
                 >
                   <input
-                    checked=""
                     class="hidden"
                     readonly=""
                     tabindex="0"
@@ -313,13 +377,6 @@ exports[`one item is checked 1`] = `
                   </label>
                 </div>
               </div>
-              <div
-                class="extra css-fv2hk0"
-              >
-                <small>
-                  normal-normal
-                </small>
-              </div>
             </div>
           </div>
         </div>
@@ -330,7 +387,7 @@ exports[`one item is checked 1`] = `
     >
       <button
         class="ui mini icon right labeled button"
-        data-testid="resetButton"
+        data-testid="0_resetButton"
       >
         <i
           aria-hidden="true"
@@ -340,12 +397,12 @@ exports[`one item is checked 1`] = `
       </button>
       <div
         class="ui right floated statistic xs"
-        data-testid="statistic"
+        data-testid="0_statistic"
       >
         <div
           class="value"
         >
-          1 / 3
+          1 / 4
         </div>
         <div
           class="label"

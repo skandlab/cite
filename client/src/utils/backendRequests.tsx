@@ -1,28 +1,34 @@
-import axios from "axios";
+export const API_URL = "http://localhost:5000/server";
 
-const API_URL = "/server";
-
-export const requestScores = (listLigand: string[], listReceptor: string[]) =>
-	axios.request({
-		method: "GET",
-		url:
-			API_URL +
+export const requestScores = (args: string[][]) =>
+	fetch(
+		API_URL +
 			"/v1/scores?ligands=" +
-			listLigand.join(",") +
+			args[0].join(",") +
 			"&receptors=" +
-			listReceptor.join(","),
-	});
+			args[1].join(",") +
+			"&interactions=" +
+			args[2].join(",") +
+			"&tumors=" +
+			args[3].join(","),
+		{
+			method: "GET",
+		}
+	);
 
 export const requestCheckboxOptions = () =>
-	axios.request({ method: "GET", url: API_URL + "/v1/options/checkbox" });
+	fetch(API_URL + "/v1/options/checkbox", {
+		method: "GET",
+	});
 
 export const requestExp = (listGene: string[], tumorType: string) =>
-	axios.request({
-		method: "GET",
-		url:
-			API_URL +
+	fetch(
+		API_URL +
 			"/v1/exp?genes=" +
 			listGene.join(",") +
 			"&tumortype=" +
 			tumorType,
-	});
+		{
+			method: "GET",
+		}
+	);
