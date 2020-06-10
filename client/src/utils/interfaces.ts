@@ -1,19 +1,10 @@
-export interface InterfaceColumnBrowserItem {
-	index: number;
-	value: string;
-	isChecked: boolean;
-	mute: boolean;
-	description?: string;
-}
+import { HeatMapDataType } from "../views/plots/plotHeatmap";
 
-export interface InterfaceScores {
+export type HeatmapCardType = {
 	ligand: string;
 	receptor: string;
-	scoreMatrix: {
-		tumorType: string;
-		[key: string]: string;
-	}[];
-}
+	data: HeatMapDataType;
+};
 
 export interface InterfaceExpressionEndpoint {
 	gene: string;
