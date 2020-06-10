@@ -8,5 +8,8 @@
 	},
 	"files.associations": {
 		"theme.config": "less"
-	}
+	},
+	"todo-tree.filtering.excludeGlobs": [
+		"**/node_modules"
+	]
 }
