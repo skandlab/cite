@@ -25,12 +25,7 @@ import {
 
 interface State {
 	filters: FilterMetadata[];
-
-	dataPresent: {
-		[key: string]: boolean;
-	}[];
 	scoreData: HeatmapCardType[];
-
 	loading: boolean;
 }
 
@@ -40,7 +35,6 @@ export class HomePage extends React.Component<{}, State> {
 
 		this.state = {
 			filters: [],
-			dataPresent: [],
 			scoreData: [],
 			loading: true,
 		};
@@ -146,7 +140,6 @@ export class HomePage extends React.Component<{}, State> {
 		);
 	};
 
-	// TODO: data present
 	render() {
 		return this.state.filters.length !== 0 ? (
 			<>
