@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Card, Statistic } from "semantic-ui-react";
 import { PlotHeatMap } from "../../plots/plotHeatmap";
 import { ROUTES } from "../../../utils/routes";
-import { HeatmapCardType } from "../../../utils/interfaces";
+import { HeatmapCardType } from "../../../utils/backendRequests";
 
 export interface HeatmapCardProps extends HeatmapCardType {}
 
