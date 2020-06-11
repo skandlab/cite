@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 /**
  * ui elements
  */
-import { Grid, Card } from "semantic-ui-react";
+import { Grid, Card, Dimmer, Loader } from "semantic-ui-react";
 import { GridColumn } from "../../containers/gridColumn";
 import { ColumnBrowser } from "../../hoc/columnBrowser";
 import { ColumnBrowserType } from "../../hoc/columnBrowser";
@@ -147,40 +147,43 @@ export class HomePage extends React.Component<{}, State> {
 	};
 
 	// TODO: popupContent
+	// TODO: data present
 	render() {
-		return (
-			this.state.filters && (
-				<>
-					<Grid.Row centered>
-						<GridColumn>
-							<Card.Group centered>
-								{this.state.filters.map((filter) => (
-									<ColumnBrowser
-										{...filter}
-										key={filter.index}
-										loading={this.state.loading}
-										handleToggleCheckbox={
-											this.handleToggleCheckbox
-										}
-										handleReset={this.handleReset}
-									/>
-								))}
-							</Card.Group>
-						</GridColumn>
-					</Grid.Row>
-					{!this.state.loading && <DataDisplayGrid {...this.state} />}
-					{this.state.loading && (
-						<Loader>
-							<p>Loading...</p>
-						</Loader>
-					)}
-				</>
-			)
+		return this.state.filters.length !== 0 ? (
+			<>
+				<Grid.Row centered>
+					<GridColumn>
+						<Card.Group centered>
+							{this.state.filters.map((filter) => (
+								<ColumnBrowser
+									{...filter}
+									key={filter.index}
+									loading={this.state.loading}
+									handleToggleCheckbox={
+										this.handleToggleCheckbox
+									}
+									handleReset={this.handleReset}
+								/>
+							))}
+						</Card.Group>
+					</GridColumn>
+				</Grid.Row>
+				{!this.state.loading && <DataDisplayGrid {...this.state} />}
+				{this.state.loading && (
+					<LoaderText>
+						<p>Loading...</p>
+					</LoaderText>
+				)}
+			</>
+		) : (
+			<Dimmer inverted active page>
+				<Loader size="huge" />
+			</Dimmer>
 		);
 	}
 }
 
-const Loader = styled.span`
+const LoaderText = styled.span`
 	position: absolute;
 	bottom: 0;
 `;
