@@ -1,8 +1,7 @@
 import { setupWorker, rest } from "msw";
 import { setupServer } from "msw/node";
-import { API_URL } from "../../../utils/backendRequests";
+import { API_URL, FilterMetadata } from "../../../utils/backendRequests";
 import { DeconvData, CheckboxOptions } from "./__mock_data__.json";
-import { FilterMetadata } from ".";
 
 export const OptionsPerCard = (CheckboxOptions[
 	"filters"
@@ -37,12 +36,12 @@ function generateData(
 			});
 		}
 	}
-	return { scoreData: result };
+	return result;
 }
 
 const Endpoints = [
 	rest.get(API_URL + "/v1/options/checkbox", (req, res, ctx) => {
-		return res(ctx.status(200), ctx.json(CheckboxOptions));
+		return res(ctx.status(200), ctx.json(CheckboxOptions["filters"]));
 	}),
 	rest.get(API_URL + "/v1/scores", (req, res, ctx) => {
 		let ligands = req.url.searchParams

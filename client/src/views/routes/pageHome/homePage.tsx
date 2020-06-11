@@ -2,6 +2,7 @@
  * external imports
  */
 import React from "react";
+import styled from "@emotion/styled";
 
 /**
  * ui elements
@@ -17,25 +18,10 @@ import { DataDisplayGrid } from "./dataDisplayGrid";
  */
 import {
 	requestScores,
-	requestCheckboxOptions,
+	requestCheckboxOptionsAndScores,
+	HeatmapCardType,
+	FilterMetadata,
 } from "../../../utils/backendRequests";
-import { browserHistory } from "../../../utils/browserHistory";
-
-/**
- * interfaces and constants
- */
-import { SemanticShorthandContent } from "semantic-ui-react/dist/commonjs/generic";
-import { ROUTES } from "../../../utils/routes";
-import { HeatmapCardType } from "../../../utils/interfaces";
-import styled from "@emotion/styled";
-
-export type FilterMetadata = {
-	index: number;
-	title: string;
-	popupContent: SemanticShorthandContent;
-	options: ColumnBrowserType[];
-	filteredOptions: ColumnBrowserType[];
-};
 
 interface State {
 	filters: FilterMetadata[];
@@ -64,18 +50,14 @@ export class HomePage extends React.Component<{}, State> {
 	 * on mount get options and data
 	 */
 	componentDidMount() {
-		Promise.all([requestCheckboxOptions(), requestScores([[], [], [], []])])
-			.then(async (resp) => {
-				const respData1 = await resp[0].json();
-				const respData2 = await resp[1].json();
-				this.setState({
-					...this.state,
-					...respData1,
-					...respData2,
-					loading: false,
-				});
+		requestCheckboxOptionsAndScores((data1, data2) =>
+			this.setState({
+				...this.state,
+				filters: data1,
+				scoreData: data2,
+				loading: false,
 			})
-			.catch((_) => browserHistory.push(ROUTES.Error.push()));
+		);
 	}
 
 	/**
@@ -116,17 +98,14 @@ export class HomePage extends React.Component<{}, State> {
 		);
 
 		this.setState({ loading: true }, () =>
-			requestScores(apiArgs)
-				.then(async (resp) => {
-					const respData = await resp.json();
-					this.setState({
-						...this.state,
-						...respData,
-						loading: false,
-						filters: tmpFilterState,
-					});
+			requestScores(apiArgs, (data) =>
+				this.setState({
+					...this.state,
+					scoreData: data,
+					loading: false,
+					filters: tmpFilterState,
 				})
-				.catch((_) => browserHistory.push(ROUTES.Error.push()))
+			)
 		);
 	};
 
@@ -156,17 +135,14 @@ export class HomePage extends React.Component<{}, State> {
 		);
 
 		this.setState({ loading: true }, () =>
-			requestScores(apiArgs)
-				.then(async (resp) => {
-					const respData = await resp.json();
-					this.setState({
-						...this.state,
-						...respData,
-						loading: false,
-						filters: tmpFilterState,
-					});
+			requestScores(apiArgs, (data) =>
+				this.setState({
+					...this.state,
+					scoreData: data,
+					loading: false,
+					filters: tmpFilterState,
 				})
-				.catch((_) => browserHistory.push(ROUTES.Error.push()))
+			)
 		);
 	};
 
