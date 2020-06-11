@@ -7,11 +7,9 @@ import {
 	Label,
 	Segment,
 	Header,
-	Container,
 } from "semantic-ui-react";
 import { GridColumn } from "../containers/gridColumn";
 import { Members } from "../../utils/constants";
-import styled from "@emotion/styled";
 
 interface Props {
 	imageUrl: string;
@@ -20,10 +18,6 @@ interface Props {
 	jobDescription: string;
 	email: string;
 }
-
-const StyledContainer = styled(Container)`
-	font-size: 20px;
-`;
 
 const MemberInfo = (props: Props) => (
 	<Card>
