@@ -15,10 +15,10 @@ interface Props {
 
 export const PlotHeatMap = ({ data, onHeatMapClick }: Props) => (
 	<ResponsiveHeatMap
+		{...(heatmapProps as HeatMapSvgProps)}
 		data={data.xyValues}
 		indexBy={data.indexBy}
 		keys={data.keys}
 		onClick={(e) => onHeatMapClick(e.yKey as string)}
-		{...(heatmapProps as HeatMapSvgProps)}
 	/>
 );
