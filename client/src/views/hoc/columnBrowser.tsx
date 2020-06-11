@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import {
 	Button,
 	Card,
-	Checkbox,
 	Form,
 	Icon,
 	Item,
@@ -166,38 +165,51 @@ const StyledCheckbox = ({
 	optionIndex,
 	handleToggleCheckbox,
 }: StyledCheckboxProps) => (
-	<StyledItem mute={option.mute ? "" : undefined}>
-		<Item.Content>
-			<Item.Description>
-				<Checkbox
-					data-testid={option.value}
-					label={option.value}
-					checked={option.isChecked}
-					onChange={() =>
-						handleToggleCheckbox(
-							index,
-							{ ...option, isChecked: !option.isChecked },
-							optionIndex
-						)
-					}
-				/>
-			</Item.Description>
-			{option.description && (
-				<StyledItemExtra>
-					<small>{option.description}</small>
-				</StyledItemExtra>
-			)}
-		</Item.Content>
-	</StyledItem>
+	<StyledItemWrapper mute={option.mute}>
+		<Item>
+			<Item.Content>
+				<Item.Description>
+					<div
+						data-testid={option.value}
+						className={
+							option.isChecked
+								? "ui checked checkbox"
+								: "ui checkbox"
+						}
+						onClick={() =>
+							handleToggleCheckbox(
+								index,
+								{ ...option, isChecked: !option.isChecked },
+								optionIndex
+							)
+						}
+					>
+						<input
+							className="hidden"
+							type="checkbox"
+							tabIndex={0}
+							checked={option.isChecked}
+							onChange={() => null} // discard
+							name={option.value + "_checkbox"}
+						/>
+						<label htmlFor={option.value + "_checkbox"}>
+							{option.value}
+						</label>
+						{option.description && (
+							<small>{option.description}</small>
+						)}
+					</div>
+				</Item.Description>
+			</Item.Content>
+		</Item>
+	</StyledItemWrapper>
 );
 
-const StyledItem = styled(Item)`
-	margin: 0 !important;
-	padding: 0 !important;
-
-	& label {
-		color: ${(props) =>
-			props.mute !== undefined ? "#b3b3b3" : "#4a4f59"} !important;
+const StyledItemWrapper = styled.div<{ mute: boolean }>`
+	margin: 0.7em 0;
+	& label,
+	small {
+		color: ${(props) => (props.mute ? "#b3b3b3" : "#4a4f59")} !important;
 	}
 `;
 
@@ -217,9 +229,4 @@ const StyledForm = styled(Form)`
 	& .field:last-child {
 		margin-bottom: 0.5em !important;
 	}
-`;
-
-const StyledItemExtra = styled(Item.Extra)`
-	margin: 0 !important;
-	color: rgba(0, 0, 0, 0.6) !important;
 `;

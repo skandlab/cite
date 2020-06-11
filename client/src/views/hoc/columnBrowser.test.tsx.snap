@@ -63,109 +63,129 @@ exports[`snapshot testing initial render 1`] = `
           data-testid="0_checkbox-list"
         >
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="cc"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    cc
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="cc"
+                  >
+                    <input
+                      class="hidden"
+                      name="cc_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="cc_checkbox"
+                    >
+                      cc
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="cs"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    cs
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="cs"
+                  >
+                    <input
+                      class="hidden"
+                      name="cs_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="cs_checkbox"
+                    >
+                      cs
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="nn"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    nn
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="nn"
+                  >
+                    <input
+                      class="hidden"
+                      name="nn_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="nn_checkbox"
+                    >
+                      nn
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="sc"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    sc
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="sc"
+                  >
+                    <input
+                      class="hidden"
+                      name="sc_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="sc_checkbox"
+                    >
+                      sc
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -271,110 +291,130 @@ exports[`snapshot testing one item is checked 1`] = `
           data-testid="0_checkbox-list"
         >
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checked checkbox"
-                  data-testid="sc"
+                  class="description"
                 >
-                  <input
-                    checked=""
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    sc
-                  </label>
+                  <div
+                    class="ui checked checkbox"
+                    data-testid="sc"
+                  >
+                    <input
+                      checked=""
+                      class="hidden"
+                      name="sc_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="sc_checkbox"
+                    >
+                      sc
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="cc"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    cc
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="cc"
+                  >
+                    <input
+                      class="hidden"
+                      name="cc_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="cc_checkbox"
+                    >
+                      cc
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="cs"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    cs
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="cs"
+                  >
+                    <input
+                      class="hidden"
+                      name="cs_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="cs_checkbox"
+                    >
+                      cs
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="item css-1l92o6s"
+            class="css-blg02k"
           >
             <div
-              class="content"
+              class="item"
             >
               <div
-                class="description"
+                class="content"
               >
                 <div
-                  class="ui checkbox"
-                  data-testid="nn"
+                  class="description"
                 >
-                  <input
-                    class="hidden"
-                    readonly=""
-                    tabindex="0"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label>
-                    nn
-                  </label>
+                  <div
+                    class="ui checkbox"
+                    data-testid="nn"
+                  >
+                    <input
+                      class="hidden"
+                      name="nn_checkbox"
+                      tabindex="0"
+                      type="checkbox"
+                    />
+                    <label
+                      for="nn_checkbox"
+                    >
+                      nn
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
