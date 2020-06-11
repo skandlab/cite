@@ -5,19 +5,12 @@ import styled from "@emotion/styled";
 import { Grid, Segment, Header, Card, Dimmer, Loader } from "semantic-ui-react";
 import { PlotScatter } from "../plots/plotScatter";
 import { PlotBar } from "../plots/plotBarplot";
-import { GridColumn } from "../lib/gridColumn";
+import { GridColumn } from "../containers/gridColumn";
 
-import { requestExp } from "../../utils/backendRequests";
-import { browserHistory } from "../../utils/browserHistory";
-
-import { ROUTER_PARAMS_EXPRESSION, ROUTES } from "../../utils/routes";
-import { InterfaceExpressionEndpoint } from "../../utils/interfaces";
+import { requestExp, DeconvDataType } from "../../utils/backendRequests";
+import { ROUTER_PARAMS_EXPRESSION } from "../../utils/routes";
 
 interface Props extends RouteComponentProps<ROUTER_PARAMS_EXPRESSION> {}
-
-const PlotCardGroup = styled(Card.Group)`
-	padding: 0 !important;
-`;
 
 export const ExpressionPage = (props: Props) => {
 	const {
@@ -25,36 +18,51 @@ export const ExpressionPage = (props: Props) => {
 		receptorFromRoute,
 		tumorTypeFromRoute,
 	} = props.match.params;
-	const [state, updateState] = useState<{
-		isFetchingData: boolean;
-		dataArray: InterfaceExpressionEndpoint[];
-	}>({
-		isFetchingData: true,
-		dataArray: [],
-	});
+	const [dataArray, updateDataArray] = useState<DeconvDataType[]>([]);
 
 	useEffect(() => {
-		requestExp([ligandFromRoute, receptorFromRoute], tumorTypeFromRoute)
-			.then((resp) =>
-				updateState({
-					dataArray: resp.data,
-					isFetchingData: false,
-				})
-			)
-			.catch((_) => browserHistory.push(ROUTES.Error.push()));
+		requestExp(
+			[ligandFromRoute, receptorFromRoute],
+			tumorTypeFromRoute,
+			(data) => updateDataArray(data)
+		);
 	}, [ligandFromRoute, receptorFromRoute, tumorTypeFromRoute]);
 
-	return !state.isFetchingData ? (
+	return dataArray ? (
 		<>
-			{state.dataArray.map((data) => (
-				<React.Fragment key={data.gene}>
+			{dataArray.map(({ gene, tumorType, ...restProps }) => (
+				<React.Fragment key={gene}>
 					<Grid.Row centered>
 						<GridColumn>
-							<PlotGroup
-								title={data.gene}
-								subHeader={data.tumorType}
-								data={data}
-							/>
+							<Segment textAlign="center">
+								<Header as="h3">
+									{gene}
+									<Header.Subheader>
+										{tumorType}
+									</Header.Subheader>
+								</Header>
+								<CardGroup centered itemsPerRow={2}>
+									<Card>
+										<Card.Content>
+											<PlotScatter
+												{...restProps}
+												xAxisName="Tumor Purity"
+												yAxisName="log2 (fpkm + 1)"
+											/>
+										</Card.Content>
+									</Card>
+
+									<Card>
+										<Card.Content>
+											<PlotBar
+												{...restProps}
+												xAxisName="Cell Type"
+												yAxisName="log2 (fpkm + 1)"
+											/>
+										</Card.Content>
+									</Card>
+								</CardGroup>
+							</Segment>
 						</GridColumn>
 					</Grid.Row>
 					<Grid.Row />
@@ -68,41 +76,6 @@ export const ExpressionPage = (props: Props) => {
 	);
 };
 
-const PlotGroup = (props: {
-	title: string;
-	subHeader: string;
-	data: InterfaceExpressionEndpoint;
-}) => (
-	<Segment textAlign="center">
-		<Header as="h3">
-			{props.title}
-			<Header.Subheader>{props.subHeader}</Header.Subheader>
-		</Header>
-		<PlotCardGroup centered itemsPerRow={2}>
-			{props.data.scatterplot && (
-				<Card>
-					<Card.Content>
-						<PlotScatter
-							scatterPlotData={props.data.scatterplot}
-							linePlotData={props.data.lineplot}
-							xAxisName="Tumor Purity"
-							yAxisName="log2 (fpkm + 1)"
-						/>
-					</Card.Content>
-				</Card>
-			)}
-
-			{props.data.barplot && (
-				<Card>
-					<Card.Content>
-						<PlotBar
-							barPlotData={props.data.barplot}
-							xAxisName="Cell Type"
-							yAxisName="log2 (fpkm + 1)"
-						/>
-					</Card.Content>
-				</Card>
-			)}
-		</PlotCardGroup>
-	</Segment>
-);
+const CardGroup = styled(Card.Group)`
+	padding: 0 !important;
+`;

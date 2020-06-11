@@ -1,4 +1,24 @@
+import { browserHistory } from "./browserHistory";
+import { ROUTES } from "./routes";
+
 export const API_URL = "http://localhost:5000/server";
+
+export type DeconvDataType = {
+	gene: string;
+	tumorType: string;
+	scatterPlotData: {
+		name: string;
+		value: [number, number];
+	}[];
+	linePlotData: {
+		name: string;
+		value: [number, number];
+	}[];
+	barPlotData: {
+		name: string;
+		value: number;
+	}[];
+};
 
 export const requestScores = (args: string[][]) =>
 	fetch(
@@ -21,14 +41,21 @@ export const requestCheckboxOptions = () =>
 		method: "GET",
 	});
 
-export const requestExp = (listGene: string[], tumorType: string) =>
+export const requestExp = (
+	listGene: string[],
+	tumorType: string,
+	callBack: (data: DeconvDataType[]) => void
+) =>
 	fetch(
 		API_URL +
-			"/v1/exp?genes=" +
+			"/v1/deconv?genes=" +
 			listGene.join(",") +
 			"&tumortype=" +
 			tumorType,
 		{
 			method: "GET",
 		}
-	);
+	)
+		.then((resp) => resp.json())
+		.then((resp) => callBack(resp as DeconvDataType[]))
+		.catch((_) => browserHistory.push(ROUTES.Error.push()));

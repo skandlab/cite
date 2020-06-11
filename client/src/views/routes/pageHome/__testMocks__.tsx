@@ -1,184 +1,12 @@
-import { FilterMetadata } from ".";
 import { setupWorker, rest } from "msw";
 import { setupServer } from "msw/node";
 import { API_URL } from "../../../utils/backendRequests";
+import { DeconvData, CheckboxOptions } from "./__mock_data__.json";
+import { FilterMetadata } from ".";
 
-export const CheckboxOptions: { filters: FilterMetadata[] } = {
-	filters: [
-		{
-			index: 0,
-			title: "Ligands",
-			popupContent: null,
-			options: [
-				{
-					index: 0,
-					isChecked: false,
-					mute: false,
-					value: "A2M",
-				},
-				{
-					index: 1,
-					isChecked: false,
-					mute: false,
-					value: "AANAT",
-				},
-				{
-					index: 2,
-					isChecked: false,
-					mute: false,
-					value: "ADAM12",
-				},
-				{
-					index: 3,
-					isChecked: false,
-					mute: false,
-					value: "ADAM15",
-				},
-				{
-					index: 4,
-					isChecked: false,
-					mute: false,
-					value: "ADAM17",
-				},
-			],
-			filteredOptions: [],
-		},
-		{
-			index: 1,
-			title: "Receptors",
-			popupContent: null,
-			options: [
-				{
-					index: 0,
-					isChecked: false,
-					mute: false,
-					value: "ACKR2",
-				},
-				{
-					index: 1,
-					isChecked: false,
-					mute: false,
-					value: "ACKR3",
-				},
-				{
-					index: 2,
-					isChecked: false,
-					mute: false,
-					value: "ACKR4",
-				},
-				{
-					index: 3,
-					isChecked: false,
-					mute: false,
-					value: "ACVR1",
-				},
-				{
-					index: 4,
-					isChecked: false,
-					mute: false,
-					value: "ACVR1B",
-				},
-			],
-			filteredOptions: [],
-		},
-		{
-			index: 2,
-			title: "Interaction type",
-			popupContent: null,
-			options: [
-				{
-					description: "cancer-cancer",
-					index: 0,
-					isChecked: false,
-					mute: false,
-					value: "cc",
-				},
-				{
-					description: "cancer-stroma",
-					index: 1,
-					isChecked: false,
-					mute: false,
-					value: "cs",
-				},
-				{
-					description: "normal-normal",
-					index: 2,
-					isChecked: false,
-					mute: false,
-					value: "nn",
-				},
-				{
-					description: "stroma-cancer",
-					index: 3,
-					isChecked: false,
-					mute: false,
-					value: "sc",
-				},
-				{
-					description: "stroma-stroma",
-					index: 4,
-					isChecked: false,
-					mute: false,
-					value: "ss",
-				},
-			],
-			filteredOptions: [],
-		},
-		{
-			index: 3,
-			title: "Tumor type",
-			popupContent: null,
-			options: [
-				{
-					description: "Bladder Urothelial Carcinoma",
-					index: 0,
-					isChecked: false,
-					mute: false,
-					value: "BLCA",
-				},
-				{
-					description: "Breast invasive carcinoma",
-					index: 1,
-					isChecked: false,
-					mute: false,
-					value: "BRCA",
-				},
-				{
-					description:
-						"Cervical squamous cell carcinoma and endocervical adenocarcinoma",
-					index: 2,
-					isChecked: false,
-					mute: false,
-					value: "CESC",
-				},
-				{
-					description: "Colorectal carcinoma",
-					index: 3,
-					isChecked: false,
-					mute: false,
-					value: "CRC",
-				},
-				{
-					description: "Esophageal carcinoma",
-					index: 4,
-					isChecked: false,
-					mute: false,
-					value: "ESCA",
-				},
-				{
-					description: "Glioblastoma multiforme",
-					index: 5,
-					isChecked: false,
-					mute: false,
-					value: "GBM",
-				},
-			],
-			filteredOptions: [],
-		},
-	],
-};
-
-export const OptionsPerCard = CheckboxOptions["filters"].map((filter) =>
+export const OptionsPerCard = (CheckboxOptions[
+	"filters"
+] as FilterMetadata[]).map((filter) =>
 	filter.options.map((option) => option.value)
 );
 
@@ -252,6 +80,20 @@ const Endpoints = [
 		return res(
 			ctx.status(200),
 			ctx.json(generateData(ligands, receptors, interactions, tumors))
+		);
+	}),
+	rest.get(API_URL + "/v1/deconv", (req, res, ctx) => {
+		let [gene1, gene2] = req.url.searchParams
+			.get("genes")!
+			.split(",")
+			.filter((o) => o);
+
+		return res(
+			ctx.status(200),
+			ctx.json([
+				{ ...DeconvData[0], gene: gene1 },
+				{ ...DeconvData[1], gene: gene2 },
+			])
 		);
 	}),
 ];
