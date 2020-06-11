@@ -1,3 +1,8 @@
 module.exports = {
-  plugins: [{ plugin: require("@semantic-ui-react/craco-less") }],
+	jest: {
+		configure: {
+			snapshotResolver: "./snapshotResolver.js",
+		},
+	},
+	plugins: [{ plugin: require("@semantic-ui-react/craco-less") }],
 };
