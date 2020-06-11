@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/dom";
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen, waitFor } from "@testing-library/react";
-import { server } from "./pageHome/__testMocks__";
+import { server } from "../../__mockEndpoints__";
 import { Router, Route } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { ExpressionPage } from "./pageExpression";

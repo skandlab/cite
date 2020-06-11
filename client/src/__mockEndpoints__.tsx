@@ -1,7 +1,7 @@
 import { setupWorker, rest } from "msw";
 import { setupServer } from "msw/node";
-import { API_URL, FilterMetadata } from "../../../utils/backendRequests";
-import { DeconvData, CheckboxOptions } from "./__mock_data__.json";
+import { API_URL, FilterMetadata } from "./utils/backendRequests";
+import { DeconvData, CheckboxOptions } from "./__mockdata__.json";
 
 export const OptionsPerCard = (CheckboxOptions[
 	"filters"

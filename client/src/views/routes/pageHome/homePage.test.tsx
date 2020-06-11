@@ -4,8 +4,8 @@ import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HomePage } from "./homePage";
-import { OptionsPerCard } from "./__testMocks__";
-import { server } from "./__testMocks__";
+import { OptionsPerCard } from "../../../__mockEndpoints__";
+import { server } from "../../../__mockEndpoints__";
 
 beforeEach(() => {
 	server.listen();
