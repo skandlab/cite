@@ -146,7 +146,6 @@ export class HomePage extends React.Component<{}, State> {
 		);
 	};
 
-	// TODO: popupContent
 	// TODO: data present
 	render() {
 		return this.state.filters.length !== 0 ? (

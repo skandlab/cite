@@ -13,6 +13,7 @@ import {
 	Dimmer,
 	Loader,
 } from "semantic-ui-react";
+import Interweave from "interweave";
 
 export interface ColumnBrowserType {
 	index: number;
@@ -64,7 +65,9 @@ export const ColumnBrowser = ({
 							size="small"
 							inverted
 							hoverable
-							content={popupContent}
+							content={
+								<Interweave content={popupContent as string} />
+							}
 							trigger={<Icon name="info circle" />}
 						/>
 					)}
