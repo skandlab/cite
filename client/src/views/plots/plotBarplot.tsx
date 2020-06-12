@@ -6,7 +6,7 @@ interface Props {
 	title?: string;
 	xAxisName: string;
 	yAxisName: string;
-	barPlotData: {
+	barplotData: {
 		name: string;
 		value: number;
 	}[];
@@ -18,7 +18,7 @@ const mergeProps = (props: Props) => {
 		xAxis: {
 			...echartsProps.xAxis,
 			type: "category",
-			data: props.barPlotData.map((d) => d.name),
+			data: props.barplotData.map((d) => d.name),
 			name: props.xAxisName,
 			splitLine: {
 				show: false,
@@ -30,7 +30,7 @@ const mergeProps = (props: Props) => {
 		},
 		series: {
 			...barplotProps.series,
-			data: props.barPlotData,
+			data: props.barplotData,
 			tooltip: {
 				formatter: function (params: any) {
 					return params.name + "<br/>expression: " + params.value;

@@ -10,11 +10,11 @@ interface Props {
 	title?: string;
 	xAxisName: string;
 	yAxisName: string;
-	scatterPlotData: {
+	scatterplotData: {
 		name: string;
 		value: [number, number];
 	}[];
-	linePlotData: {
+	lineplotData: {
 		name: string;
 		value: [number, number];
 	}[];
@@ -34,7 +34,7 @@ const mergeProps = (props: Props) => {
 		series: [
 			{
 				...scatterplotProps.series,
-				data: props.scatterPlotData,
+				data: props.scatterplotData,
 				tooltip: {
 					formatter: function (params: any) {
 						return (
@@ -49,7 +49,7 @@ const mergeProps = (props: Props) => {
 			},
 			{
 				...lineplotProps.series,
-				data: props.linePlotData,
+				data: props.lineplotData,
 				tooltip: {
 					formatter: function (params: any) {
 						return (

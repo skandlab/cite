@@ -23,15 +23,15 @@ export type HeatmapCardType = {
 export type DeconvDataType = {
 	gene: string;
 	tumorType: string;
-	scatterPlotData: {
+	scatterplotData: {
 		name: string;
 		value: [number, number];
 	}[];
-	linePlotData: {
+	lineplotData: {
 		name: string;
 		value: [number, number];
 	}[];
-	barPlotData: {
+	barplotData: {
 		name: string;
 		value: number;
 	}[];
