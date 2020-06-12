@@ -3,30 +3,25 @@ import pickle
 import json
 from . import settings
 
-deconv_exp_df = pd.read_parquet(settings.DATA_DECONV_EXP_FILEPATH)
-samples_exp_df = pd.read_parquet(settings.DATA_SAMPLES_EXP_FILEPATH)
-
-with open(settings.DATA_MAPPING_TUMOR_SAMPLES, "rb") as f:
-    mapping_tumor_samples = pickle.load(f)
-
-with open(settings.DATA_SCORES_FILEPATH, "r") as f:
-    data_score = json.load(f)
-
-with open(settings.DATA_METADATA_FILEPATH, "r") as f:
-    __tmp__ = json.load(f)
-    (
-        list_ligand,
-        list_receptor,
-        list_tumor_type,
-        list_interaction_type,
-        checkboxOptions,
-    ) = (
-        __tmp__["ligand"],
-        __tmp__["receptor"],
-        __tmp__["tumorType"],
-        __tmp__["interactionType"],
-        __tmp__["metadata"],
-    )
+mapLigandIndex = pd.read_parquet(settings.DATA_MAP_LIGAND_INDEX_FILEPATH)
+mapReceptorIndex = pd.read_parquet(settings.DATA_MAP_RECEPTOR_INDEX_FILEPATH)
+mapTumorIndex = pd.read_parquet(settings.DATA_MAP_TUMOR_INDEX_FILEPATH)
+dfScores = pd.read_parquet(settings.DATA_SCORES_FILEPATH)
 
 with open(settings.DATA_DEFAULT_SCORES_FILEPATH, "r") as f:
-    default_scores = json.load(f)
+    defaultScores = json.load(f)
+
+with open(settings.DATA_METADATA_FILEPATH, "r") as f:
+    metadata = json.load(f)
+    (ligandList, receptorList, tumorList, interactionList) = (
+        metadata["ligands"],
+        metadata["receptors"],
+        metadata["tumors"],
+        metadata["interactions"],
+    )
+
+with open(settings.DATA_FILTERS_FILEPATH, "r") as f:
+    dataFilters = json.load(f)
+
+with open(settings.DATA_DECONV_VALUES_FILEPATH, "r") as f:
+    deconvValues = json.load(f)

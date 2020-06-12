@@ -3,96 +3,91 @@ import pandas as pd
 import numpy as np
 from . import dao
 from . import error
+from . import settings
 
 
 def __check_if_all__(
-    list_ligand: List[str], list_receptor: List[str],
+    ligandList: List[str],
+    receptorList: List[str],
+    interactionList: List[str],
+    tumorList: List[str],
 ):
-    if len(list_ligand) == 1 and len(list_ligand[0]) == 0:
-        list_ligand = dao.list_ligand
-    if len(list_receptor) == 1 and len(list_receptor[0]) == 0:
-        list_receptor = dao.list_receptor
-    return list_ligand, list_receptor
+    if len(ligandList) == 1 and len(ligandList[0]) == 0:
+        ligandList = dao.ligandList
+    if len(receptorList) == 1 and len(receptorList[0]) == 0:
+        receptorList = dao.receptorList
+    if len(interactionList) == 1 and len(interactionList[0]) == 0:
+        interactionList = dao.interactionList
+    if len(tumorList) == 1 and len(tumorList[0]) == 0:
+        tumorList = dao.tumorList
+    return ligandList, receptorList, interactionList, tumorList
 
 
 def __validate__(
-    list_ligand: List[str], list_receptor: List[str],
+    ligandList: List[str],
+    receptorList: List[str],
+    interactionList: List[str],
+    tumorList: List[str],
 ):
-    if len(np.setdiff1d(list_ligand, dao.list_ligand)) != 0:
-        raise error.ValidationError("Invalid ligand in query: {}".format(list_ligand))
-    if len(np.setdiff1d(list_receptor, dao.list_receptor)) != 0:
+    if len(np.setdiff1d(ligandList, dao.ligandList)) != 0:
+        raise error.ValidationError("Invalid ligand in query: {}".format(ligandList))
+    if len(np.setdiff1d(receptorList, dao.receptorList)) != 0:
         raise error.ValidationError(
-            "Invalid receptor in query: {}".format(list_receptor)
+            "Invalid receptor in query: {}".format(receptorList)
         )
+    if len(np.setdiff1d(interactionList, dao.interactionList)) != 0:
+        raise error.ValidationError(
+            "Invalid interaction in query: {}".format(interactionList)
+        )
+    if len(np.setdiff1d(tumorList, dao.tumorList)) != 0:
+        raise error.ValidationError("Invalid tumor in query: {}".format(tumorList))
 
 
-isChecked = lambda item, list_items: True if item in list_items else False
+# TODO: caching machinism
+def get_score(
+    params_ligandList: List[str],
+    params_receptorList: List[str],
+    params_interactionList: List[str],
+    params_tumorList: List[str],
+):
+    if (
+        params_ligandList == [""]
+        and params_receptorList == [""]
+        and params_interactionList == [""]
+        and params_tumorList == [""]
+    ):
+        return dao.defaultScores
 
-
-def get_score(params_list_ligand: List[str], params_list_receptor: List[str]):
-    if params_list_ligand == [""] and params_list_receptor == [""]:
-        return dao.default_scores
-
-    list_ligand, list_receptor = __check_if_all__(
-        params_list_ligand, params_list_receptor
+    ligandList, receptorList, interactionList, tumorList = __check_if_all__(
+        params_ligandList, params_receptorList, params_interactionList, params_tumorList
     )
-    __validate__(list_ligand, list_receptor)
+    __validate__(ligandList, receptorList, interactionList, tumorList)
 
-    filteredData = []
-    alreadySelectedLigand = []
-    alreadySelectedReceptor = []
-    for dic in dao.data_score:
-        ligand, receptor = dic["ligand"], dic["receptor"]
+    indexes = np.intersect1d(
+        dao.mapLigandIndex.loc[ligandList, "index"].values,
+        dao.mapReceptorIndex.loc[receptorList, "index"].values,
+    )
+    indexes = np.intersect1d(indexes, dao.mapTumorIndex.loc[tumorList, "index"].values)
 
-        # if both ligand and receptor in the data point
-        # add the score to the final results array
-        if ligand in list_ligand and receptor in list_receptor:
-            filteredData.append(dic)
+    tmpdf = dao.dfScores.iloc[indexes][["tumorType", *interactionList]]
 
-            if ligand not in alreadySelectedLigand:
-                alreadySelectedLigand.append(ligand)
-            if receptor not in alreadySelectedReceptor:
-                alreadySelectedReceptor.append(receptor)
+    pairs = tmpdf.index.unique()
+    # sort scores according to pairs
+    scores = tmpdf.loc[pairs].to_dict("records")
 
-    alreadySelectedLigand.sort()
-    alreadySelectedReceptor.sort()
-
-    ligandOptions = [
-        {
-            "isChecked": isChecked(ligand, params_list_ligand),
-            "index": index,
-            "value": ligand,
-            "mute": False,
-        }
-        for index, ligand in enumerate(alreadySelectedLigand)
-    ]
-    receptorOptions = [
-        {
-            "isChecked": isChecked(receptor, params_list_receptor),
-            "index": index,
-            "value": receptor,
-            "mute": False,
-        }
-        for index, receptor in enumerate(alreadySelectedReceptor)
-    ]
-
-    index = len(ligandOptions)
-    for ligand in dao.list_ligand:
-        if ligand not in alreadySelectedLigand:
-            ligandOptions.append(
-                {"isChecked": False, "value": ligand, "mute": True, "index": index}
-            )
-            index += 1
-
-    index = len(receptorOptions)
-    for receptor in dao.list_receptor:
-        if receptor not in alreadySelectedReceptor:
-            receptorOptions.append(
-                {"isChecked": False, "value": receptor, "mute": True, "index": index}
-            )
-
-    return {
-        "ligandOptions": ligandOptions,
-        "receptorOptions": receptorOptions,
-        "scoreData": filteredData,
-    }
+    result = []
+    index = 0
+    for [ligand, receptor] in pairs:
+        result.append(
+            {
+                "ligand": ligand,
+                "receptor": receptor,
+                "data": {
+                    "xyValues": scores[index : index + len(tumorList)],
+                    "keys": interactionList,
+                    "indexBy": "tumorType",
+                },
+            }
+        )
+        index = index + len(tumorList)
+    return result
