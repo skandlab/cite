@@ -27,6 +27,7 @@ interface State {
 	filters: FilterMetadata[];
 	scoreData: HeatmapCardType[];
 	loading: boolean;
+	isFetching: boolean[];
 }
 
 export class HomePage extends React.Component<{}, State> {
@@ -37,6 +38,7 @@ export class HomePage extends React.Component<{}, State> {
 			filters: [],
 			scoreData: [],
 			loading: true,
+			isFetching: [],
 		};
 	}
 
@@ -50,6 +52,7 @@ export class HomePage extends React.Component<{}, State> {
 				filters: data1,
 				scoreData: data2,
 				loading: false,
+				isFetching: data1.map((_d) => false),
 			})
 		);
 	}
@@ -58,11 +61,11 @@ export class HomePage extends React.Component<{}, State> {
 	 * onToggle
 	 */
 	handleToggleCheckbox = (
-		index: number,
+		filterIndex: number,
 		selectedOption: ColumnBrowserType,
-		selectedIndex: number
+		selectedfilterIndex: number
 	) => {
-		let { options, filteredOptions } = this.state.filters[index];
+		let { options, filteredOptions } = this.state.filters[filterIndex];
 
 		/**
 		 * create future state
@@ -72,42 +75,55 @@ export class HomePage extends React.Component<{}, State> {
 			filteredOptions.push(selectedOption);
 		} else {
 			filteredOptions = [
-				...filteredOptions.slice(0, selectedIndex),
-				...filteredOptions.slice(selectedIndex + 1),
+				...filteredOptions.slice(0, selectedfilterIndex),
+				...filteredOptions.slice(selectedfilterIndex + 1),
 			];
 		}
 
 		let tmpFilterState = [
-			...this.state.filters.slice(0, index),
+			...this.state.filters.slice(0, filterIndex),
 			{
-				...this.state.filters[index],
+				...this.state.filters[filterIndex],
 				options: options,
 				filteredOptions: filteredOptions,
 			},
-			...this.state.filters.slice(index + 1),
+			...this.state.filters.slice(filterIndex + 1),
 		];
 
 		let apiArgs = tmpFilterState.map((filter) =>
 			filter.filteredOptions.map((option) => option.value)
 		);
 
-		this.setState({ loading: true }, () =>
-			requestScores(apiArgs, (data) =>
-				this.setState({
-					...this.state,
-					scoreData: data,
-					loading: false,
-					filters: tmpFilterState,
-				})
-			)
+		this.setState(
+			{
+				...this.state,
+				isFetching: [
+					...this.state.isFetching.slice(0, filterIndex),
+					true,
+					...this.state.isFetching.slice(filterIndex + 1),
+				],
+			},
+			() =>
+				requestScores(apiArgs, (data) =>
+					this.setState({
+						...this.state,
+						scoreData: data,
+						filters: tmpFilterState,
+						isFetching: [
+							...this.state.isFetching.slice(0, filterIndex),
+							false,
+							...this.state.isFetching.slice(filterIndex + 1),
+						],
+					})
+				)
 		);
 	};
 
 	/**
 	 * reset
 	 */
-	handleReset = (index: number): void => {
-		let { options, filteredOptions } = this.state.filters[index];
+	handleReset = (filterIndex: number): void => {
+		let { options, filteredOptions } = this.state.filters[filterIndex];
 
 		filteredOptions.forEach(({ index }) => {
 			options[index].isChecked = false;
@@ -115,28 +131,41 @@ export class HomePage extends React.Component<{}, State> {
 		filteredOptions = [];
 
 		let tmpFilterState = [
-			...this.state.filters.slice(0, index),
+			...this.state.filters.slice(0, filterIndex),
 			{
-				...this.state.filters[index],
+				...this.state.filters[filterIndex],
 				options: options,
 				filteredOptions: filteredOptions,
 			},
-			...this.state.filters.slice(index + 1),
+			...this.state.filters.slice(filterIndex + 1),
 		];
 
 		let apiArgs = tmpFilterState.map((filter) =>
 			filter.filteredOptions.map((option) => option.value)
 		);
 
-		this.setState({ loading: true }, () =>
-			requestScores(apiArgs, (data) =>
-				this.setState({
-					...this.state,
-					scoreData: data,
-					loading: false,
-					filters: tmpFilterState,
-				})
-			)
+		this.setState(
+			{
+				...this.state,
+				isFetching: [
+					...this.state.isFetching.slice(0, filterIndex),
+					true,
+					...this.state.isFetching.slice(filterIndex + 1),
+				],
+			},
+			() =>
+				requestScores(apiArgs, (data) =>
+					this.setState({
+						...this.state,
+						scoreData: data,
+						filters: tmpFilterState,
+						isFetching: [
+							...this.state.isFetching.slice(0, filterIndex),
+							false,
+							...this.state.isFetching.slice(filterIndex + 1),
+						],
+					})
+				)
 		);
 	};
 
@@ -146,11 +175,11 @@ export class HomePage extends React.Component<{}, State> {
 				<Grid.Row centered>
 					<GridColumn>
 						<Card.Group centered>
-							{this.state.filters.map((filter) => (
+							{this.state.filters.map((filter, filterIndex) => (
 								<ColumnBrowser
 									{...filter}
 									key={filter.index}
-									loading={this.state.loading}
+									loading={this.state.isFetching[filterIndex]}
 									handleToggleCheckbox={
 										this.handleToggleCheckbox
 									}
