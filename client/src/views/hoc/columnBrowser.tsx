@@ -206,7 +206,7 @@ const StyledCheckbox = ({
 );
 
 const StyledItemWrapper = styled.div<{ mute: boolean }>`
-	margin: 0.7em 0;
+	padding: 0.7em 0.1em;
 	& label,
 	small {
 		color: ${(props) => (props.mute ? "#b3b3b3" : "#4a4f59")} !important;
