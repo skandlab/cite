@@ -49,10 +49,10 @@ const API_SCORES = (args: string[][]) =>
 	"&tumors=" +
 	args[3].join(",");
 
-export const requestCheckboxOptionsAndScores = (
+export const requestCheckboxOptionsAndScores = async (
 	callBack: (data1: FilterMetadata[], data: HeatmapCardType[]) => void
 ) =>
-	axios
+	await axios
 		.all([
 			axios.request({
 				method: "GET",
@@ -71,11 +71,11 @@ export const requestCheckboxOptionsAndScores = (
 		)
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
-export const requestScores = (
+export const requestScores = async (
 	args: string[][],
 	callBack: (data: HeatmapCardType[]) => void
 ) =>
-	axios
+	await axios
 		.request({
 			method: "GET",
 			url: API_SCORES([...args]),
@@ -83,12 +83,12 @@ export const requestScores = (
 		.then((resp) => callBack(resp.data as HeatmapCardType[]))
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
-export const requestExp = (
+export const requestExp = async (
 	listGene: string[],
 	tumorType: string,
 	callBack: (data: DeconvDataType[]) => void
 ) =>
-	axios
+	await axios
 		.request({
 			method: "GET",
 			url:
