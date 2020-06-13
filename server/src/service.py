@@ -71,7 +71,7 @@ def get_score(
 
     tmpdf = dao.dfScores.iloc[indexes][["tumorType", *interactionList]]
 
-    pairs = tmpdf.index.unique()
+    pairs = np.sort(tmpdf.index.unique())
     # sort scores according to pairs
     scores = tmpdf.loc[pairs].to_dict("records")
 
