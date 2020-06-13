@@ -5,7 +5,7 @@ import { ColumnBrowserType } from "../views/hoc/columnBrowser";
 import { browserHistory } from "./browserHistory";
 import { ROUTES } from "./routes";
 
-export const API_URL = "/server";
+axios.defaults.baseURL = "/server";
 
 export type FilterMetadata = {
 	index: number;
@@ -38,9 +38,8 @@ export type DeconvDataType = {
 	}[];
 };
 
-const API_CHECKBOX_OPTIONS = () => API_URL + "/v1/options/checkbox";
+const API_CHECKBOX_OPTIONS = () => "/v1/options/checkbox";
 const API_SCORES = (args: string[][]) =>
-	API_URL +
 	"/v1/scores?ligands=" +
 	args[0].join(",") +
 	"&receptors=" +
@@ -93,7 +92,6 @@ export const requestExp = (
 		.request({
 			method: "GET",
 			url:
-				API_URL +
 				"/v1/deconv?genes=" +
 				listGene.join(",") +
 				"&tumortype=" +
