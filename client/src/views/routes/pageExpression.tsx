@@ -12,7 +12,7 @@ import { ROUTER_PARAMS_EXPRESSION } from "../../utils/routes";
 
 interface Props extends RouteComponentProps<ROUTER_PARAMS_EXPRESSION> {}
 
-export const ExpressionPage = (props: Props) => {
+const ExpressionPage = (props: Props) => {
 	const {
 		ligandFromRoute,
 		receptorFromRoute,
@@ -79,3 +79,5 @@ export const ExpressionPage = (props: Props) => {
 const CardGroup = styled(Card.Group)`
 	padding: 0 !important;
 `;
+
+export default ExpressionPage;

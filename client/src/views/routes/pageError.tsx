@@ -9,7 +9,7 @@ import { browserHistory } from "../../utils/browserHistory";
 import { Members } from "../../utils/constants";
 import { ROUTES } from "../../utils/routes";
 
-export const ErrorPage = () => (
+const ErrorPage = () => (
 	<Grid.Row centered>
 		<GridColumn textAlign="center">
 			<Segment>
@@ -46,3 +46,5 @@ export const ErrorPage = () => (
 const ExtraMarginHeader = styled(Header)`
 	margin-bottom: 2em !important;
 `;
+
+export default ErrorPage;

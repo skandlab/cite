@@ -42,7 +42,7 @@ const MemberInfo = (props: Props) => (
 	</Card>
 );
 
-export const PageAbout = () => (
+const PageAbout = () => (
 	<>
 		<Grid.Row>
 			<GridColumn>
@@ -105,3 +105,5 @@ export const PageAbout = () => (
 		</Grid.Row>
 	</>
 );
+
+export default PageAbout;

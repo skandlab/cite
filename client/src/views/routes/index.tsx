@@ -1,19 +1,20 @@
 import React from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Icon } from "semantic-ui-react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { Navbar } from "../containers/navbar";
-import { HomePage } from "./pageHome";
-import { ErrorPage } from "./pageError";
-import { PageAbout } from "./pageAbout";
 
 import { browserHistory } from "../../utils/browserHistory";
 import { ROUTES } from "../../utils/routes";
-import { ExpressionPage } from "./pageExpression";
 
 interface State {
 	currentRoute: string;
 }
+
+const LazyImportedHomePage = React.lazy(() => import("./pageHome"));
+const LazyImportedExpressionPage = React.lazy(() => import("./pageExpression"));
+const LazyImportedErrorPage = React.lazy(() => import("./pageError"));
+const LazyImportedAboutPage = React.lazy(() => import("./pageAbout"));
 
 export class AppRouter extends React.Component<{}, State> {
 	constructor(props: {}) {
@@ -38,34 +39,42 @@ export class AppRouter extends React.Component<{}, State> {
 
 	render() {
 		return (
-			<Grid stackable>
-				<Navbar {...this.state} />
-				<Router history={browserHistory}>
-					<Switch>
-						<Route
-							exact
-							path={ROUTES.About.routes}
-							component={PageAbout}
-						/>
-						<Route
-							exact
-							path={ROUTES.Error.routes}
-							component={ErrorPage}
-						/>
-						<Route
-							exact
-							path={ROUTES.Expression.routes}
-							render={(props) => <ExpressionPage {...props} />}
-						/>
-						<Route
-							exact
-							path={ROUTES.Home.routes}
-							component={HomePage}
-						/>
-						<Redirect from="*" to={ROUTES.Home.push()} />
-					</Switch>
-				</Router>
-			</Grid>
+			<React.StrictMode>
+				<React.Suspense fallback={<Icon loading name="spinner" />}>
+					<Grid stackable>
+						<Navbar {...this.state} />
+						<Router history={browserHistory}>
+							<Switch>
+								<Route
+									exact
+									path={ROUTES.About.routes}
+									component={LazyImportedAboutPage}
+								/>
+								<Route
+									exact
+									path={ROUTES.Error.routes}
+									component={LazyImportedErrorPage}
+								/>
+								<Route
+									exact
+									path={ROUTES.Expression.routes}
+									render={(props) => (
+										<LazyImportedExpressionPage
+											{...props}
+										/>
+									)}
+								/>
+								<Route
+									exact
+									path={ROUTES.Home.routes}
+									component={LazyImportedHomePage}
+								/>
+								<Redirect from="*" to={ROUTES.Home.push()} />
+							</Switch>
+						</Router>
+					</Grid>
+				</React.Suspense>
+			</React.StrictMode>
 		);
 	}
 }
