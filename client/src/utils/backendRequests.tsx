@@ -1,3 +1,4 @@
+import axios from "axios";
 import { HeatMapDataType } from "../views/plots/plotHeatmap";
 import { SemanticShorthandContent } from "semantic-ui-react/dist/commonjs/generic";
 import { ColumnBrowserType } from "../views/hoc/columnBrowser";
@@ -52,33 +53,35 @@ const API_SCORES = (args: string[][]) =>
 export const requestCheckboxOptionsAndScores = (
 	callBack: (data1: FilterMetadata[], data: HeatmapCardType[]) => void
 ) =>
-	Promise.all([
-		fetch(API_CHECKBOX_OPTIONS(), {
-			method: "GET",
-		}),
-		fetch(API_SCORES([[], [], [], []]), {
-			method: "GET",
-		}),
-	])
-		.then(async (resp) => {
-			const respData1 = await resp[0].json();
-			const respData2 = await resp[1].json();
+	axios
+		.all([
+			axios.request({
+				method: "GET",
+				url: API_CHECKBOX_OPTIONS(),
+			}),
+			axios.request({
+				method: "GET",
+				url: API_SCORES([[], [], [], []]),
+			}),
+		])
+		.then((resp) =>
 			callBack(
-				respData1 as FilterMetadata[],
-				respData2 as HeatmapCardType[]
-			);
-		})
+				resp[0].data as FilterMetadata[],
+				resp[1].data as HeatmapCardType[]
+			)
+		)
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
 export const requestScores = (
 	args: string[][],
 	callBack: (data: HeatmapCardType[]) => void
 ) =>
-	fetch(API_SCORES([...args]), {
-		method: "GET",
-	})
-		.then((resp) => resp.json())
-		.then((resp) => callBack(resp as HeatmapCardType[]))
+	axios
+		.request({
+			method: "GET",
+			url: API_SCORES([...args]),
+		})
+		.then((resp) => callBack(resp.data as HeatmapCardType[]))
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
 export const requestExp = (
@@ -86,16 +89,15 @@ export const requestExp = (
 	tumorType: string,
 	callBack: (data: DeconvDataType[]) => void
 ) =>
-	fetch(
-		API_URL +
-			"/v1/deconv?genes=" +
-			listGene.join(",") +
-			"&tumortype=" +
-			tumorType,
-		{
+	axios
+		.request({
 			method: "GET",
-		}
-	)
-		.then((resp) => resp.json())
-		.then((resp) => callBack(resp as DeconvDataType[]))
+			url:
+				API_URL +
+				"/v1/deconv?genes=" +
+				listGene.join(",") +
+				"&tumortype=" +
+				tumorType,
+		})
+		.then((resp) => callBack(resp.data as DeconvDataType[]))
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));

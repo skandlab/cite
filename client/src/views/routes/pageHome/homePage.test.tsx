@@ -4,15 +4,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HomePage } from "./homePage";
-import { OptionsPerCard } from "../../../__mockEndpoints__";
-import { server } from "../../../__mockEndpoints__";
-
-beforeEach(() => {
-	server.listen();
-});
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
-
+import OptionsPerCard from "../../../__mockEndpoints__";
 const defaultRender = async () => {
 	const { asFragment } = render(<HomePage />);
 	await screen.findByText("cs");
@@ -727,7 +719,7 @@ function TestState(
 	});
 
 	// which items are checked
-	OptionsPerCard.forEach((itemsPerCard, index) => {
+	(OptionsPerCard as string[][]).forEach((itemsPerCard, index) => {
 		let count = 0;
 		itemsPerCard.forEach((item) => {
 			if (checkedItems.includes(item)) {
