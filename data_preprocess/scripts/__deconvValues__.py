@@ -14,7 +14,7 @@ with open(MAPPING_TUMOR_SAMPLES, "rb") as f:
 
 
 def run(ligandList, receptorList):
-    dfExp = pd.read_csv(INPUT_EXP_FILE, usecols=["sample", "t", "C", "S", "T", "N"])
+    dfExp = pd.read_csv(INPUT_EXP_FILE, usecols=["sample", "t", "C", "N", "S", "T"])
     dfExp.columns = [
         "gene",
         "tumorType",
@@ -67,7 +67,7 @@ def run(ligandList, receptorList):
 
         # lineplotData
         [cancerValue, stromaValue] = dfExp.loc[
-            ("A2M", "BLCA"), ["Cancer", "Stroma"]
+            (gene, tumorType), ["Cancer", "Stroma"]
         ].values
         data["lineplotData"] = [
             {"name": "Cancer", "value": [1, cancerValue]},
