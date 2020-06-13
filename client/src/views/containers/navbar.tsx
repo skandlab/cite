@@ -32,7 +32,7 @@ const CommonMenu = () => (
 			<Image
 				size="mini"
 				src={URL_NAVBAR_LOGO}
-				alt="site-logo"
+				alt="cite-logo"
 				onClick={() => browserHistory.push(ROUTES.Home.push())}
 			/>
 		</StyledImageMenuItem>

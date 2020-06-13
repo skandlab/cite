@@ -1,39 +1,39 @@
 version: "3.7"
 services:
-    site_server:
+    cite_server:
         # build using dockerfile
         build:
             context: ./server
             args:
-                - USER=site_user
-        image: site_server:$VERSION
+                - USER=cite_user
+        image: cite_server:$VERSION
         expose:
             - 5000
         volumes:
-            - $PWD/data:/home/site_user/data
+            - $PWD/data:/home/cite_user/data
         networks:
-            site_network:
-        container_name: site_server
+            cite_network:
+        container_name: cite_server
         restart: always
-    site_nginx:
+    cite_nginx:
         # build using dockerfile
         build:
             context: .
             dockerfile: nginx/dockerfile
             args:
-                - USER=site_user
-        image: site_nginx:$VERSION
+                - USER=cite_user
+        image: cite_nginx:$VERSION
         ports:
             - "80:80"
             - "443:443"
         networks:
-            site_network:
-        container_name: site_nginx
+            cite_network:
+        container_name: cite_nginx
         restart: always
         depends_on:
-            - site_server
+            - cite_server
 networks:
-    site_network:
-        name: site_network
+    cite_network:
+        name: cite_network
 volumes:
     data:

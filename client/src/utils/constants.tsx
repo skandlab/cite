@@ -1,4 +1,4 @@
-export const APP_TITLE = "SITE";
+export const APP_TITLE = "CITE";
 export const APP_DESCRIPTION =
 	"Crosstalk Interactions within Tumor microEnvironment";
 

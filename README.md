@@ -7,7 +7,7 @@
             | $$   |  $$$$$$/| $$ \/  | $$| $$$$$$$$| $$  | $$ /$$$$$$|  $$$$$$/
             |__/    \______/ |__/     |__/|________/|__/  |__/|______/ \______/
 
-# SITE [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
+# CITE [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
 
 ### Authors
 
@@ -37,11 +37,11 @@
 #### process
 
 ```bash
-git clone https://github.com/bigfoot31/site
-cp -r certs site
-cp -r data site
-cp -r static site
-cd site
+git clone https://github.com/bigfoot31/cite
+cp -r certs cite
+cp -r data cite
+cp -r static cite
+cd cite
 docker-compose build
 docker-compose up -d
 ```
