@@ -3,7 +3,7 @@ import "@testing-library/dom";
 import "@testing-library/jest-dom/extend-expect";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { HomePage } from "./homePage";
+import { HomePage } from "./pageHome";
 import OptionsPerCard from "../../../__mockEndpoints__";
 const defaultRender = async () => {
 	const { asFragment } = render(<HomePage />);
