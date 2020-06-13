@@ -12,3 +12,5 @@ data_preprocess/*
 server/data
 client/coverage
 client/package-lock.json
+
+*.tar
