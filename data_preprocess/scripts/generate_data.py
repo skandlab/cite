@@ -5,11 +5,9 @@ from . import __filters__
 from . import __scores__
 from . import __deconvValues__
 
-INPUT_SCORE_FILE = "source/productScore_v2.csv"
-OUTPUT_METADATA_FILE = "output/metadata.json"
 
 df = pd.read_csv(
-    INPUT_SCORE_FILE,
+    c.INPUT_SCORE_FILE,
     usecols=[
         "ligand",
         "receptor",
@@ -43,7 +41,7 @@ print("scores done.")
 __deconvValues__.run(ligandList, receptorList)
 print("deconv values done.")
 
-with open(OUTPUT_METADATA_FILE, "w") as f:
+with open(c.METADATA_FILE, "w") as f:
     json.dump(
         {
             "ligands": ligandList,

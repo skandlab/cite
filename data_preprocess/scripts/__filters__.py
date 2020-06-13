@@ -2,11 +2,9 @@ import json
 
 from . import __contants__ as c
 
-OUTPUT_FILTERS_FILE = "output/filters.json"
-
 
 def run(tumorList, ligandList, receptorList, interactionList):
-    with open(OUTPUT_FILTERS_FILE, "w") as f:
+    with open(c.FILTERS_FILE, "w") as f:
         json.dump(
             [
                 {

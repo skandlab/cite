@@ -1,19 +1,17 @@
 import pandas as pd
 import pickle
 import numpy as np
+from . import __contants__ as c
 
-INPUT_EXP_FILE = "source/deconv_logx+1nt_pct1.csv"
-SAMPLES_EXP_FILE = "source/coding_expr_mut.pkl"
-MAPPING_TUMOR_SAMPLES = "source/mapping_tumor_samples.pickle"
-PURITY_FILE = "source/purity.parquet"
-OUTPUT_DECONV_VALUES_FILE = "output/deconvValues.pickle"
 
-with open(MAPPING_TUMOR_SAMPLES, "rb") as f:
+with open(c.MAPPING_TUMOR_SAMPLES_FILE, "rb") as f:
     mapping_tumor_samples = pickle.load(f)
 
 
 def run(ligandList, receptorList):
-    dfExp = pd.read_csv(INPUT_EXP_FILE, usecols=["sample", "t", "C", "N", "S", "T"])
+    dfExp = pd.read_csv(
+        c.EXP_PER_CELLTYPE_FILE, usecols=["sample", "t", "C", "N", "S", "T"]
+    )
     dfExp.columns = [
         "gene",
         "tumorType",
@@ -41,11 +39,11 @@ def run(ligandList, receptorList):
     dfExp.reset_index(inplace=True)
     dfExp.set_index(["gene", "tumorType"], inplace=True)
 
-    dfSamplesExp = pd.read_pickle(SAMPLES_EXP_FILE)
+    dfSamplesExp = pd.read_pickle(c.EXP_PER_SAMPLES_FILE)
     # aliases
     dfSamplesExp["C10orf54"] = dfSamplesExp["VSIR"]
     dfSamplesExp = dfSamplesExp[np.intersect1d(geneList, dfSamplesExp.columns)]
-    purity = pd.read_parquet(PURITY_FILE)
+    purity = pd.read_parquet(c.PURITY_FILE)
     dfSamplesExp["cancer"] = purity.loc[
         np.intersect1d(dfSamplesExp.index, purity.index), "cancer"
     ].round(3)
@@ -86,7 +84,7 @@ def run(ligandList, receptorList):
 
         result[hashedKey] = data
 
-    with open(OUTPUT_DECONV_VALUES_FILE, "wb") as f:
+    with open(c.DECONV_VALUES_FILE, "wb") as f:
         pickle.dump(
             result, f,
         )

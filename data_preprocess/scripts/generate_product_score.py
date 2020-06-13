@@ -1,11 +1,9 @@
 import pandas as pd
 import numpy as np
 
-INPUT_DATA_FILE = "source/deconv_logx+1nt_pct1.csv"
-INPUT_INTERACTION_FILE = "source/pairs_v2.txt"
-OUTPUT_FILE = "source/productScore_v2.csv"
+from . import __contants__ as c
 
-df = pd.read_csv(INPUT_DATA_FILE)
+df = pd.read_csv(c.EXP_PER_CELLTYPE_FILE)
 
 list_tumor_type = df.t.values[:20].tolist()
 
@@ -38,7 +36,7 @@ def func(ligand, receptor):
 
 
 l = []
-with open(INPUT_INTERACTION_FILE, "r") as f:
+with open(c.PAIRS_FILE, "r") as f:
     line = f.readline()
     while line:
         try:
@@ -49,4 +47,4 @@ with open(INPUT_INTERACTION_FILE, "r") as f:
 
 df = pd.concat(l)
 df.drop_duplicates(inplace=True)
-df.to_csv(OUTPUT_FILE, index=False)
+df.to_csv(c.INPUT_SCORE_FILE, index=False)
