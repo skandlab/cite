@@ -6,17 +6,6 @@ exports[`snapshot testing initial render 1`] = `
     class="ui card"
   >
     <div
-      class="ui inverted dimmer"
-    >
-      <div
-        class="content"
-      >
-        <div
-          class="ui inverted loader"
-        />
-      </div>
-    </div>
-    <div
       class="content"
     >
       <div
@@ -60,131 +49,134 @@ exports[`snapshot testing initial render 1`] = `
         </form>
         <div
           class="ui items css-p5nlxd"
-          data-testid="0_checkbox-list"
         >
           <div
-            class="css-tescqt"
+            data-testid="0_checkbox-list"
           >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="cc"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="cc_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="cc_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="cc"
                     >
-                      cc
-                    </label>
+                      <input
+                        class="hidden"
+                        name="cc_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="cc_checkbox"
+                      >
+                        cc
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="cs"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="cs_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="cs_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="cs"
                     >
-                      cs
-                    </label>
+                      <input
+                        class="hidden"
+                        name="cs_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="cs_checkbox"
+                      >
+                        cs
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="nn"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="nn_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="nn_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="nn"
                     >
-                      nn
-                    </label>
+                      <input
+                        class="hidden"
+                        name="nn_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="nn_checkbox"
+                      >
+                        nn
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="sc"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="sc_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="sc_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="sc"
                     >
-                      sc
-                    </label>
+                      <input
+                        class="hidden"
+                        name="sc_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="sc_checkbox"
+                      >
+                        sc
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -234,17 +226,6 @@ exports[`snapshot testing one item is checked 1`] = `
     class="ui card"
   >
     <div
-      class="ui inverted dimmer"
-    >
-      <div
-        class="content"
-      >
-        <div
-          class="ui inverted loader"
-        />
-      </div>
-    </div>
-    <div
       class="content"
     >
       <div
@@ -288,132 +269,135 @@ exports[`snapshot testing one item is checked 1`] = `
         </form>
         <div
           class="ui items css-p5nlxd"
-          data-testid="0_checkbox-list"
         >
           <div
-            class="css-tescqt"
+            data-testid="0_checkbox-list"
           >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checked checkbox"
-                    data-testid="sc"
+                    class="description"
                   >
-                    <input
-                      checked=""
-                      class="hidden"
-                      name="sc_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="sc_checkbox"
+                    <div
+                      class="ui checked checkbox"
+                      data-testid="sc"
                     >
-                      sc
-                    </label>
+                      <input
+                        checked=""
+                        class="hidden"
+                        name="sc_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="sc_checkbox"
+                      >
+                        sc
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="cc"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="cc_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="cc_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="cc"
                     >
-                      cc
-                    </label>
+                      <input
+                        class="hidden"
+                        name="cc_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="cc_checkbox"
+                      >
+                        cc
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="cs"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="cs_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="cs_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="cs"
                     >
-                      cs
-                    </label>
+                      <input
+                        class="hidden"
+                        name="cs_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="cs_checkbox"
+                      >
+                        cs
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="css-tescqt"
-          >
             <div
-              class="item"
+              class="css-tescqt"
             >
               <div
-                class="content"
+                class="item"
               >
                 <div
-                  class="description"
+                  class="content"
                 >
                   <div
-                    class="ui checkbox"
-                    data-testid="nn"
+                    class="description"
                   >
-                    <input
-                      class="hidden"
-                      name="nn_checkbox"
-                      tabindex="0"
-                      type="checkbox"
-                    />
-                    <label
-                      for="nn_checkbox"
+                    <div
+                      class="ui checkbox"
+                      data-testid="nn"
                     >
-                      nn
-                    </label>
+                      <input
+                        class="hidden"
+                        name="nn_checkbox"
+                        tabindex="0"
+                        type="checkbox"
+                      />
+                      <label
+                        for="nn_checkbox"
+                      >
+                        nn
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -41,8 +41,8 @@ describe("snapshot tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -57,8 +57,8 @@ describe("snapshot tests", () => {
 		fireEvent.click(
 			screen.getByTestId("CESC").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("CESC");
+		await screen.findByTestId("3_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -73,8 +73,8 @@ describe("snapshot tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("0_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -90,8 +90,8 @@ describe("snapshot tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ACKR4").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -123,8 +123,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -139,8 +139,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -167,8 +167,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -181,8 +181,8 @@ describe("toggling tests", () => {
 		 * reset
 		 */
 		fireEvent.click(screen.getByTestId("2_resetButton"));
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -226,8 +226,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -240,8 +240,8 @@ describe("toggling tests", () => {
 		 * reset
 		 */
 		fireEvent.click(screen.getByTestId("2_resetButton"));
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -268,8 +268,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -284,8 +284,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("sc").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("sc");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -300,8 +300,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("nn").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("nn");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -333,8 +333,8 @@ describe("toggling tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -361,8 +361,8 @@ describe("toggling tests", () => {
 		 * reset
 		 */
 		fireEvent.click(screen.getByTestId("2_resetButton"));
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -391,8 +391,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -407,8 +407,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("CESC").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("CESC");
+		await screen.findByTestId("3_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -423,8 +423,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("0_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -440,8 +440,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ACKR4").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -457,8 +457,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("CESC").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("CESC");
+		await screen.findByTestId("3_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -474,8 +474,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ACKR4").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -491,8 +491,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("0_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -507,8 +507,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -535,8 +535,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -551,8 +551,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("CESC").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("CESC");
+		await screen.findByTestId("3_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -567,8 +567,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("0_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -584,8 +584,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ACKR4").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 5, 6],
 			["", "", "", ""],
@@ -619,8 +619,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ACVR1B").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -636,8 +636,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("0_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -651,8 +651,8 @@ describe("integration tests", () => {
 		 * reset
 		 */
 		fireEvent.click(screen.getByTestId("1_resetButton"));
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("1_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -667,8 +667,8 @@ describe("integration tests", () => {
 		fireEvent.click(
 			screen.getByTestId("cs").getElementsByTagName("input")[0]
 		);
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("2_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],
@@ -681,8 +681,8 @@ describe("integration tests", () => {
 		 * reset
 		 */
 		fireEvent.click(screen.getByTestId("3_resetButton"));
-		await screen.findByText("Loading...");
-		await screen.findByText("cs");
+		await screen.findByTestId("3_checkbox-list");
+
 		TestState(
 			[5, 5, 2, 6],
 			["", "", "c", ""],

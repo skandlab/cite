@@ -9,10 +9,9 @@ import {
 	Popup,
 	SemanticShorthandContent,
 	Statistic,
-	Dimmer,
-	Loader,
 } from "semantic-ui-react";
 import Interweave from "interweave";
+import { ItemGroupLoader } from "../containers/itemGroupLoader";
 
 export interface ColumnBrowserType {
 	index: number;
@@ -51,9 +50,6 @@ export const ColumnBrowser = ({
 
 	return (
 		<Card>
-			<Dimmer active={loading} inverted>
-				<Loader inverted />
-			</Dimmer>
 			<Card.Content>
 				<StyledCardHeader>
 					<span>
@@ -80,48 +76,55 @@ export const ColumnBrowser = ({
 							value={inputText}
 							onChange={(_, { value }) => updateInputText(value)}
 						/>
-						{loading && (
-							<span>
-								<small>Loading...</small>
-							</span>
-						)}
 					</StyledForm>
 
-					<StyledItemGroup
-						data-testid={index.toString() + "_checkbox-list"}
-					>
-						{filteredOptions.map(
-							(option, optionIndex) =>
-								option.value
-									.toLowerCase()
-									.startsWith(inputText.toLowerCase()) && (
-									<StyledCheckbox
-										key={option.value}
-										option={option}
-										optionIndex={optionIndex}
-										index={index}
-										handleToggleCheckbox={
-											handleToggleCheckbox
-										}
-									/>
-								)
-						)}
-						{options.map(
-							(option, optionIndex) =>
-								option.value
-									.toLowerCase()
-									.startsWith(inputText.toLowerCase()) &&
-								!option.isChecked && (
-									<StyledCheckbox
-										key={option.value}
-										option={option}
-										optionIndex={optionIndex}
-										index={index}
-										handleToggleCheckbox={
-											handleToggleCheckbox
-										}
-									/>
-								)
+					<StyledItemGroup>
+						{loading ? (
+							<ItemGroupLoader />
+						) : (
+							<div
+								data-testid={
+									index.toString() + "_checkbox-list"
+								}
+							>
+								{filteredOptions.map(
+									(option, optionIndex) =>
+										option.value
+											.toLowerCase()
+											.startsWith(
+												inputText.toLowerCase()
+											) && (
+											<StyledCheckbox
+												key={option.value}
+												option={option}
+												optionIndex={optionIndex}
+												index={index}
+												handleToggleCheckbox={
+													handleToggleCheckbox
+												}
+											/>
+										)
+								)}
+								{options.map(
+									(option, optionIndex) =>
+										option.value
+											.toLowerCase()
+											.startsWith(
+												inputText.toLowerCase()
+											) &&
+										!option.isChecked && (
+											<StyledCheckbox
+												key={option.value}
+												option={option}
+												optionIndex={optionIndex}
+												index={index}
+												handleToggleCheckbox={
+													handleToggleCheckbox
+												}
+											/>
+										)
+								)}
+							</div>
 						)}
 					</StyledItemGroup>
 				</Card.Description>

@@ -15,17 +15,6 @@ exports[`snapshot tests nothing checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -69,163 +58,166 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="0_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="0_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="A2M"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="A2M_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="A2M_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="A2M"
                           >
-                            A2M
-                          </label>
+                            <input
+                              class="hidden"
+                              name="A2M_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="A2M_checkbox"
+                            >
+                              A2M
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="AANAT"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="AANAT_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="AANAT_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="AANAT"
                           >
-                            AANAT
-                          </label>
+                            <input
+                              class="hidden"
+                              name="AANAT_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="AANAT_checkbox"
+                            >
+                              AANAT
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ADAM12"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ADAM12_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM12_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ADAM12"
                           >
-                            ADAM12
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ADAM12_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM12_checkbox"
+                            >
+                              ADAM12
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ADAM15"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ADAM15_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM15_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ADAM15"
                           >
-                            ADAM15
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ADAM15_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM15_checkbox"
+                            >
+                              ADAM15
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ADAM17"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ADAM17_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM17_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ADAM17"
                           >
-                            ADAM17
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ADAM17_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM17_checkbox"
+                            >
+                              ADAM17
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -270,17 +262,6 @@ exports[`snapshot tests nothing checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -324,163 +305,166 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="1_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="1_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACKR2"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACKR2_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR2_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACKR2"
                           >
-                            ACKR2
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACKR2_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR2_checkbox"
+                            >
+                              ACKR2
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACKR3"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACKR3_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR3_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACKR3"
                           >
-                            ACKR3
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACKR3_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR3_checkbox"
+                            >
+                              ACKR3
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACKR4"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACKR4_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR4_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACKR4"
                           >
-                            ACKR4
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACKR4_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR4_checkbox"
+                            >
+                              ACKR4
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACVR1"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACVR1_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACVR1_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACVR1"
                           >
-                            ACVR1
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACVR1_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACVR1_checkbox"
+                            >
+                              ACVR1
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACVR1B"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACVR1B_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACVR1B_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACVR1B"
                           >
-                            ACVR1B
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACVR1B_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACVR1B_checkbox"
+                            >
+                              ACVR1B
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -525,17 +509,6 @@ exports[`snapshot tests nothing checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -579,178 +552,181 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="2_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="2_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="cc"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="cc_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="cc_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="cc"
                           >
-                            cc
-                          </label>
-                          <small>
-                            cancer-cancer
-                          </small>
+                            <input
+                              class="hidden"
+                              name="cc_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="cc_checkbox"
+                            >
+                              cc
+                            </label>
+                            <small>
+                              cancer-cancer
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="cs"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="cs_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="cs_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="cs"
                           >
-                            cs
-                          </label>
-                          <small>
-                            cancer-stroma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="cs_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="cs_checkbox"
+                            >
+                              cs
+                            </label>
+                            <small>
+                              cancer-stroma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="nn"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="nn_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="nn_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="nn"
                           >
-                            nn
-                          </label>
-                          <small>
-                            normal-normal
-                          </small>
+                            <input
+                              class="hidden"
+                              name="nn_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="nn_checkbox"
+                            >
+                              nn
+                            </label>
+                            <small>
+                              normal-normal
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="sc"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="sc_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="sc_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="sc"
                           >
-                            sc
-                          </label>
-                          <small>
-                            stroma-cancer
-                          </small>
+                            <input
+                              class="hidden"
+                              name="sc_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="sc_checkbox"
+                            >
+                              sc
+                            </label>
+                            <small>
+                              stroma-cancer
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ss"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ss_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ss_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ss"
                           >
-                            ss
-                          </label>
-                          <small>
-                            stroma-stroma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="ss_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ss_checkbox"
+                            >
+                              ss
+                            </label>
+                            <small>
+                              stroma-stroma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -795,17 +771,6 @@ exports[`snapshot tests nothing checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -845,213 +810,216 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="3_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="3_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="BLCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="BLCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="BLCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="BLCA"
                           >
-                            BLCA
-                          </label>
-                          <small>
-                            Bladder Urothelial Carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="BLCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="BLCA_checkbox"
+                            >
+                              BLCA
+                            </label>
+                            <small>
+                              Bladder Urothelial Carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="BRCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="BRCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="BRCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="BRCA"
                           >
-                            BRCA
-                          </label>
-                          <small>
-                            Breast invasive carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="BRCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="BRCA_checkbox"
+                            >
+                              BRCA
+                            </label>
+                            <small>
+                              Breast invasive carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="CESC"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="CESC_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="CESC_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="CESC"
                           >
-                            CESC
-                          </label>
-                          <small>
-                            Cervical squamous cell carcinoma and endocervical adenocarcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="CESC_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="CESC_checkbox"
+                            >
+                              CESC
+                            </label>
+                            <small>
+                              Cervical squamous cell carcinoma and endocervical adenocarcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="CRC"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="CRC_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="CRC_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="CRC"
                           >
-                            CRC
-                          </label>
-                          <small>
-                            Colorectal carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="CRC_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="CRC_checkbox"
+                            >
+                              CRC
+                            </label>
+                            <small>
+                              Colorectal carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ESCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ESCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ESCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ESCA"
                           >
-                            ESCA
-                          </label>
-                          <small>
-                            Esophageal carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="ESCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ESCA_checkbox"
+                            >
+                              ESCA
+                            </label>
+                            <small>
+                              Esophageal carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="GBM"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="GBM_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="GBM_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="GBM"
                           >
-                            GBM
-                          </label>
-                          <small>
-                            Glioblastoma multiforme
-                          </small>
+                            <input
+                              class="hidden"
+                              name="GBM_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="GBM_checkbox"
+                            >
+                              GBM
+                            </label>
+                            <small>
+                              Glioblastoma multiforme
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1930,18 +1898,6 @@ exports[`snapshot tests one per group is checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-            style=""
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -1985,164 +1941,167 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="0_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="0_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checked checkbox"
-                          data-testid="ADAM15"
+                          class="description"
                         >
-                          <input
-                            checked=""
-                            class="hidden"
-                            name="ADAM15_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM15_checkbox"
+                          <div
+                            class="ui checked checkbox"
+                            data-testid="ADAM15"
                           >
-                            ADAM15
-                          </label>
+                            <input
+                              checked=""
+                              class="hidden"
+                              name="ADAM15_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM15_checkbox"
+                            >
+                              ADAM15
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="A2M"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="A2M_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="A2M_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="A2M"
                           >
-                            A2M
-                          </label>
+                            <input
+                              class="hidden"
+                              name="A2M_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="A2M_checkbox"
+                            >
+                              A2M
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="AANAT"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="AANAT_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="AANAT_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="AANAT"
                           >
-                            AANAT
-                          </label>
+                            <input
+                              class="hidden"
+                              name="AANAT_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="AANAT_checkbox"
+                            >
+                              AANAT
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ADAM12"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ADAM12_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM12_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ADAM12"
                           >
-                            ADAM12
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ADAM12_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM12_checkbox"
+                            >
+                              ADAM12
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ADAM17"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ADAM17_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ADAM17_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ADAM17"
                           >
-                            ADAM17
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ADAM17_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ADAM17_checkbox"
+                            >
+                              ADAM17
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2184,18 +2143,6 @@ exports[`snapshot tests one per group is checked 1`] = `
         <div
           class="ui card"
         >
-          <div
-            class="ui inverted dimmer"
-            style=""
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
           <div
             class="content"
           >
@@ -2240,164 +2187,167 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="1_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="1_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checked checkbox"
-                          data-testid="ACKR4"
+                          class="description"
                         >
-                          <input
-                            checked=""
-                            class="hidden"
-                            name="ACKR4_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR4_checkbox"
+                          <div
+                            class="ui checked checkbox"
+                            data-testid="ACKR4"
                           >
-                            ACKR4
-                          </label>
+                            <input
+                              checked=""
+                              class="hidden"
+                              name="ACKR4_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR4_checkbox"
+                            >
+                              ACKR4
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACKR2"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACKR2_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR2_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACKR2"
                           >
-                            ACKR2
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACKR2_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR2_checkbox"
+                            >
+                              ACKR2
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACKR3"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACKR3_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACKR3_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACKR3"
                           >
-                            ACKR3
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACKR3_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACKR3_checkbox"
+                            >
+                              ACKR3
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACVR1"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACVR1_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACVR1_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACVR1"
                           >
-                            ACVR1
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACVR1_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACVR1_checkbox"
+                            >
+                              ACVR1
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ACVR1B"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ACVR1B_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ACVR1B_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ACVR1B"
                           >
-                            ACVR1B
-                          </label>
+                            <input
+                              class="hidden"
+                              name="ACVR1B_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ACVR1B_checkbox"
+                            >
+                              ACVR1B
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2439,18 +2389,6 @@ exports[`snapshot tests one per group is checked 1`] = `
         <div
           class="ui card"
         >
-          <div
-            class="ui inverted dimmer"
-            style=""
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
           <div
             class="content"
           >
@@ -2495,179 +2433,182 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="2_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="2_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checked checkbox"
-                          data-testid="cs"
+                          class="description"
                         >
-                          <input
-                            checked=""
-                            class="hidden"
-                            name="cs_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="cs_checkbox"
+                          <div
+                            class="ui checked checkbox"
+                            data-testid="cs"
                           >
-                            cs
-                          </label>
-                          <small>
-                            cancer-stroma
-                          </small>
+                            <input
+                              checked=""
+                              class="hidden"
+                              name="cs_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="cs_checkbox"
+                            >
+                              cs
+                            </label>
+                            <small>
+                              cancer-stroma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="cc"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="cc_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="cc_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="cc"
                           >
-                            cc
-                          </label>
-                          <small>
-                            cancer-cancer
-                          </small>
+                            <input
+                              class="hidden"
+                              name="cc_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="cc_checkbox"
+                            >
+                              cc
+                            </label>
+                            <small>
+                              cancer-cancer
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="nn"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="nn_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="nn_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="nn"
                           >
-                            nn
-                          </label>
-                          <small>
-                            normal-normal
-                          </small>
+                            <input
+                              class="hidden"
+                              name="nn_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="nn_checkbox"
+                            >
+                              nn
+                            </label>
+                            <small>
+                              normal-normal
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="sc"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="sc_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="sc_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="sc"
                           >
-                            sc
-                          </label>
-                          <small>
-                            stroma-cancer
-                          </small>
+                            <input
+                              class="hidden"
+                              name="sc_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="sc_checkbox"
+                            >
+                              sc
+                            </label>
+                            <small>
+                              stroma-cancer
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ss"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ss_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ss_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ss"
                           >
-                            ss
-                          </label>
-                          <small>
-                            stroma-stroma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="ss_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ss_checkbox"
+                            >
+                              ss
+                            </label>
+                            <small>
+                              stroma-stroma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2710,18 +2651,6 @@ exports[`snapshot tests one per group is checked 1`] = `
           class="ui card"
         >
           <div
-            class="ui inverted dimmer"
-            style=""
-          >
-            <div
-              class="content"
-            >
-              <div
-                class="ui inverted loader"
-              />
-            </div>
-          </div>
-          <div
             class="content"
           >
             <div
@@ -2761,214 +2690,217 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
-                data-testid="3_checkbox-list"
               >
                 <div
-                  class="css-tescqt"
+                  data-testid="3_checkbox-list"
                 >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checked checkbox"
-                          data-testid="CESC"
+                          class="description"
                         >
-                          <input
-                            checked=""
-                            class="hidden"
-                            name="CESC_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="CESC_checkbox"
+                          <div
+                            class="ui checked checkbox"
+                            data-testid="CESC"
                           >
-                            CESC
-                          </label>
-                          <small>
-                            Cervical squamous cell carcinoma and endocervical adenocarcinoma
-                          </small>
+                            <input
+                              checked=""
+                              class="hidden"
+                              name="CESC_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="CESC_checkbox"
+                            >
+                              CESC
+                            </label>
+                            <small>
+                              Cervical squamous cell carcinoma and endocervical adenocarcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="BLCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="BLCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="BLCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="BLCA"
                           >
-                            BLCA
-                          </label>
-                          <small>
-                            Bladder Urothelial Carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="BLCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="BLCA_checkbox"
+                            >
+                              BLCA
+                            </label>
+                            <small>
+                              Bladder Urothelial Carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="BRCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="BRCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="BRCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="BRCA"
                           >
-                            BRCA
-                          </label>
-                          <small>
-                            Breast invasive carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="BRCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="BRCA_checkbox"
+                            >
+                              BRCA
+                            </label>
+                            <small>
+                              Breast invasive carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="CRC"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="CRC_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="CRC_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="CRC"
                           >
-                            CRC
-                          </label>
-                          <small>
-                            Colorectal carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="CRC_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="CRC_checkbox"
+                            >
+                              CRC
+                            </label>
+                            <small>
+                              Colorectal carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="ESCA"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="ESCA_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="ESCA_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="ESCA"
                           >
-                            ESCA
-                          </label>
-                          <small>
-                            Esophageal carcinoma
-                          </small>
+                            <input
+                              class="hidden"
+                              name="ESCA_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="ESCA_checkbox"
+                            >
+                              ESCA
+                            </label>
+                            <small>
+                              Esophageal carcinoma
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="css-tescqt"
-                >
                   <div
-                    class="item"
+                    class="css-tescqt"
                   >
                     <div
-                      class="content"
+                      class="item"
                     >
                       <div
-                        class="description"
+                        class="content"
                       >
                         <div
-                          class="ui checkbox"
-                          data-testid="GBM"
+                          class="description"
                         >
-                          <input
-                            class="hidden"
-                            name="GBM_checkbox"
-                            tabindex="0"
-                            type="checkbox"
-                          />
-                          <label
-                            for="GBM_checkbox"
+                          <div
+                            class="ui checkbox"
+                            data-testid="GBM"
                           >
-                            GBM
-                          </label>
-                          <small>
-                            Glioblastoma multiforme
-                          </small>
+                            <input
+                              class="hidden"
+                              name="GBM_checkbox"
+                              tabindex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              for="GBM_checkbox"
+                            >
+                              GBM
+                            </label>
+                            <small>
+                              Glioblastoma multiforme
+                            </small>
+                          </div>
                         </div>
                       </div>
                     </div>
