@@ -45,8 +45,8 @@ export class HomePage extends React.Component<{}, State> {
 	/**
 	 * on mount get options and data
 	 */
-	componentDidMount() {
-		requestCheckboxOptionsAndScores((data1, data2) =>
+	async componentDidMount() {
+		await requestCheckboxOptionsAndScores((data1, data2) =>
 			this.setState({
 				...this.state,
 				filters: data1,
@@ -103,8 +103,8 @@ export class HomePage extends React.Component<{}, State> {
 					...this.state.isFetching.slice(filterIndex + 1),
 				],
 			},
-			() =>
-				requestScores(apiArgs, (data) =>
+			async () =>
+				await requestScores(apiArgs, (data) =>
 					this.setState({
 						...this.state,
 						scoreData: data,
@@ -153,8 +153,8 @@ export class HomePage extends React.Component<{}, State> {
 					...this.state.isFetching.slice(filterIndex + 1),
 				],
 			},
-			() =>
-				requestScores(apiArgs, (data) =>
+			async () =>
+				await requestScores(apiArgs, (data) =>
 					this.setState({
 						...this.state,
 						scoreData: data,
