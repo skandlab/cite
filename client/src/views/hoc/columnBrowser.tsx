@@ -80,6 +80,11 @@ export const ColumnBrowser = ({
 							value={inputText}
 							onChange={(_, { value }) => updateInputText(value)}
 						/>
+						{loading && (
+							<span>
+								<small>Loading...</small>
+							</span>
+						)}
 					</StyledForm>
 
 					<StyledItemGroup

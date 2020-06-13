@@ -63,7 +63,7 @@ exports[`snapshot testing initial render 1`] = `
           data-testid="0_checkbox-list"
         >
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -95,7 +95,7 @@ exports[`snapshot testing initial render 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -127,7 +127,7 @@ exports[`snapshot testing initial render 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -159,7 +159,7 @@ exports[`snapshot testing initial render 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -291,7 +291,7 @@ exports[`snapshot testing one item is checked 1`] = `
           data-testid="0_checkbox-list"
         >
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -324,7 +324,7 @@ exports[`snapshot testing one item is checked 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -356,7 +356,7 @@ exports[`snapshot testing one item is checked 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"
@@ -388,7 +388,7 @@ exports[`snapshot testing one item is checked 1`] = `
             </div>
           </div>
           <div
-            class="css-blg02k"
+            class="css-tescqt"
           >
             <div
               class="item"

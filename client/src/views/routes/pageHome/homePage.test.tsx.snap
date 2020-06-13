@@ -6,7 +6,7 @@ exports[`snapshot tests nothing checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui centered cards"
@@ -72,7 +72,7 @@ exports[`snapshot tests nothing checked 1`] = `
                 data-testid="0_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -104,7 +104,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -136,7 +136,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -168,7 +168,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -200,7 +200,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -327,7 +327,7 @@ exports[`snapshot tests nothing checked 1`] = `
                 data-testid="1_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -359,7 +359,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -391,7 +391,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -423,7 +423,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -455,7 +455,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -582,7 +582,7 @@ exports[`snapshot tests nothing checked 1`] = `
                 data-testid="2_checkbox-list"
               >
                 <div
-                  class="css-1myy9vx"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -617,7 +617,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -652,7 +652,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -687,7 +687,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -722,7 +722,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -848,7 +848,7 @@ exports[`snapshot tests nothing checked 1`] = `
                 data-testid="3_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -883,7 +883,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -918,7 +918,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -953,7 +953,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -988,7 +988,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -1023,7 +1023,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -1099,7 +1099,7 @@ exports[`snapshot tests nothing checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui borderless secondary nohover menu"
@@ -1188,7 +1188,7 @@ exports[`snapshot tests nothing checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui centered doubling cards css-1iidtr2"
@@ -1824,7 +1824,7 @@ exports[`snapshot tests nothing checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui center aligned container"
@@ -1921,7 +1921,7 @@ exports[`snapshot tests one per group is checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui centered cards"
@@ -1988,7 +1988,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                 data-testid="0_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2021,7 +2021,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2053,7 +2053,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2085,7 +2085,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2117,7 +2117,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2243,7 +2243,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                 data-testid="1_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2276,7 +2276,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2308,7 +2308,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2340,7 +2340,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2372,7 +2372,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2498,7 +2498,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                 data-testid="2_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2534,7 +2534,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-1myy9vx"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2569,7 +2569,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2604,7 +2604,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2639,7 +2639,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2764,7 +2764,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                 data-testid="3_checkbox-list"
               >
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2800,7 +2800,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2835,7 +2835,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2870,7 +2870,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2905,7 +2905,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -2940,7 +2940,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   </div>
                 </div>
                 <div
-                  class="css-blg02k"
+                  class="css-tescqt"
                 >
                   <div
                     class="item"
@@ -3014,7 +3014,7 @@ exports[`snapshot tests one per group is checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui borderless secondary nohover menu"
@@ -3103,7 +3103,7 @@ exports[`snapshot tests one per group is checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui centered doubling cards css-1iidtr2"
@@ -3167,7 +3167,7 @@ exports[`snapshot tests one per group is checked 1`] = `
     class="centered row"
   >
     <div
-      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column"
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
         class="ui center aligned container"
