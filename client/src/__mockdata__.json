@@ -1,180 +1,178 @@
 {
-	"CheckboxOptions": {
-		"filters": [
-			{
-				"index": 0,
-				"title": "Ligands",
-				"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
-				"options": [
-					{
-						"index": 0,
-						"isChecked": false,
-						"mute": false,
-						"value": "A2M"
-					},
-					{
-						"index": 1,
-						"isChecked": false,
-						"mute": false,
-						"value": "AANAT"
-					},
-					{
-						"index": 2,
-						"isChecked": false,
-						"mute": false,
-						"value": "ADAM12"
-					},
-					{
-						"index": 3,
-						"isChecked": false,
-						"mute": false,
-						"value": "ADAM15"
-					},
-					{
-						"index": 4,
-						"isChecked": false,
-						"mute": false,
-						"value": "ADAM17"
-					}
-				],
-				"filteredOptions": []
-			},
-			{
-				"index": 1,
-				"title": "Receptors",
-				"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
-				"options": [
-					{
-						"index": 0,
-						"isChecked": false,
-						"mute": false,
-						"value": "ACKR2"
-					},
-					{
-						"index": 1,
-						"isChecked": false,
-						"mute": false,
-						"value": "ACKR3"
-					},
-					{
-						"index": 2,
-						"isChecked": false,
-						"mute": false,
-						"value": "ACKR4"
-					},
-					{
-						"index": 3,
-						"isChecked": false,
-						"mute": false,
-						"value": "ACVR1"
-					},
-					{
-						"index": 4,
-						"isChecked": false,
-						"mute": false,
-						"value": "ACVR1B"
-					}
-				],
-				"filteredOptions": []
-			},
-			{
-				"index": 2,
-				"title": "Interaction type",
-				"popupContent": "<p>read more on interaction type in <a href='/ui/about' target='_blank' rel='noopener noreferrer' >about page</a> <sup><Icon name='external alternate' size='small' fitted /></sup></p>",
-				"options": [
-					{
-						"description": "cancer-cancer",
-						"index": 0,
-						"isChecked": false,
-						"mute": false,
-						"value": "cc"
-					},
-					{
-						"description": "cancer-stroma",
-						"index": 1,
-						"isChecked": false,
-						"mute": false,
-						"value": "cs"
-					},
-					{
-						"description": "normal-normal",
-						"index": 2,
-						"isChecked": false,
-						"mute": false,
-						"value": "nn"
-					},
-					{
-						"description": "stroma-cancer",
-						"index": 3,
-						"isChecked": false,
-						"mute": false,
-						"value": "sc"
-					},
-					{
-						"description": "stroma-stroma",
-						"index": 4,
-						"isChecked": false,
-						"mute": false,
-						"value": "ss"
-					}
-				],
-				"filteredOptions": []
-			},
-			{
-				"index": 3,
-				"title": "Tumor type",
-				"popupContent": null,
-				"options": [
-					{
-						"description": "Bladder Urothelial Carcinoma",
-						"index": 0,
-						"isChecked": false,
-						"mute": false,
-						"value": "BLCA"
-					},
-					{
-						"description": "Breast invasive carcinoma",
-						"index": 1,
-						"isChecked": false,
-						"mute": false,
-						"value": "BRCA"
-					},
-					{
-						"description": "Cervical squamous cell carcinoma and endocervical adenocarcinoma",
-						"index": 2,
-						"isChecked": false,
-						"mute": false,
-						"value": "CESC"
-					},
-					{
-						"description": "Colorectal carcinoma",
-						"index": 3,
-						"isChecked": false,
-						"mute": false,
-						"value": "CRC"
-					},
-					{
-						"description": "Esophageal carcinoma",
-						"index": 4,
-						"isChecked": false,
-						"mute": false,
-						"value": "ESCA"
-					},
-					{
-						"description": "Glioblastoma multiforme",
-						"index": 5,
-						"isChecked": false,
-						"mute": false,
-						"value": "GBM"
-					}
-				],
-				"filteredOptions": []
-			}
-		]
-	},
+	"CheckboxOptions": [
+		{
+			"index": 0,
+			"title": "Ligands",
+			"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+			"options": [
+				{
+					"index": 0,
+					"isChecked": false,
+					"mute": false,
+					"value": "A2M"
+				},
+				{
+					"index": 1,
+					"isChecked": false,
+					"mute": false,
+					"value": "AANAT"
+				},
+				{
+					"index": 2,
+					"isChecked": false,
+					"mute": false,
+					"value": "ADAM12"
+				},
+				{
+					"index": 3,
+					"isChecked": false,
+					"mute": false,
+					"value": "ADAM15"
+				},
+				{
+					"index": 4,
+					"isChecked": false,
+					"mute": false,
+					"value": "ADAM17"
+				}
+			],
+			"filteredOptions": []
+		},
+		{
+			"index": 1,
+			"title": "Receptors",
+			"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+			"options": [
+				{
+					"index": 0,
+					"isChecked": false,
+					"mute": false,
+					"value": "ACKR2"
+				},
+				{
+					"index": 1,
+					"isChecked": false,
+					"mute": false,
+					"value": "ACKR3"
+				},
+				{
+					"index": 2,
+					"isChecked": false,
+					"mute": false,
+					"value": "ACKR4"
+				},
+				{
+					"index": 3,
+					"isChecked": false,
+					"mute": false,
+					"value": "ACVR1"
+				},
+				{
+					"index": 4,
+					"isChecked": false,
+					"mute": false,
+					"value": "ACVR1B"
+				}
+			],
+			"filteredOptions": []
+		},
+		{
+			"index": 2,
+			"title": "Interaction type",
+			"popupContent": "<p>read more on interaction type in <a href='/ui/about' target='_blank' rel='noopener noreferrer' >about page</a> <sup><Icon name='external alternate' size='small' fitted /></sup></p>",
+			"options": [
+				{
+					"description": "cancer-cancer",
+					"index": 0,
+					"isChecked": false,
+					"mute": false,
+					"value": "cc"
+				},
+				{
+					"description": "cancer-stroma",
+					"index": 1,
+					"isChecked": false,
+					"mute": false,
+					"value": "cs"
+				},
+				{
+					"description": "normal-normal",
+					"index": 2,
+					"isChecked": false,
+					"mute": false,
+					"value": "nn"
+				},
+				{
+					"description": "stroma-cancer",
+					"index": 3,
+					"isChecked": false,
+					"mute": false,
+					"value": "sc"
+				},
+				{
+					"description": "stroma-stroma",
+					"index": 4,
+					"isChecked": false,
+					"mute": false,
+					"value": "ss"
+				}
+			],
+			"filteredOptions": []
+		},
+		{
+			"index": 3,
+			"title": "Tumor type",
+			"popupContent": null,
+			"options": [
+				{
+					"description": "Bladder Urothelial Carcinoma",
+					"index": 0,
+					"isChecked": false,
+					"mute": false,
+					"value": "BLCA"
+				},
+				{
+					"description": "Breast invasive carcinoma",
+					"index": 1,
+					"isChecked": false,
+					"mute": false,
+					"value": "BRCA"
+				},
+				{
+					"description": "Cervical squamous cell carcinoma and endocervical adenocarcinoma",
+					"index": 2,
+					"isChecked": false,
+					"mute": false,
+					"value": "CESC"
+				},
+				{
+					"description": "Colorectal carcinoma",
+					"index": 3,
+					"isChecked": false,
+					"mute": false,
+					"value": "CRC"
+				},
+				{
+					"description": "Esophageal carcinoma",
+					"index": 4,
+					"isChecked": false,
+					"mute": false,
+					"value": "ESCA"
+				},
+				{
+					"description": "Glioblastoma multiforme",
+					"index": 5,
+					"isChecked": false,
+					"mute": false,
+					"value": "GBM"
+				}
+			],
+			"filteredOptions": []
+		}
+	],
 	"DeconvData": [
 		{
-			"barPlotData": [
+			"barplotData": [
 				{
 					"name": "Cancer",
 					"value": 0.095
@@ -193,7 +191,7 @@
 				}
 			],
 			"gene": "AANAT",
-			"linePlotData": [
+			"lineplotData": [
 				{
 					"name": "Cancer",
 					"value": [1, 0.095]
@@ -203,7 +201,7 @@
 					"value": [0, 0.184]
 				}
 			],
-			"scatterPlotData": [
+			"scatterplotData": [
 				{
 					"name": "TCGA-2F-A9KO-01",
 					"value": [0.403, 0.044]
@@ -1820,7 +1818,7 @@
 			"tumorType": "Bladder Urothelial Carcinoma"
 		},
 		{
-			"barPlotData": [
+			"barplotData": [
 				{
 					"name": "Cancer",
 					"value": 0.165
@@ -1839,7 +1837,7 @@
 				}
 			],
 			"gene": "MTNR1B",
-			"linePlotData": [
+			"lineplotData": [
 				{
 					"name": "Cancer",
 					"value": [1, 0.165]
@@ -1849,7 +1847,7 @@
 					"value": [0, 0.118]
 				}
 			],
-			"scatterPlotData": [
+			"scatterplotData": [
 				{
 					"name": "TCGA-2F-A9KO-01",
 					"value": [0.403, 0.126]

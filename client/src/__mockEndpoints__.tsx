@@ -3,10 +3,8 @@ import { setupServer } from "msw/node";
 import { API_URL, FilterMetadata } from "./utils/backendRequests";
 import { DeconvData, CheckboxOptions } from "./__mockdata__.json";
 
-export const OptionsPerCard = (CheckboxOptions[
-	"filters"
-] as FilterMetadata[]).map((filter) =>
-	filter.options.map((option) => option.value)
+export const OptionsPerCard = (CheckboxOptions as FilterMetadata[]).map(
+	(filter) => filter.options.map((option) => option.value)
 );
 
 function generateData(
@@ -41,7 +39,7 @@ function generateData(
 
 const Endpoints = [
 	rest.get(API_URL + "/v1/options/checkbox", (req, res, ctx) => {
-		return res(ctx.status(200), ctx.json(CheckboxOptions["filters"]));
+		return res(ctx.status(200), ctx.json(CheckboxOptions));
 	}),
 	rest.get(API_URL + "/v1/scores", (req, res, ctx) => {
 		let ligands = req.url.searchParams
