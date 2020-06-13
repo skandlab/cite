@@ -5,7 +5,7 @@ import { ColumnBrowserType } from "../views/hoc/columnBrowser";
 import { browserHistory } from "./browserHistory";
 import { ROUTES } from "./routes";
 
-export const API_URL = "http://localhost:5000/server";
+export const API_URL = "/server";
 
 export type FilterMetadata = {
 	index: number;
