@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import {
 	Grid,
 	Menu,
@@ -22,20 +21,16 @@ interface Props {
 	currentRoute: string;
 }
 
-const StyledImageMenuItem = styled(Menu.Item)`
-	padding-left: 0 !important;
-`;
-
 const CommonMenu = () => (
 	<>
-		<StyledImageMenuItem>
+		<Menu.Item>
 			<Image
 				size="mini"
 				src={URL_NAVBAR_LOGO}
 				alt="cite-logo"
 				onClick={() => browserHistory.push(ROUTES.Home.push())}
 			/>
-		</StyledImageMenuItem>
+		</Menu.Item>
 		<Menu.Item>
 			<Responsive maxWidth={1000}>
 				<Header as="h2">
