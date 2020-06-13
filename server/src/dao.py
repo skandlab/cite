@@ -23,5 +23,5 @@ with open(settings.DATA_METADATA_FILEPATH, "r") as f:
 with open(settings.DATA_FILTERS_FILEPATH, "r") as f:
     dataFilters = json.load(f)
 
-with open(settings.DATA_DECONV_VALUES_FILEPATH, "r") as f:
-    deconvValues = json.load(f)
+with open(settings.DATA_DECONV_VALUES_FILEPATH, "rb") as f:
+    deconvValues = pickle.load(f)

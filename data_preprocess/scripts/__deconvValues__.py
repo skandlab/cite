@@ -1,5 +1,4 @@
 import pandas as pd
-import json
 import pickle
 import numpy as np
 
@@ -7,7 +6,7 @@ INPUT_EXP_FILE = "source/deconv_logx+1nt_pct1.csv"
 SAMPLES_EXP_FILE = "source/coding_expr_mut.pkl"
 MAPPING_TUMOR_SAMPLES = "source/mapping_tumor_samples.pickle"
 PURITY_FILE = "source/purity.parquet"
-OUTPUT_DECONV_VALUES_FILE = "output/deconvValues.json"
+OUTPUT_DECONV_VALUES_FILE = "output/deconvValues.pickle"
 
 with open(MAPPING_TUMOR_SAMPLES, "rb") as f:
     mapping_tumor_samples = pickle.load(f)
@@ -87,7 +86,7 @@ def run(ligandList, receptorList):
 
         result[hashedKey] = data
 
-    with open(OUTPUT_DECONV_VALUES_FILE, "w") as f:
-        json.dump(
+    with open(OUTPUT_DECONV_VALUES_FILE, "wb") as f:
+        pickle.dump(
             result, f,
         )
