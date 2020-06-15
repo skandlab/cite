@@ -59,3 +59,11 @@ docker-compose up -d
     sudo yum install -y epel-release
     sudo yum install -y clamav
     ```
+-   pylint command
+    ```python
+    pytest -s --disable-warnings --cov src --cov-config pycov.ini src/*Test.py
+    ```
+-   pytest command
+    ```python
+    pylint --rcfile pylintrc.ini src > report_pylint.txt
+    ```
