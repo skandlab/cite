@@ -54,7 +54,10 @@ def get_score(
         and paramsInteractionList == []
         and paramsTumorList == []
     ):
-        return dao.DB_INSTANCE.defaultScores
+        return (
+            dao.DB_INSTANCE.defaultScores["scores"],
+            dao.DB_INSTANCE.defaultScores["itemIsPresent"],
+        )
 
     ligandList, receptorList, interactionList, tumorList = __check_if_all__(
         paramsLigandList, paramsReceptorList, paramsInteractionList, paramsTumorList
