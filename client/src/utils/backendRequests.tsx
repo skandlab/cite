@@ -5,14 +5,21 @@ import { ColumnBrowserType } from "../views/hoc/columnBrowser";
 import { browserHistory } from "./browserHistory";
 import { ROUTES } from "./routes";
 
-axios.defaults.baseURL = "/server";
+axios.defaults.baseURL = "http://localhost:5000/server";
 
 export type FilterMetadata = {
-	index: number;
+	filterIndex: number;
 	title: string;
 	popupContent: SemanticShorthandContent;
 	options: ColumnBrowserType[];
 	filteredOptions: ColumnBrowserType[];
+};
+
+export type ItemIsPresentType = {
+	filterType: string;
+	itemIsPresent: {
+		[key: string]: boolean;
+	};
 };
 
 export type HeatmapCardType = {
@@ -50,7 +57,11 @@ const API_SCORES = (args: string[][]) =>
 	args[3].join(",");
 
 export const requestCheckboxOptionsAndScores = async (
-	callBack: (data1: FilterMetadata[], data: HeatmapCardType[]) => void
+	callBack: (
+		data1: FilterMetadata[],
+		data2: HeatmapCardType[],
+		data3: ItemIsPresentType[]
+	) => void
 ) =>
 	await axios
 		.all([
@@ -66,21 +77,27 @@ export const requestCheckboxOptionsAndScores = async (
 		.then((resp) =>
 			callBack(
 				resp[0].data as FilterMetadata[],
-				resp[1].data as HeatmapCardType[]
+				resp[1].data["scores"] as HeatmapCardType[],
+				resp[1].data["itemIsPresent"] as ItemIsPresentType[]
 			)
 		)
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
 export const requestScores = async (
 	args: string[][],
-	callBack: (data: HeatmapCardType[]) => void
+	callBack: (data1: HeatmapCardType[], data2: ItemIsPresentType[]) => void
 ) =>
 	await axios
 		.request({
 			method: "GET",
 			url: API_SCORES([...args]),
 		})
-		.then((resp) => callBack(resp.data as HeatmapCardType[]))
+		.then((resp) =>
+			callBack(
+				resp.data["scores"] as HeatmapCardType[],
+				resp.data["itemIsPresent"] as ItemIsPresentType[]
+			)
+		)
 		.catch((_) => browserHistory.push(ROUTES.Error.push()));
 
 export const requestExp = async (

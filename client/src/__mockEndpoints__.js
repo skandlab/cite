@@ -8,13 +8,18 @@ let CheckboxOptions = data["CheckboxOptions"];
 const app = express();
 app.use(cors());
 
-app.get("/", (req, res) => {
-	res.send("Hello world!");
-});
-
 const OptionsPerCard = CheckboxOptions.map((filter) =>
 	filter.options.map((option) => option.value)
 );
+
+let a = {};
+OptionsPerCard[0].forEach((item) => (a[item] = true));
+let b = {};
+OptionsPerCard[1].forEach((item) => (b[item] = true));
+let c = {};
+OptionsPerCard[2].forEach((item) => (c[item] = false));
+let d = {};
+OptionsPerCard[3].forEach((item) => (d[item] = false));
 
 function generateData(
 	card0 = OptionsPerCard[0], // ligands
@@ -23,8 +28,12 @@ function generateData(
 	card3 = OptionsPerCard[3] // tumors
 ) {
 	let result = [];
+	let l = { ...a };
+	let r = { ...b };
 	for (let i = 0; i < card0.length; i++) {
 		for (let j = 0; j < card1.length; j++) {
+			l[card0[i]] = false;
+			r[card1[j]] = false;
 			result.push({
 				ligand: card0[i],
 				receptor: card1[j],
@@ -43,7 +52,16 @@ function generateData(
 			});
 		}
 	}
-	return result;
+
+	return {
+		scores: result,
+		itemIsPresent: [
+			{ filterType: "ligands", itemIsPresent: l },
+			{ filterType: "receptors", itemIsPresent: r },
+			{ filterType: "interactions", itemIsPresent: c },
+			{ filterType: "tumors", itemIsPresent: d },
+		],
+	};
 }
 
 // Endpoints

@@ -80,6 +80,9 @@ exports[`snapshot testing initial render 1`] = `
                       >
                         cc
                       </label>
+                      <small>
+                        cancer-cancer
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -112,6 +115,9 @@ exports[`snapshot testing initial render 1`] = `
                       >
                         cs
                       </label>
+                      <small>
+                        cancer-stroma
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -144,6 +150,9 @@ exports[`snapshot testing initial render 1`] = `
                       >
                         nn
                       </label>
+                      <small>
+                        normal-normal
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -176,6 +185,9 @@ exports[`snapshot testing initial render 1`] = `
                       >
                         sc
                       </label>
+                      <small>
+                        stroma-stroma
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -301,13 +313,16 @@ exports[`snapshot testing one item is checked 1`] = `
                       >
                         sc
                       </label>
+                      <small>
+                        stroma-stroma
+                      </small>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="css-tescqt"
+              class="css-1fj4a12"
             >
               <div
                 class="item"
@@ -333,13 +348,16 @@ exports[`snapshot testing one item is checked 1`] = `
                       >
                         cc
                       </label>
+                      <small>
+                        cancer-cancer
+                      </small>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="css-tescqt"
+              class="css-1fj4a12"
             >
               <div
                 class="item"
@@ -365,13 +383,16 @@ exports[`snapshot testing one item is checked 1`] = `
                       >
                         cs
                       </label>
+                      <small>
+                        cancer-stroma
+                      </small>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div
-              class="css-tescqt"
+              class="css-1fj4a12"
             >
               <div
                 class="item"
@@ -397,6 +418,9 @@ exports[`snapshot testing one item is checked 1`] = `
                       >
                         nn
                       </label>
+                      <small>
+                        normal-normal
+                      </small>
                     </div>
                   </div>
                 </div>

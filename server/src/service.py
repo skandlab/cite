@@ -81,7 +81,11 @@ def get_score(
 
     result = []
     index = 0
+    ligandSet = set()
+    receptorSet = set()
     for [ligand, receptor] in pairs:
+        ligandSet.add(ligand)
+        receptorSet.add(receptor)
         result.append(
             {
                 "ligand": ligand,
@@ -94,4 +98,30 @@ def get_score(
             }
         )
         index = index + len(tumorList)
-    return result
+    return result, __generateItemIsPresent__(ligandSet, receptorSet)
+
+
+def __generateItemIsPresent__(
+    params_ligandList: List[str], params_receptorList: List[str]
+):
+    ldic = dao.DB_INSTANCE.ligandDic.copy()
+    rdic = dao.DB_INSTANCE.receptorDic.copy()
+    if len(params_ligandList) == len(dao.DB_INSTANCE.ligandList):
+        ldic = dao.DB_INSTANCE.ligandAllDic
+    else:
+        for ligand in params_ligandList:
+            ldic[ligand] = False
+    if len(params_receptorList) == len(dao.DB_INSTANCE.receptorList):
+        rdic = dao.DB_INSTANCE.receptorAllDic
+    else:
+        for receptor in params_receptorList:
+            rdic[receptor] = False
+    return [
+        {"filterType": "ligand", "itemIsPresent": ldic},
+        {"filterType": "receptor", "itemIsPresent": rdic},
+        {
+            "filterType": "interaction",
+            "itemIsPresent": dao.DB_INSTANCE.interactionAllDic,
+        },
+        {"filterType": "tumor", "itemIsPresent": dao.DB_INSTANCE.tumorAllDic},
+    ]

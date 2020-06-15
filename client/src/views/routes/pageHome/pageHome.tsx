@@ -2,7 +2,6 @@
  * external imports
  */
 import React from "react";
-import styled from "@emotion/styled";
 
 /**
  * ui elements
@@ -21,10 +20,12 @@ import {
 	requestCheckboxOptionsAndScores,
 	HeatmapCardType,
 	FilterMetadata,
+	ItemIsPresentType,
 } from "../../../utils/backendRequests";
 
 interface State {
 	filters: FilterMetadata[];
+	itemIsPresent: ItemIsPresentType[];
 	scoreData: HeatmapCardType[];
 	loading: boolean;
 	isFetching: boolean[];
@@ -36,6 +37,7 @@ export class HomePage extends React.Component<{}, State> {
 
 		this.state = {
 			filters: [],
+			itemIsPresent: [],
 			scoreData: [],
 			loading: true,
 			isFetching: [],
@@ -46,11 +48,12 @@ export class HomePage extends React.Component<{}, State> {
 	 * on mount get options and data
 	 */
 	async componentDidMount() {
-		await requestCheckboxOptionsAndScores((data1, data2) =>
+		await requestCheckboxOptionsAndScores((data1, data2, data3) =>
 			this.setState({
 				...this.state,
 				filters: data1,
 				scoreData: data2,
+				itemIsPresent: data3,
 				loading: false,
 				isFetching: data1.map((_d) => false),
 			})
@@ -63,7 +66,7 @@ export class HomePage extends React.Component<{}, State> {
 	handleToggleCheckbox = (
 		filterIndex: number,
 		selectedOption: ColumnBrowserType,
-		selectedfilterIndex: number
+		selectedOptionIndex: number
 	) => {
 		let { options, filteredOptions } = this.state.filters[filterIndex];
 
@@ -75,8 +78,8 @@ export class HomePage extends React.Component<{}, State> {
 			filteredOptions.push(selectedOption);
 		} else {
 			filteredOptions = [
-				...filteredOptions.slice(0, selectedfilterIndex),
-				...filteredOptions.slice(selectedfilterIndex + 1),
+				...filteredOptions.slice(0, selectedOptionIndex),
+				...filteredOptions.slice(selectedOptionIndex + 1),
 			];
 		}
 
@@ -104,10 +107,11 @@ export class HomePage extends React.Component<{}, State> {
 				],
 			},
 			async () =>
-				await requestScores(apiArgs, (data) =>
+				await requestScores(apiArgs, (data1, data2) =>
 					this.setState({
 						...this.state,
-						scoreData: data,
+						scoreData: data1,
+						itemIsPresent: data2,
 						filters: tmpFilterState,
 						isFetching: [
 							...this.state.isFetching.slice(0, filterIndex),
@@ -154,10 +158,11 @@ export class HomePage extends React.Component<{}, State> {
 				],
 			},
 			async () =>
-				await requestScores(apiArgs, (data) =>
+				await requestScores(apiArgs, (data1, data2) =>
 					this.setState({
 						...this.state,
-						scoreData: data,
+						scoreData: data1,
+						itemIsPresent: data2,
 						filters: tmpFilterState,
 						isFetching: [
 							...this.state.isFetching.slice(0, filterIndex),
@@ -175,11 +180,15 @@ export class HomePage extends React.Component<{}, State> {
 				<Grid.Row centered>
 					<GridColumn>
 						<Card.Group centered>
-							{this.state.filters.map((filter, filterIndex) => (
+							{this.state.filters.map((filter, index) => (
 								<ColumnBrowser
 									{...filter}
-									key={filter.index}
-									loading={this.state.isFetching[filterIndex]}
+									itemIsPresent={
+										this.state.itemIsPresent[index]
+											.itemIsPresent
+									}
+									key={index}
+									loading={this.state.isFetching[index]}
 									handleToggleCheckbox={
 										this.handleToggleCheckbox
 									}
@@ -190,11 +199,6 @@ export class HomePage extends React.Component<{}, State> {
 					</GridColumn>
 				</Grid.Row>
 				{!this.state.loading && <DataDisplayGrid {...this.state} />}
-				{this.state.loading && (
-					<LoaderText>
-						<p>Loading...</p>
-					</LoaderText>
-				)}
 			</>
 		) : (
 			<Dimmer inverted active page>
@@ -203,8 +207,3 @@ export class HomePage extends React.Component<{}, State> {
 		);
 	}
 }
-
-const LoaderText = styled.span`
-	position: absolute;
-	bottom: 0;
-`;

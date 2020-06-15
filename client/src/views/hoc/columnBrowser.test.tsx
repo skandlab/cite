@@ -14,26 +14,37 @@ const options = [
 		value: "cc",
 		mute: false,
 		isChecked: false,
+		description: "cancer-cancer",
 	},
 	{
 		index: 1,
 		value: "cs",
 		mute: false,
 		isChecked: false,
+		description: "cancer-stroma",
 	},
 	{
 		index: 2,
 		value: "nn",
 		mute: false,
 		isChecked: false,
+		description: "normal-normal",
 	},
 	{
 		index: 3,
 		value: "sc",
 		mute: false,
 		isChecked: false,
+		description: "stroma-stroma",
 	},
 ];
+
+const itemIsPresent = {
+	cc: false,
+	cs: false,
+	nn: false,
+	sc: false,
+};
 
 /**
  * nothing is selected
@@ -41,12 +52,13 @@ const options = [
 const NoCheckedRender = () =>
 	render(
 		<ColumnBrowser
-			index={0}
+			filterIndex={0}
 			title="Interaction type"
 			popupContent={
 				<p>if no associated heatmap present then gene will be dimmed</p>
 			}
 			options={options}
+			itemIsPresent={itemIsPresent}
 			loading={false}
 			filteredOptions={[]}
 			handleToggleCheckbox={mockedHandleToggleCheckbox}
@@ -60,15 +72,21 @@ const NoCheckedRender = () =>
 const OneCheckedRender = () =>
 	render(
 		<ColumnBrowser
-			index={0}
+			filterIndex={0}
 			title="Interaction type"
 			popupContent={
 				<p>if no associated heatmap present then gene will be dimmed</p>
 			}
 			options={[
-				...options.slice(0, 3),
 				{ ...options[3], isChecked: true },
+				...options.slice(0, 3),
 			]}
+			itemIsPresent={{
+				sc: false,
+				cc: true,
+				cs: true,
+				nn: true,
+			}}
 			loading={false}
 			filteredOptions={[{ ...options[3], isChecked: true }]}
 			handleToggleCheckbox={mockedHandleToggleCheckbox}
@@ -90,10 +108,10 @@ describe("snapshot testing", () => {
 		TestState(
 			"",
 			[
-				{ item: "cc", checked: false },
-				{ item: "cs", checked: false },
-				{ item: "nn", checked: false },
-				{ item: "sc", checked: false },
+				{ item: "cc", checked: false, muted: false },
+				{ item: "cs", checked: false, muted: false },
+				{ item: "nn", checked: false, muted: false },
+				{ item: "sc", checked: false, muted: false },
 			],
 			"0 / 4",
 			true
@@ -107,14 +125,37 @@ describe("snapshot testing", () => {
 		TestState(
 			"",
 			[
-				{ item: "sc", checked: true },
-				{ item: "cc", checked: false },
-				{ item: "cs", checked: false },
-				{ item: "nn", checked: false },
+				{ item: "sc", checked: true, muted: false },
+				{ item: "cc", checked: false, muted: true },
+				{ item: "cs", checked: false, muted: true },
+				{ item: "nn", checked: false, muted: true },
 			],
 			"1 / 4",
 			false
 		);
+	});
+
+	test("loading", () => {
+		const { asFragment } = render(
+			<ColumnBrowser
+				filterIndex={0}
+				title="Interaction type"
+				popupContent={
+					<p>
+						if no associated heatmap present then gene will be
+						dimmed
+					</p>
+				}
+				options={options}
+				itemIsPresent={itemIsPresent}
+				loading={true}
+				filteredOptions={[]}
+				handleToggleCheckbox={mockedHandleToggleCheckbox}
+				handleReset={mockedHandleReset}
+			/>
+		);
+
+		expect(screen.getByRole("img"));
 	});
 });
 
@@ -166,10 +207,20 @@ describe("test filter input", () => {
 		 * filter "n"
 		 */
 		fireEvent.change(getFilterInput(), { target: { value: "n" } });
-		TestState("n", [{ item: "nn", checked: false }], "1 / 4", false);
+		TestState(
+			"n",
+			[{ item: "nn", checked: false, muted: true }],
+			"1 / 4",
+			false
+		);
 
 		fireEvent.change(getFilterInput(), { target: { value: "s" } });
-		TestState("s", [{ item: "sc", checked: true }], "1 / 4", false);
+		TestState(
+			"s",
+			[{ item: "sc", checked: true, muted: false }],
+			"1 / 4",
+			false
+		);
 
 		/**
 		 * reset,
@@ -181,10 +232,10 @@ describe("test filter input", () => {
 		TestState(
 			"",
 			[
-				{ item: "cc", checked: false },
-				{ item: "cs", checked: false },
-				{ item: "nn", checked: false },
-				{ item: "sc", checked: true },
+				{ item: "cc", checked: false, muted: true },
+				{ item: "cs", checked: false, muted: true },
+				{ item: "nn", checked: false, muted: true },
+				{ item: "sc", checked: true, muted: false },
 			],
 			"1 / 4",
 			false
@@ -201,8 +252,8 @@ describe("test filter input", () => {
 		TestState(
 			"c",
 			[
-				{ item: "cc", checked: false },
-				{ item: "cs", checked: false },
+				{ item: "cc", checked: false, muted: false },
+				{ item: "cs", checked: false, muted: false },
 			],
 			"0 / 4",
 			true
@@ -215,10 +266,10 @@ describe("test filter input", () => {
 		TestState(
 			"",
 			[
-				{ item: "cc", checked: false },
-				{ item: "cs", checked: false },
-				{ item: "nn", checked: false },
-				{ item: "sc", checked: false },
+				{ item: "cc", checked: false, muted: false },
+				{ item: "cs", checked: false, muted: false },
+				{ item: "nn", checked: false, muted: false },
+				{ item: "sc", checked: false, muted: false },
 			],
 			"0 / 4",
 			true
@@ -239,15 +290,31 @@ describe("test filter input", () => {
  */
 export function TestState(
 	filterValue: string,
-	checkboxList: { item: string; checked: boolean }[],
+	checkboxList: { item: string; checked: boolean; muted: boolean }[],
 	statistic: string,
 	disabled: boolean
 ) {
 	expect(getFilterInput()).toHaveValue(filterValue);
-	checkboxList.forEach(({ item, checked }) => {
+	checkboxList.forEach(({ item, checked, muted }) => {
 		checked
 			? expect(getCheckbox(item)).toHaveClass("ui checked checkbox")
 			: expect(getCheckbox(item)).not.toHaveClass("ui checked checkbox");
+
+		if (muted) {
+			expect(
+				getCheckbox(item).getElementsByTagName("label")[0]
+			).toHaveStyle(`color: #b3b3b3`);
+			expect(
+				getCheckbox(item).getElementsByTagName("small")[0]
+			).toHaveStyle(`color: #b3b3b3`);
+		} else {
+			expect(
+				getCheckbox(item).getElementsByTagName("label")[0]
+			).toHaveStyle(`color: #4a4f59`);
+			expect(
+				getCheckbox(item).getElementsByTagName("small")[0]
+			).toHaveStyle(`color: #4a4f59`);
+		}
 	});
 	expect(getCheckboxListChilds()).toHaveLength(checkboxList.length);
 	expect(getStatistic()).toHaveTextContent(statistic);

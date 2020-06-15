@@ -8,7 +8,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
         json.dump(
             [
                 {
-                    "index": 0,
+                    "filterIndex": 0,
                     "title": "Ligands",
                     "popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
                     "options": [
@@ -23,7 +23,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                     "filteredOptions": [],
                 },
                 {
-                    "index": 1,
+                    "filterIndex": 1,
                     "title": "Receptors",
                     "popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
                     "options": [
@@ -38,7 +38,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                     "filteredOptions": [],
                 },
                 {
-                    "index": 2,
+                    "filterIndex": 2,
                     "title": "Interaction Type",
                     "popupContent": "<p>read more on interaction type in <a href='/ui/about' target='_blank' rel='noopener noreferrer' >about page</a> <sup><Icon name='external alternate' size='small' fitted /></sup></p>",
                     "options": [
@@ -54,7 +54,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                     "filteredOptions": [],
                 },
                 {
-                    "index": 3,
+                    "filterIndex": 3,
                     "title": "Tumor Type",
                     "popupContent": None,
                     "options": [

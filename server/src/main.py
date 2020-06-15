@@ -109,16 +109,17 @@ def endpoint_score():
         parsedParams["tumors"],
     )
 
-    return jsonify(
-        service.get_score(ligandList, receptorList, interactionList, tumorList)
+    scores, itemIsPresent = service.get_score(
+        ligandList, receptorList, interactionList, tumorList
     )
+    return jsonify({"scores": scores, "itemIsPresent": itemIsPresent})
 
 
 @app.route("/options/checkbox", methods=["GET"])
 def endpoint_checkboxOptions():
     """
     Array<{
-        index: number;
+        filterIndex: number;
         title: string;
         popupContent: SemanticShorthandContent;
         options: ColumnBrowserType[];
