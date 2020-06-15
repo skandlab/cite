@@ -1,4 +1,6 @@
+from typing import Dict
 from flask import jsonify, Blueprint, request
+from werkzeug.datastructures import MultiDict
 import numpy as np
 
 from . import settings
@@ -15,14 +17,33 @@ app = Blueprint(
 )
 
 
-REQUIRED_EXP_QUERY_PARAMETERS = ["genes", "tumortype"]
+def helpers(requestParams: MultiDict, requiredParams: Dict):
+    for query_param in requiredParams.keys():
+        if query_param not in requestParams:
+            raise error.ValidationError(
+                "required query parameter not present: {}".format(query_param)
+            )
+
+    parsedParams = {}
+    for queryParam, queryParamType in requiredParams.items():
+        value = requestParams.get(queryParam)
+        if queryParamType == bool:
+            parsedParams[queryParam] = value.lower() == "true"
+        elif queryParamType == list:
+            parsedParams[queryParam] = [val for val in value.split(",") if val != ""]
+        else:
+            parsedParams[queryParam] = value
+    return parsedParams
+
+
+REQUIRED_EXP_QUERY_PARAMETERS = {"genes": list, "tumortype": str}
 
 
 @app.route("/deconv", methods=["GET"])
 def endpoint_exp():
     """
     array of length 2
-    
+
     Array<{
         gene: string;
         tumorType: string;
@@ -40,26 +61,27 @@ def endpoint_exp():
         }[];
     }>
     """
-    query_params_present = [k for k in request.values.keys()]
+    parsedParams = helpers(request.args, REQUIRED_EXP_QUERY_PARAMETERS,)
 
-    for query_param in REQUIRED_EXP_QUERY_PARAMETERS:
-        if query_param not in query_params_present:
-            raise error.ValidationError(
-                "required query parameter not present: {}".format(query_param)
-            )
-
-    geneList = request.values.get("genes").split(",")
-    tumorType = request.values.get("tumortype")
+    geneList, tumorType = (
+        parsedParams["genes"],
+        parsedParams["tumortype"],
+    )
 
     return jsonify(
         [
-            dao.deconvValues["{}_{}".format(geneList[0], tumorType)],
-            dao.deconvValues["{}_{}".format(geneList[1], tumorType)],
+            dao.DB_INSTANCE.deconvValues["{}_{}".format(geneList[0], tumorType)],
+            dao.DB_INSTANCE.deconvValues["{}_{}".format(geneList[1], tumorType)],
         ]
     )
 
 
-REQUIRED_SCORES_QUERY_PARAMETERS = ["ligands", "receptors", "interactions", "tumors"]
+REQUIRED_SCORES_QUERY_PARAMETERS = {
+    "ligands": list,
+    "receptors": list,
+    "interactions": list,
+    "tumors": list,
+}
 
 
 @app.route("/scores", methods=["GET"])
@@ -78,19 +100,13 @@ def endpoint_score():
         indexBy: string;
     }
     """
-    query_params_present = [k for k in request.values.keys()]
-
-    for query_param in REQUIRED_SCORES_QUERY_PARAMETERS:
-        if query_param not in query_params_present:
-            raise error.ValidationError(
-                "required query parameter not present: {}".format(query_param)
-            )
+    parsedParams = helpers(request.args, REQUIRED_SCORES_QUERY_PARAMETERS)
 
     ligandList, receptorList, interactionList, tumorList = (
-        request.values.get("ligands").strip().split(","),
-        request.values.get("receptors").strip().split(","),
-        request.values.get("interactions").strip().split(","),
-        request.values.get("tumors").strip().split(","),
+        parsedParams["ligands"],
+        parsedParams["receptors"],
+        parsedParams["interactions"],
+        parsedParams["tumors"],
     )
 
     return jsonify(
@@ -109,4 +125,4 @@ def endpoint_checkboxOptions():
         filteredOptions: ColumnBrowserType[];
     }>
     """
-    return jsonify(dao.dataFilters)
+    return jsonify(dao.DB_INSTANCE.dataFilters)

@@ -12,14 +12,14 @@ def __check_if_all__(
     interactionList: List[str],
     tumorList: List[str],
 ):
-    if len(ligandList) == 1 and len(ligandList[0]) == 0:
-        ligandList = dao.ligandList
-    if len(receptorList) == 1 and len(receptorList[0]) == 0:
-        receptorList = dao.receptorList
-    if len(interactionList) == 1 and len(interactionList[0]) == 0:
-        interactionList = dao.interactionList
-    if len(tumorList) == 1 and len(tumorList[0]) == 0:
-        tumorList = dao.tumorList
+    if not ligandList:
+        ligandList = dao.DB_INSTANCE.ligandList
+    if not receptorList:
+        receptorList = dao.DB_INSTANCE.receptorList
+    if not interactionList:
+        interactionList = dao.DB_INSTANCE.interactionList
+    if not tumorList:
+        tumorList = dao.DB_INSTANCE.tumorList
     return ligandList, receptorList, interactionList, tumorList
 
 
@@ -29,17 +29,17 @@ def __validate__(
     interactionList: List[str],
     tumorList: List[str],
 ):
-    if len(np.setdiff1d(ligandList, dao.ligandList)) != 0:
+    if len(np.setdiff1d(ligandList, dao.DB_INSTANCE.ligandList)) != 0:
         raise error.ValidationError("Invalid ligand in query: {}".format(ligandList))
-    if len(np.setdiff1d(receptorList, dao.receptorList)) != 0:
+    if len(np.setdiff1d(receptorList, dao.DB_INSTANCE.receptorList)) != 0:
         raise error.ValidationError(
             "Invalid receptor in query: {}".format(receptorList)
         )
-    if len(np.setdiff1d(interactionList, dao.interactionList)) != 0:
+    if len(np.setdiff1d(interactionList, dao.DB_INSTANCE.interactionList)) != 0:
         raise error.ValidationError(
             "Invalid interaction in query: {}".format(interactionList)
         )
-    if len(np.setdiff1d(tumorList, dao.tumorList)) != 0:
+    if len(np.setdiff1d(tumorList, dao.DB_INSTANCE.tumorList)) != 0:
         raise error.ValidationError("Invalid tumor in query: {}".format(tumorList))
 
 
@@ -51,25 +51,29 @@ def get_score(
     params_tumorList: List[str],
 ):
     if (
-        params_ligandList == [""]
-        and params_receptorList == [""]
-        and params_interactionList == [""]
-        and params_tumorList == [""]
+        params_ligandList == []
+        and params_receptorList == []
+        and params_interactionList == []
+        and params_tumorList == []
     ):
-        return dao.defaultScores
+        return dao.DB_INSTANCE.defaultScores
 
     ligandList, receptorList, interactionList, tumorList = __check_if_all__(
         params_ligandList, params_receptorList, params_interactionList, params_tumorList
     )
     __validate__(ligandList, receptorList, interactionList, tumorList)
 
+    # get indexes of the scores dataframe to query
     indexes = np.intersect1d(
-        dao.mapLigandIndex.loc[ligandList, "index"].values,
-        dao.mapReceptorIndex.loc[receptorList, "index"].values,
+        dao.DB_INSTANCE.mapTumorIndex.loc[tumorList, "index"].values,
+        np.intersect1d(
+            dao.DB_INSTANCE.mapLigandIndex.loc[ligandList, "index"].values,
+            dao.DB_INSTANCE.mapReceptorIndex.loc[receptorList, "index"].values,
+        ),
     )
-    indexes = np.intersect1d(indexes, dao.mapTumorIndex.loc[tumorList, "index"].values)
 
-    tmpdf = dao.dfScores.iloc[indexes][["tumorType", *interactionList]]
+    # create a slice of the scores dataframe based on above indices and interaction types
+    tmpdf = dao.DB_INSTANCE.dfScores.iloc[indexes][["tumorType", *interactionList]]
 
     pairs = np.sort(tmpdf.index.unique())
     # sort scores according to pairs

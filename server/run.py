@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from src import settings
 from src import main
 from src import error
+from src import dao
 
 from logging import getLogger
 
@@ -31,4 +32,7 @@ def UrlNotFoundHandler(error):
 
 
 if __name__ == "__main__":
+    dao.init()
+    if dao.DB_INSTANCE is None:
+        LOGGER.error("database not initialized")
     app.run()
