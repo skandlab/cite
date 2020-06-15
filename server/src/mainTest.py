@@ -4,7 +4,7 @@ from flask import Flask
 from . import main
 
 app = Flask(__name__)
-app.register_blueprint(main.app)
+app.register_blueprint(main.APP)
 testClient = app.test_client()
 
 

@@ -1,27 +1,25 @@
 from typing import Dict
+from logging import getLogger
 from flask import jsonify, Blueprint, request
 from werkzeug.datastructures import MultiDict
-import numpy as np
 
 from . import settings
 from . import service
 from . import dao
 from . import error
 
-from logging import getLogger
-
 LOGGER = getLogger(__name__)
 
-app = Blueprint(
+APP = Blueprint(
     "Main", __name__, url_prefix="{}/{}".format(settings.API_NAME, settings.API_VERSION)
 )
 
 
 def helpers(requestParams: MultiDict, requiredParams: Dict):
-    for query_param in requiredParams.keys():
-        if query_param not in requestParams:
+    for queryParam in requiredParams.keys():
+        if queryParam not in requestParams:
             raise error.ValidationError(
-                "required query parameter not present: {}".format(query_param)
+                "required query parameter not present: {}".format(queryParam)
             )
 
     parsedParams = {}
@@ -39,7 +37,7 @@ def helpers(requestParams: MultiDict, requiredParams: Dict):
 REQUIRED_EXP_QUERY_PARAMETERS = {"genes": list, "tumortype": str}
 
 
-@app.route("/deconv", methods=["GET"])
+@APP.route("/deconv", methods=["GET"])
 def endpoint_exp():
     """
     array of length 2
@@ -84,7 +82,7 @@ REQUIRED_SCORES_QUERY_PARAMETERS = {
 }
 
 
-@app.route("/scores", methods=["GET"])
+@APP.route("/scores", methods=["GET"])
 def endpoint_score():
     """
     Array<{
@@ -115,8 +113,8 @@ def endpoint_score():
     return jsonify({"scores": scores, "itemIsPresent": itemIsPresent})
 
 
-@app.route("/options/checkbox", methods=["GET"])
-def endpoint_checkboxOptions():
+@APP.route("/options/checkbox", methods=["GET"])
+def endpoint_checkboxoptions():
     """
     Array<{
         filterIndex: number;

@@ -1,17 +1,23 @@
-import pytest
 import pandas as pd
 from . import dao
 
-_l = []
-for l in ["A", "B", "C"]:
-    for r in ["D", "E"]:
-        for t in ["CRC", "LUAD"]:
-            _l.append({"ligand": l, "receptor": r, "tumorType": t, "cc": 1, "nn": 3})
-scores = pd.DataFrame(_l)
 
-
-class mock:
+class Mock:
     def __init__(self):
+        tmpList = []
+        for ligand in ["A", "B", "C"]:
+            for receptor in ["D", "E"]:
+                for tumor in ["CRC", "LUAD"]:
+                    tmpList.append(
+                        {
+                            "ligand": ligand,
+                            "receptor": receptor,
+                            "tumorType": tumor,
+                            "cc": 1,
+                            "nn": 3,
+                        }
+                    )
+        scores = pd.DataFrame(tmpList)
         self.defaultScores = (
             [
                 {
@@ -134,4 +140,4 @@ class mock:
         ]
 
 
-dao.DB_INSTANCE = mock()
+dao.DB_INSTANCE = Mock()

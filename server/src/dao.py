@@ -1,6 +1,6 @@
-import pandas as pd
 import pickle
 import json
+import pandas as pd
 from . import settings
 
 DB_INSTANCE = None
@@ -23,11 +23,11 @@ class DAO:
         self.mapTumorIndex = pd.read_parquet(settings.DATA_MAP_TUMOR_INDEX_FILEPATH)
         self.dfScores = pd.read_parquet(settings.DATA_SCORES_FILEPATH)
 
-        with open(settings.DATA_DEFAULT_SCORES_FILEPATH, "r") as f:
-            self.defaultScores = json.load(f)
+        with open(settings.DATA_DEFAULT_SCORES_FILEPATH, "r") as file:
+            self.defaultScores = json.load(file)
 
-        with open(settings.DATA_METADATA_FILEPATH, "r") as f:
-            metadata = json.load(f)
+        with open(settings.DATA_METADATA_FILEPATH, "r") as file:
+            metadata = json.load(file)
             (
                 self.ligandList,
                 self.receptorList,
@@ -46,8 +46,8 @@ class DAO:
             self.interactionAllDic = {ligand: False for ligand in self.interactionList}
             self.tumorAllDic = {receptor: False for receptor in self.tumorList}
 
-        with open(settings.DATA_FILTERS_FILEPATH, "r") as f:
-            self.dataFilters = json.load(f)
+        with open(settings.DATA_FILTERS_FILEPATH, "r") as file:
+            self.dataFilters = json.load(file)
 
-        with open(settings.DATA_DECONV_VALUES_FILEPATH, "rb") as f:
-            self.deconvValues = pickle.load(f)
+        with open(settings.DATA_DECONV_VALUES_FILEPATH, "rb") as file:
+            self.deconvValues = pickle.load(file)

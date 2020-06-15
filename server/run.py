@@ -11,7 +11,7 @@ LOGGER = getLogger(__name__)
 
 app = Flask(__name__)
 
-app.register_blueprint(main.app)
+app.register_blueprint(main.APP)
 
 
 @app.errorhandler(Exception)

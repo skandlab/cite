@@ -1,9 +1,7 @@
 from typing import List
-import pandas as pd
 import numpy as np
 from . import dao
 from . import error
-from . import settings
 
 
 def __check_if_all__(
@@ -45,21 +43,21 @@ def __validate__(
 
 # TODO: caching machinism
 def get_score(
-    params_ligandList: List[str],
-    params_receptorList: List[str],
-    params_interactionList: List[str],
-    params_tumorList: List[str],
+    paramsLigandList: List[str],
+    paramsReceptorList: List[str],
+    paramsInteractionList: List[str],
+    paramsTumorList: List[str],
 ):
     if (
-        params_ligandList == []
-        and params_receptorList == []
-        and params_interactionList == []
-        and params_tumorList == []
+        paramsLigandList == []
+        and paramsReceptorList == []
+        and paramsInteractionList == []
+        and paramsTumorList == []
     ):
         return dao.DB_INSTANCE.defaultScores
 
     ligandList, receptorList, interactionList, tumorList = __check_if_all__(
-        params_ligandList, params_receptorList, params_interactionList, params_tumorList
+        paramsLigandList, paramsReceptorList, paramsInteractionList, paramsTumorList
     )
     __validate__(ligandList, receptorList, interactionList, tumorList)
 
@@ -102,19 +100,19 @@ def get_score(
 
 
 def __generateItemIsPresent__(
-    params_ligandList: List[str], params_receptorList: List[str]
+    paramsLigandList: List[str], paramsReceptorList: List[str]
 ):
     ldic = dao.DB_INSTANCE.ligandDic.copy()
     rdic = dao.DB_INSTANCE.receptorDic.copy()
-    if len(params_ligandList) == len(dao.DB_INSTANCE.ligandList):
+    if len(paramsLigandList) == len(dao.DB_INSTANCE.ligandList):
         ldic = dao.DB_INSTANCE.ligandAllDic
     else:
-        for ligand in params_ligandList:
+        for ligand in paramsLigandList:
             ldic[ligand] = False
-    if len(params_receptorList) == len(dao.DB_INSTANCE.receptorList):
+    if len(paramsReceptorList) == len(dao.DB_INSTANCE.receptorList):
         rdic = dao.DB_INSTANCE.receptorAllDic
     else:
-        for receptor in params_receptorList:
+        for receptor in paramsReceptorList:
             rdic[receptor] = False
     return [
         {"filterType": "ligand", "itemIsPresent": ldic},
