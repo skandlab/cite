@@ -80,48 +80,12 @@ def test_get_score_default():
     assert len(items) == 4
     assert results == [
         {
-            "ligand": "A",
-            "receptor": "D",
-            "data": {
-                "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
-                ],
-                "keys": ["cc", "nn"],
-                "indexBy": "tumorType",
-            },
-        },
-        {
-            "ligand": "A",
+            "ligand": "C",
             "receptor": "E",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
-                ],
-                "keys": ["cc", "nn"],
-                "indexBy": "tumorType",
-            },
-        },
-        {
-            "ligand": "B",
-            "receptor": "D",
-            "data": {
-                "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
-                ],
-                "keys": ["cc", "nn"],
-                "indexBy": "tumorType",
-            },
-        },
-        {
-            "ligand": "B",
-            "receptor": "E",
-            "data": {
-                "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 20, "nn": 21},
+                    {"tumorType": "LUAD", "cc": 22, "nn": 23},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",
@@ -132,20 +96,56 @@ def test_get_score_default():
             "receptor": "D",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 16, "nn": 17},
+                    {"tumorType": "LUAD", "cc": 18, "nn": 19},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",
             },
         },
         {
-            "ligand": "C",
+            "ligand": "B",
             "receptor": "E",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 12, "nn": 13},
+                    {"tumorType": "LUAD", "cc": 14, "nn": 15},
+                ],
+                "keys": ["cc", "nn"],
+                "indexBy": "tumorType",
+            },
+        },
+        {
+            "ligand": "B",
+            "receptor": "D",
+            "data": {
+                "xyValues": [
+                    {"tumorType": "CRC", "cc": 8, "nn": 9},
+                    {"tumorType": "LUAD", "cc": 10, "nn": 11},
+                ],
+                "keys": ["cc", "nn"],
+                "indexBy": "tumorType",
+            },
+        },
+        {
+            "ligand": "A",
+            "receptor": "E",
+            "data": {
+                "xyValues": [
+                    {"tumorType": "CRC", "cc": 4, "nn": 5},
+                    {"tumorType": "LUAD", "cc": 6, "nn": 7},
+                ],
+                "keys": ["cc", "nn"],
+                "indexBy": "tumorType",
+            },
+        },
+        {
+            "ligand": "A",
+            "receptor": "D",
+            "data": {
+                "xyValues": [
+                    {"tumorType": "CRC", "cc": 0, "nn": 1},
+                    {"tumorType": "LUAD", "cc": 2, "nn": 3},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",
@@ -166,24 +166,12 @@ def test_get_score_notDefault():
     assert len(items) == 4
     assert results == [
         {
-            "ligand": "A",
-            "receptor": "D",
-            "data": {
-                "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
-                ],
-                "keys": ["cc", "nn"],
-                "indexBy": "tumorType",
-            },
-        },
-        {
-            "ligand": "A",
+            "ligand": "C",
             "receptor": "E",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 20, "nn": 21},
+                    {"tumorType": "LUAD", "cc": 22, "nn": 23},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",
@@ -194,20 +182,32 @@ def test_get_score_notDefault():
             "receptor": "D",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 16, "nn": 17},
+                    {"tumorType": "LUAD", "cc": 18, "nn": 19},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",
             },
         },
         {
-            "ligand": "C",
+            "ligand": "A",
             "receptor": "E",
             "data": {
                 "xyValues": [
-                    {"tumorType": "CRC", "cc": 1, "nn": 3},
-                    {"tumorType": "LUAD", "cc": 1, "nn": 3},
+                    {"tumorType": "CRC", "cc": 4, "nn": 5},
+                    {"tumorType": "LUAD", "cc": 6, "nn": 7},
+                ],
+                "keys": ["cc", "nn"],
+                "indexBy": "tumorType",
+            },
+        },
+        {
+            "ligand": "A",
+            "receptor": "D",
+            "data": {
+                "xyValues": [
+                    {"tumorType": "CRC", "cc": 0, "nn": 1},
+                    {"tumorType": "LUAD", "cc": 2, "nn": 3},
                 ],
                 "keys": ["cc", "nn"],
                 "indexBy": "tumorType",

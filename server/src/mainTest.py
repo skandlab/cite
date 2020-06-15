@@ -40,23 +40,11 @@ def test_scores():
                     "indexBy": "tumorType",
                     "keys": ["cc"],
                     "xyValues": [
-                        {"cc": 1, "tumorType": "CRC"},
-                        {"cc": 1, "tumorType": "LUAD"},
+                        {"cc": 12, "tumorType": "CRC"},
+                        {"cc": 14, "tumorType": "LUAD"},
                     ],
                 },
-                "ligand": "A",
-                "receptor": "D",
-            },
-            {
-                "data": {
-                    "indexBy": "tumorType",
-                    "keys": ["cc"],
-                    "xyValues": [
-                        {"cc": 1, "tumorType": "CRC"},
-                        {"cc": 1, "tumorType": "LUAD"},
-                    ],
-                },
-                "ligand": "A",
+                "ligand": "B",
                 "receptor": "E",
             },
             {
@@ -64,8 +52,8 @@ def test_scores():
                     "indexBy": "tumorType",
                     "keys": ["cc"],
                     "xyValues": [
-                        {"cc": 1, "tumorType": "CRC"},
-                        {"cc": 1, "tumorType": "LUAD"},
+                        {"cc": 8, "tumorType": "CRC"},
+                        {"cc": 10, "tumorType": "LUAD"},
                     ],
                 },
                 "ligand": "B",
@@ -76,12 +64,24 @@ def test_scores():
                     "indexBy": "tumorType",
                     "keys": ["cc"],
                     "xyValues": [
-                        {"cc": 1, "tumorType": "CRC"},
-                        {"cc": 1, "tumorType": "LUAD"},
+                        {"cc": 4, "tumorType": "CRC"},
+                        {"cc": 6, "tumorType": "LUAD"},
                     ],
                 },
-                "ligand": "B",
+                "ligand": "A",
                 "receptor": "E",
+            },
+            {
+                "data": {
+                    "indexBy": "tumorType",
+                    "keys": ["cc"],
+                    "xyValues": [
+                        {"cc": 0, "tumorType": "CRC"},
+                        {"cc": 2, "tumorType": "LUAD"},
+                    ],
+                },
+                "ligand": "A",
+                "receptor": "D",
             },
         ],
     }

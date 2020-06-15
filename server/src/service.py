@@ -76,7 +76,17 @@ def get_score(
     # create a slice of the scores dataframe based on above indices and interaction types
     tmpdf = dao.DB_INSTANCE.dfScores.iloc[indexes][["tumorType", *interactionList]]
 
-    pairs = np.sort(tmpdf.index.unique())
+    # aggregate max per pair
+    # then sort in descending order
+    # this gives the order of the pairs
+    pairs = (
+        tmpdf.groupby(level=[0, 1])
+        .max()
+        .iloc[:, 1:]
+        .max(axis=1)
+        .sort_values(ascending=False)
+        .index
+    )
     # sort scores according to pairs
     scores = tmpdf.loc[pairs].to_dict("records")
 
