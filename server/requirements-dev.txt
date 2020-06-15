@@ -1,0 +1,7 @@
+- r requirements.txt
+
+pytest==5.4.3
+coverage
+pytest-cov
+pytest-sugar
+black

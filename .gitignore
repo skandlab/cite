@@ -5,6 +5,8 @@ node_modules
 .ipynb_checkpoints
 *.ipynb
 __pycache__
+**/.coverage
+**/report*
 
 data_preprocess/*
 !data_preprocess/scripts
