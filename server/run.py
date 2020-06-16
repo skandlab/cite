@@ -31,8 +31,9 @@ def UrlNotFoundHandler(error):
     return jsonify("Url Not Found", 404)
 
 
+dao.init()
+if dao.DB_INSTANCE is None:
+    LOGGER.error("database not initialized")
+
 if __name__ == "__main__":
-    dao.init()
-    if dao.DB_INSTANCE is None:
-        LOGGER.error("database not initialized")
     app.run()
