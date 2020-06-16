@@ -10,7 +10,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                 {
                     "filterIndex": 0,
                     "title": "Ligands",
-                    "popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+                    "popupContent": None,
                     "options": [
                         {
                             "index": index,
@@ -25,7 +25,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                 {
                     "filterIndex": 1,
                     "title": "Receptors",
-                    "popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+                    "popupContent": None,
                     "options": [
                         {
                             "index": index,
