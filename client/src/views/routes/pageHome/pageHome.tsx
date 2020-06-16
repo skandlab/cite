@@ -3,6 +3,7 @@
  */
 import React from "react";
 import Tour from "reactour";
+import styled from "@emotion/styled";
 
 /**
  * ui elements
@@ -277,8 +278,14 @@ export class HomePage extends React.Component<{}, State> {
 			</>
 		) : (
 			<Dimmer inverted active page>
-				<Loader size="huge" />
+				<StyledLoader size="huge" />
 			</Dimmer>
 		);
 	}
 }
+
+const StyledLoader = styled(Loader)`
+	:before {
+		border-color: rgba(255, 255, 255, 0.15) !important;
+	}
+`;
