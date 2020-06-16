@@ -31,7 +31,7 @@ export const TourSteps: any = [
 	},
 	{
 		selector: '[data-tour="0_filterInput"]',
-		content: "Quick search for any item within a filter type",
+		content: "Quick search for any item within a filter type.",
 		position: "top",
 	},
 	{
@@ -52,7 +52,7 @@ export const TourSteps: any = [
 	},
 	{
 		selector: '[data-tour="0_resetButton"]',
-		content: "Reset filter list to unfiltered state",
+		content: "Reset filter list to unfiltered state.",
 		position: "top",
 	},
 	{
