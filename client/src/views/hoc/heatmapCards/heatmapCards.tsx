@@ -13,7 +13,7 @@ export const HeatMapCardGroup = ({ scoreDataList }: HeatmapCardGroupProps) =>
 			<em>No Ligand-Receptor combination found.</em>
 		</StyledContainer>
 	) : (
-		<StyledCardGroup centered doubling>
+		<StyledCardGroup data-tour="heatmapcards" centered doubling>
 			{scoreDataList.map((scoreData, index) => (
 				<HeatMapCard key={index} {...scoreData} />
 			))}

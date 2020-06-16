@@ -9,7 +9,67 @@ exports[`snapshot tests nothing checked 1`] = `
       class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
+        class="ui segment"
+      >
+        <div
+          class="ui message"
+        >
+          <h2
+            class="header"
+          >
+            Welcome
+          </h2>
+          <p>
+            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME).
+          </p>
+          <p>
+            <b>
+              Example:-
+            </b>
+            <br />
+            If you are interested in the 
+            <u>
+              AREG-EGFR
+            </u>
+             interaction in 
+            <u>
+              glioblastoma (GBM) and lower-grade glioma (LGG)
+            </u>
+            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of RC scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
+            <u>
+              very high SC (stroma-to-cancer) score
+            </u>
+             for this pair, indicating that tumor infiltrating stromal cells over-express the ligand AREG, activating over-expressed EGFR in cancer cells.
+          </p>
+          <button
+            class="ui mini button"
+            data-testid="exampleButton"
+            role="button"
+          >
+            Try example
+          </button>
+          <button
+            class="ui mini button css-k4wnm0"
+          >
+            Take a tour    
+            <i
+              aria-hidden="true"
+              class="rocket icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
+    >
+      <div
         class="ui centered cards"
+        data-tour="filter"
       >
         <div
           class="ui card"
@@ -44,6 +104,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="0_filterInput"
+                    data-tour="0_filterInput"
                   >
                     <input
                       type="text"
@@ -58,6 +119,7 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="0_checkbox-list"
               >
                 <div
                   data-testid="0_checkbox-list"
@@ -232,6 +294,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <button
               class="ui mini icon disabled right labeled button"
               data-testid="0_resetButton"
+              data-tour="0_resetButton"
               disabled=""
               tabindex="-1"
             >
@@ -244,6 +307,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="0_statistic"
+              data-tour="0_statistic"
             >
               <div
                 class="value"
@@ -291,6 +355,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="1_filterInput"
+                    data-tour="1_filterInput"
                   >
                     <input
                       type="text"
@@ -305,6 +370,7 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="1_checkbox-list"
               >
                 <div
                   data-testid="1_checkbox-list"
@@ -479,6 +545,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <button
               class="ui mini icon disabled right labeled button"
               data-testid="1_resetButton"
+              data-tour="1_resetButton"
               disabled=""
               tabindex="-1"
             >
@@ -491,6 +558,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="1_statistic"
+              data-tour="1_statistic"
             >
               <div
                 class="value"
@@ -538,6 +606,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="2_filterInput"
+                    data-tour="2_filterInput"
                   >
                     <input
                       type="text"
@@ -552,6 +621,7 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="2_checkbox-list"
               >
                 <div
                   data-testid="2_checkbox-list"
@@ -741,6 +811,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <button
               class="ui mini icon disabled right labeled button"
               data-testid="2_resetButton"
+              data-tour="2_resetButton"
               disabled=""
               tabindex="-1"
             >
@@ -753,6 +824,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="2_statistic"
+              data-tour="2_statistic"
             >
               <div
                 class="value"
@@ -796,6 +868,7 @@ exports[`snapshot tests nothing checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="3_filterInput"
+                    data-tour="3_filterInput"
                   >
                     <input
                       type="text"
@@ -810,6 +883,7 @@ exports[`snapshot tests nothing checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="3_checkbox-list"
               >
                 <div
                   data-testid="3_checkbox-list"
@@ -1034,6 +1108,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <button
               class="ui mini icon disabled right labeled button"
               data-testid="3_resetButton"
+              data-tour="3_resetButton"
               disabled=""
               tabindex="-1"
             >
@@ -1046,6 +1121,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="3_statistic"
+              data-tour="3_statistic"
             >
               <div
                 class="value"
@@ -1077,6 +1153,7 @@ exports[`snapshot tests nothing checked 1`] = `
         >
           <div
             class="ui card"
+            data-tour="summary"
           >
             <div
               class="center aligned content"
@@ -1139,6 +1216,7 @@ exports[`snapshot tests nothing checked 1`] = `
           >
             <div
               class="css-1au1m76"
+              data-tour="colobar"
             >
               <div
                 style="width: 100%; height: 100%;"
@@ -1160,6 +1238,7 @@ exports[`snapshot tests nothing checked 1`] = `
     >
       <div
         class="ui centered doubling cards css-1iidtr2"
+        data-tour="heatmapcards"
       >
         <div
           class="ui card css-1q0psf9"
@@ -1892,7 +1971,67 @@ exports[`snapshot tests one per group is checked 1`] = `
       class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
+        class="ui segment"
+      >
+        <div
+          class="ui message"
+        >
+          <h2
+            class="header"
+          >
+            Welcome
+          </h2>
+          <p>
+            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME).
+          </p>
+          <p>
+            <b>
+              Example:-
+            </b>
+            <br />
+            If you are interested in the 
+            <u>
+              AREG-EGFR
+            </u>
+             interaction in 
+            <u>
+              glioblastoma (GBM) and lower-grade glioma (LGG)
+            </u>
+            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of RC scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
+            <u>
+              very high SC (stroma-to-cancer) score
+            </u>
+             for this pair, indicating that tumor infiltrating stromal cells over-express the ligand AREG, activating over-expressed EGFR in cancer cells.
+          </p>
+          <button
+            class="ui mini button"
+            data-testid="exampleButton"
+            role="button"
+          >
+            Try example
+          </button>
+          <button
+            class="ui mini button css-k4wnm0"
+          >
+            Take a tour    
+            <i
+              aria-hidden="true"
+              class="rocket icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="centered row"
+  >
+    <div
+      class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
+    >
+      <div
         class="ui centered cards"
+        data-tour="filter"
       >
         <div
           class="ui card"
@@ -1927,6 +2066,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="0_filterInput"
+                    data-tour="0_filterInput"
                   >
                     <input
                       type="text"
@@ -1941,6 +2081,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="0_checkbox-list"
               >
                 <div
                   data-testid="0_checkbox-list"
@@ -2116,6 +2257,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <button
               class="ui mini icon right labeled button"
               data-testid="0_resetButton"
+              data-tour="0_resetButton"
             >
               <i
                 aria-hidden="true"
@@ -2126,6 +2268,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="0_statistic"
+              data-tour="0_statistic"
             >
               <div
                 class="value"
@@ -2173,6 +2316,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="1_filterInput"
+                    data-tour="1_filterInput"
                   >
                     <input
                       type="text"
@@ -2187,6 +2331,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="1_checkbox-list"
               >
                 <div
                   data-testid="1_checkbox-list"
@@ -2362,6 +2507,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <button
               class="ui mini icon right labeled button"
               data-testid="1_resetButton"
+              data-tour="1_resetButton"
             >
               <i
                 aria-hidden="true"
@@ -2372,6 +2518,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="1_statistic"
+              data-tour="1_statistic"
             >
               <div
                 class="value"
@@ -2419,6 +2566,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="2_filterInput"
+                    data-tour="2_filterInput"
                   >
                     <input
                       type="text"
@@ -2433,6 +2581,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="2_checkbox-list"
               >
                 <div
                   data-testid="2_checkbox-list"
@@ -2623,6 +2772,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <button
               class="ui mini icon right labeled button"
               data-testid="2_resetButton"
+              data-tour="2_resetButton"
             >
               <i
                 aria-hidden="true"
@@ -2633,6 +2783,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="2_statistic"
+              data-tour="2_statistic"
             >
               <div
                 class="value"
@@ -2676,6 +2827,7 @@ exports[`snapshot tests one per group is checked 1`] = `
                   <div
                     class="ui left icon input"
                     data-testid="3_filterInput"
+                    data-tour="3_filterInput"
                   >
                     <input
                       type="text"
@@ -2690,6 +2842,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               </form>
               <div
                 class="ui items css-p5nlxd"
+                data-tour="3_checkbox-list"
               >
                 <div
                   data-testid="3_checkbox-list"
@@ -2915,6 +3068,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <button
               class="ui mini icon right labeled button"
               data-testid="3_resetButton"
+              data-tour="3_resetButton"
             >
               <i
                 aria-hidden="true"
@@ -2925,6 +3079,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <div
               class="ui right floated statistic xs"
               data-testid="3_statistic"
+              data-tour="3_statistic"
             >
               <div
                 class="value"
@@ -2956,6 +3111,7 @@ exports[`snapshot tests one per group is checked 1`] = `
         >
           <div
             class="ui card"
+            data-tour="summary"
           >
             <div
               class="center aligned content"
@@ -3018,6 +3174,7 @@ exports[`snapshot tests one per group is checked 1`] = `
           >
             <div
               class="css-1au1m76"
+              data-tour="colobar"
             >
               <div
                 style="width: 100%; height: 100%;"
@@ -3039,6 +3196,7 @@ exports[`snapshot tests one per group is checked 1`] = `
     >
       <div
         class="ui centered doubling cards css-1iidtr2"
+        data-tour="heatmapcards"
       >
         <div
           class="ui card css-1q0psf9"

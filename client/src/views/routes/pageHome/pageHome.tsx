@@ -2,6 +2,7 @@
  * external imports
  */
 import React from "react";
+import Tour from "reactour";
 
 /**
  * ui elements
@@ -22,6 +23,9 @@ import {
 	FilterMetadata,
 	ItemIsPresentType,
 } from "../../../utils/backendRequests";
+import { TourSteps } from "../../../utils/steps";
+import { Banner } from "./banner";
+import { ExampleQueryParams } from "../../../utils/constants";
 
 interface State {
 	filters: FilterMetadata[];
@@ -29,6 +33,8 @@ interface State {
 	scoreData: HeatmapCardType[];
 	loading: boolean;
 	isFetching: boolean[];
+	startTour: boolean;
+	resetLoading: boolean;
 }
 
 export class HomePage extends React.Component<{}, State> {
@@ -41,6 +47,8 @@ export class HomePage extends React.Component<{}, State> {
 			scoreData: [],
 			loading: true,
 			isFetching: [],
+			startTour: false,
+			resetLoading: false,
 		};
 	}
 
@@ -126,7 +134,7 @@ export class HomePage extends React.Component<{}, State> {
 	/**
 	 * reset
 	 */
-	handleReset = (filterIndex: number): void => {
+	handleFilterReset = (filterIndex: number): void => {
 		let { options, filteredOptions } = this.state.filters[filterIndex];
 
 		filteredOptions.forEach(({ index }) => {
@@ -174,12 +182,79 @@ export class HomePage extends React.Component<{}, State> {
 		);
 	};
 
+	handleExampleQuery = () => {
+		let tmpFilters: FilterMetadata[] = [];
+		this.state.filters.forEach(
+			({ options, filteredOptions }, filterIndex) => {
+				filteredOptions = [];
+				options = options.map((option) => {
+					if (ExampleQueryParams.includes(option.value)) {
+						filteredOptions.push({ ...option, isChecked: true });
+						return { ...option, isChecked: true };
+					} else {
+						return { ...option, isChecked: false };
+					}
+				});
+
+				tmpFilters.push({
+					...this.state.filters[filterIndex],
+					options: options,
+					filteredOptions: filteredOptions,
+				});
+			}
+		);
+
+		let apiArgs = tmpFilters.map((filter) =>
+			filter.filteredOptions.map((option) => option.value)
+		);
+
+		this.setState(
+			{
+				isFetching: this.state.isFetching.map(() => true),
+				loading: true,
+			},
+			async () =>
+				await requestScores(apiArgs, (data1, data2) =>
+					this.setState({
+						...this.state,
+						scoreData: data1,
+						itemIsPresent: data2,
+						filters: tmpFilters,
+						isFetching: this.state.isFetching.map(() => false),
+						loading: false,
+					})
+				)
+		);
+	};
+
 	render() {
 		return this.state.filters.length !== 0 ? (
 			<>
+				<Tour
+					steps={TourSteps}
+					startAt={0}
+					rounded={3}
+					updateDelay={0.2}
+					lastStepNextButton="End tour"
+					isOpen={this.state.startTour}
+					onRequestClose={() => this.setState({ startTour: false })}
+				/>
 				<Grid.Row centered>
 					<GridColumn>
-						<Card.Group centered>
+						<Banner
+							loading={this.state.loading}
+							handleExampleQuery={this.handleExampleQuery}
+							handleTourToggle={() =>
+								this.setState({
+									startTour: !this.state.startTour,
+								})
+							}
+						/>
+					</GridColumn>
+				</Grid.Row>
+				<Grid.Row centered>
+					<GridColumn>
+						<Card.Group data-tour="filter" centered>
 							{this.state.filters.map((filter, index) => (
 								<ColumnBrowser
 									{...filter}
@@ -192,7 +267,7 @@ export class HomePage extends React.Component<{}, State> {
 									handleToggleCheckbox={
 										this.handleToggleCheckbox
 									}
-									handleReset={this.handleReset}
+									handleReset={this.handleFilterReset}
 								/>
 							))}
 						</Card.Group>

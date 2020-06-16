@@ -122,6 +122,7 @@ export const ColumnBrowser = ({
 				<Card.Description>
 					<StyledForm>
 						<Form.Input
+							data-tour={filterIndex.toString() + "_filterInput"}
 							data-testid={
 								filterIndex.toString() + "_filterInput"
 							}
@@ -132,7 +133,9 @@ export const ColumnBrowser = ({
 						/>
 					</StyledForm>
 
-					<StyledItemGroup>
+					<StyledItemGroup
+						data-tour={filterIndex.toString() + "_checkbox-list"}
+					>
 						{loading ? (
 							<ItemGroupLoader />
 						) : (
@@ -151,6 +154,7 @@ export const ColumnBrowser = ({
 			</Card.Content>
 			<Card.Content extra>
 				<Button
+					data-tour={filterIndex.toString() + "_resetButton"}
 					data-testid={filterIndex.toString() + "_resetButton"}
 					size="mini"
 					labelPosition="right"
@@ -165,6 +169,7 @@ export const ColumnBrowser = ({
 					Reset Filter
 				</Button>
 				<Statistic
+					data-tour={filterIndex.toString() + "_statistic"}
 					data-testid={filterIndex.toString() + "_statistic"}
 					className="xs"
 					label="showing"

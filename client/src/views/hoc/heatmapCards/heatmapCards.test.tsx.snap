@@ -4,6 +4,7 @@ exports[`render tests with data 1`] = `
 <DocumentFragment>
   <div
     class="ui centered doubling cards css-1iidtr2"
+    data-tour="heatmapcards"
   >
     <div
       class="ui card css-1q0psf9"

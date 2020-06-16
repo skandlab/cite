@@ -20,7 +20,7 @@ const data = [
 ];
 
 export const ColorBar = () => (
-	<StyledColorBar>
+	<StyledColorBar data-tour="colobar">
 		<ResponsiveHeatMap
 			{...(heatmapProps as HeatMapSvgProps)}
 			data={data}

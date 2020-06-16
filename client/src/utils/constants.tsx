@@ -4,6 +4,8 @@ export const APP_DESCRIPTION =
 
 export const URL_NAVBAR_LOGO = require("../assets/logo.svg");
 
+export const ExampleQueryParams = ["AREG", "EGFR", "GBM", "LGG"];
+
 export const Members: {
 	imageUrl: string;
 	header: string;

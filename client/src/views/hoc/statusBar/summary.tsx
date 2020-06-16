@@ -13,7 +13,7 @@ export const Summary = ({ totalItems, currentPageNumber }: Props) => {
 	start = totalItems === 0 ? 0 : start + 1;
 
 	return (
-		<Card>
+		<Card data-tour="summary">
 			<Card.Content textAlign="center">
 				<Form widths="equal">
 					<Form.Group inline>

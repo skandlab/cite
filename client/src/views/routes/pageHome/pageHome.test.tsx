@@ -12,6 +12,12 @@ const defaultRender = async () => {
 	return asFragment;
 };
 
+jest.mock("../../../utils/constants", () => ({
+	get ExampleQueryParams() {
+		return ["A2M", "ACKR4", "GBM", "CRC"];
+	},
+}));
+
 describe("snapshot tests", () => {
 	test("nothing checked", async () => {
 		const asFragment = await defaultRender();
@@ -405,6 +411,34 @@ describe("toggling tests", () => {
 			[],
 			["0 / 5", "0 / 5", "0 / 5", "0 / 6"],
 			[true, true, true, true]
+		);
+	});
+
+	test("example", async () => {
+		render(<HomePage />);
+		await screen.findByText("cs");
+
+		fireEvent.click(screen.getByTestId("exampleButton"));
+		await screen.getAllByRole("img");
+		await screen.findByTestId("2_checkbox-list");
+
+		TestState(
+			[5, 5, 5, 6],
+			["", "", "", ""],
+			["A2M", "ACKR4", "GBM", "CRC"],
+			[
+				"AANAT",
+				"ADAM12",
+				"ADAM15",
+				"ADAM17",
+				"ACKR2",
+				"ACKR3",
+				"ACVR1",
+				"ACVR1B",
+			],
+			["1 / 5", "1 / 5", "0 / 5", "2 / 6"],
+			[false, false, true, false],
+			1
 		);
 	});
 });
