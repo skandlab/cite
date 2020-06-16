@@ -317,7 +317,7 @@ exports[`snapshot tests nothing checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -568,7 +568,7 @@ exports[`snapshot tests nothing checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -834,7 +834,7 @@ exports[`snapshot tests nothing checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -1131,7 +1131,7 @@ exports[`snapshot tests nothing checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -2278,7 +2278,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -2528,7 +2528,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -2793,7 +2793,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>
@@ -3089,7 +3089,7 @@ exports[`snapshot tests one per group is checked 1`] = `
               <div
                 class="label"
               >
-                showing
+                filtered
               </div>
             </div>
           </div>

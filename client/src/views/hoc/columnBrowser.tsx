@@ -172,7 +172,7 @@ export const ColumnBrowser = ({
 					data-tour={filterIndex.toString() + "_statistic"}
 					data-testid={filterIndex.toString() + "_statistic"}
 					className="xs"
-					label="showing"
+					label="filtered"
 					floated="right"
 					value={filteredOptions.length + " / " + options.length}
 				/>

@@ -228,7 +228,7 @@ exports[`snapshot testing initial render 1`] = `
         <div
           class="label"
         >
-          showing
+          filtered
         </div>
       </div>
     </div>
@@ -463,7 +463,7 @@ exports[`snapshot testing one item is checked 1`] = `
         <div
           class="label"
         >
-          showing
+          filtered
         </div>
       </div>
     </div>
