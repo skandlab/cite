@@ -5,7 +5,7 @@ import { ColumnBrowserType } from "../views/hoc/columnBrowser";
 import { browserHistory } from "./browserHistory";
 import { ROUTES } from "./routes";
 
-axios.defaults.baseURL = "http://localhost:5000/server";
+axios.defaults.baseURL = "/server";
 
 export type FilterMetadata = {
 	filterIndex: number;
