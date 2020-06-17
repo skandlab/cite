@@ -13,6 +13,14 @@ app = Flask(__name__)
 
 app.register_blueprint(main.APP)
 
+# for dev environment
+# @app.after_request
+# def after_request(response):
+#     header = response.headers
+#     header["Access-Control-Allow-Origin"] = "http://localhost:3000"
+#     header["Access-Control-Allow-Methods"] = "GET"
+#     return response
+
 
 @app.errorhandler(Exception)
 def GenericExceptionHandler(error):
