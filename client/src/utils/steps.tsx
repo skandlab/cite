@@ -6,14 +6,14 @@ export const TourSteps: any = [
 		content: (
 			<>
 				<p>
-					Each heatmap shows show RC scores for a{" "}
-					<strong>ligand-receptor pair</strong> across interaction
+					Each heatmap shows Relative Crosstalk scores (<b>RC</b>) for
+					a <strong>ligand-receptor pair</strong> across interaction
 					types and tumor types.
 				</p>
 				<p>
-					View cellwise data for <strong>ligand-tumor</strong> and{" "}
-					<strong>receptor-tumor</strong> combinations by clicking on
-					a square in the heatmaps.
+					Click on a square in the heatmaps to view cellwise data for{" "}
+					<strong>ligand-tumor</strong> and{" "}
+					<strong>receptor-tumor</strong> combinations.
 				</p>
 			</>
 		),
@@ -23,8 +23,8 @@ export const TourSteps: any = [
 		selector: '[data-tour="filter"]',
 		content: (
 			<p>
-				List of available filters to shortlist the RC score heatmaps. By
-				default, all heatmaps are shown.
+				List of available filters to shortlist the heatmaps. By default,
+				all heatmaps are shown.
 			</p>
 		),
 		position: "top",
@@ -44,7 +44,7 @@ export const TourSteps: any = [
 				</p>
 				<p>
 					For ligands and receptors, if no associated data is present
-					the checkbox will be dimmed as a hint.
+					then the checkbox will be dimmed as a hint.
 				</p>
 			</>
 		),
@@ -66,17 +66,15 @@ export const TourSteps: any = [
 		content: (
 			<>
 				<h3>Summary card</h3>
-				<ul>
-					<li>Total no. of pairs for the current filters.</li>
-					<li>Also, no. of pairs on the current page.</li>
-				</ul>
+				<p>Total no. of pairs for the current filters.</p>
+				<p>Also, no. of pairs on the current page.</p>
 			</>
 		),
 		position: "top",
 	},
 	{
 		selector: '[data-tour="colobar"]',
-		content: "Legend of relative cross-talk score.",
+		content: "Legend of relative crosstalk score.",
 		position: "top",
 	},
 ];

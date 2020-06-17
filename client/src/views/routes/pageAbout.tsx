@@ -75,9 +75,10 @@ const PageAbout = () => (
 						</StyledItem>
 						<StyledItem>
 							<Item.Content>
-								The RC score then estimates the relative complex
-								concentration given all four possible directions
-								of signaling and a normal tissue state, e.g. for
+								The Relative Crosstalk (<b>RC</b>) score
+								estimates the relative complex concentration
+								given all four possible directions of signaling
+								and a normal tissue state, e.g. for
 								cancer-cancer (CC) signaling:
 								<Image
 									src={require("../../assets/about_formula.png")}
@@ -91,8 +92,8 @@ const PageAbout = () => (
 							<Item.Content>
 								To estimate the relative flow of signaling
 								between cancer and stromal cell compartments,
-								the Relative Crosstalk (RC) score was used.
-								Ligand-receptor complex activity was
+								the Relative Crosstalk (<b>RC</b>) score was
+								used. Ligand-receptor complex activity was
 								approximated using the product of ligand and
 								receptor gene expression inferred for the given
 								compartments (in linear scale).
