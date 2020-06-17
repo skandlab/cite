@@ -4,5 +4,6 @@ import ReactEcharts from "echarts-for-react";
 export const PlotEchartsBasic = styled(ReactEcharts)`
 	height: 400px !important;
 	max-width: 600px;
+	min-width: 400px;
 	margin: auto;
 `;

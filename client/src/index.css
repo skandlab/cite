@@ -103,7 +103,11 @@ body {
  *for the grid 
 */
 .row {
-	padding: 2em 0 2em 0 !important;
+	padding: 2em 0 !important;
+}
+
+.ui.statistic:first-child {
+	margin: 0 !important;
 }
 
 /*

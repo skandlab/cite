@@ -3,7 +3,7 @@
 		{
 			"filterIndex": 0,
 			"title": "Ligands",
-			"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+			"popupContent": null,
 			"options": [
 				{
 					"index": 0,
@@ -41,7 +41,7 @@
 		{
 			"filterIndex": 1,
 			"title": "Receptors",
-			"popupContent": "<p>if no associated heatmap present then gene will be dimmed</p>",
+			"popupContent": null,
 			"options": [
 				{
 					"index": 0,

@@ -41,8 +41,8 @@ const ExpressionPage = (props: Props) => {
 										{tumorType}
 									</Header.Subheader>
 								</Header>
-								<CardGroup centered itemsPerRow={2}>
-									<Card>
+								<Card.Group centered itemsPerRow={2}>
+									<StyledCard>
 										<Card.Content>
 											<PlotScatter
 												{...restProps}
@@ -50,9 +50,9 @@ const ExpressionPage = (props: Props) => {
 												yAxisName="log2 (fpkm + 1)"
 											/>
 										</Card.Content>
-									</Card>
+									</StyledCard>
 
-									<Card>
+									<StyledCard>
 										<Card.Content>
 											<PlotBar
 												{...restProps}
@@ -60,8 +60,8 @@ const ExpressionPage = (props: Props) => {
 												yAxisName="log2 (fpkm + 1)"
 											/>
 										</Card.Content>
-									</Card>
-								</CardGroup>
+									</StyledCard>
+								</Card.Group>
 							</Segment>
 						</GridColumn>
 					</Grid.Row>
@@ -76,8 +76,8 @@ const ExpressionPage = (props: Props) => {
 	);
 };
 
-const CardGroup = styled(Card.Group)`
-	padding: 0 !important;
+const StyledCard = styled(Card)`
+	min-width: 400px;
 `;
 
 export default ExpressionPage;

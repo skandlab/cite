@@ -9,7 +9,6 @@ import {
 	Segment,
 	Header,
 	Item,
-	Container,
 	Divider,
 } from "semantic-ui-react";
 import { GridColumn } from "../containers/gridColumn";
@@ -50,7 +49,7 @@ const PageAbout = () => (
 	<>
 		<Grid.Row centered>
 			<StyledGridColumn>
-				<Container>
+				<Segment>
 					<em>
 						<big>
 							CITE provides a database and dynamic visualization
@@ -106,7 +105,7 @@ const PageAbout = () => (
 							</Item.Content>
 						</StyledItem>
 					</Item.Group>
-				</Container>
+				</Segment>
 			</StyledGridColumn>
 		</Grid.Row>
 		<Grid.Row centered>

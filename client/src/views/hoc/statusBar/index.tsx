@@ -1,5 +1,6 @@
 import React from "react";
-import { Menu } from "semantic-ui-react";
+import styled from "@emotion/styled";
+import { Segment } from "semantic-ui-react";
 import { ColorBar } from "./colorbar";
 import { Summary } from "./summary";
 
@@ -9,14 +10,20 @@ interface Props {
 }
 
 export const StatusBar = (props: Props) => (
-	<Menu className="nohover" secondary borderless>
-		<Menu.Item>
-			<Summary {...props} />
-		</Menu.Item>
-		<Menu.Menu position="right">
-			<Menu.Item>
-				<ColorBar />
-			</Menu.Item>
-		</Menu.Menu>
-	</Menu>
+	<StackableStatusBar>
+		<Summary {...props} />
+		<ColorBar />
+	</StackableStatusBar>
 );
+
+export const StatusBarSegment = styled(Segment)`
+	margin: 1em auto !important;
+`;
+
+const StackableStatusBar = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 3em;
+	flex-wrap: wrap;
+`;

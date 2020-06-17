@@ -87,10 +87,6 @@ exports[`snapshot tests nothing checked 1`] = `
                 />
                  Ligands
               </span>
-              <i
-                aria-hidden="true"
-                class="info circle icon"
-              />
             </div>
             <div
               class="description"
@@ -338,10 +334,6 @@ exports[`snapshot tests nothing checked 1`] = `
                 />
                  Receptors
               </span>
-              <i
-                aria-hidden="true"
-                class="info circle icon"
-              />
             </div>
             <div
               class="description"
@@ -1146,82 +1138,54 @@ exports[`snapshot tests nothing checked 1`] = `
       class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
-        class="ui borderless secondary nohover menu"
+        class="css-1pnad6s"
       >
         <div
-          class="item"
+          class="ui compact segment css-1d6gp5m"
+          data-tour="summary"
         >
           <div
-            class="ui card"
-            data-tour="summary"
+            class="css-1nny79i"
           >
             <div
-              class="center aligned content"
-            >
-              <form
-                class="ui equal width form"
-              >
-                <div
-                  class="inline fields"
-                >
-                  <div
-                    class="field"
-                  >
-                    <div
-                      class="ui mini statistic"
-                    >
-                      <div
-                        class="value"
-                      >
-                        25
-                      </div>
-                      <small>
-                        Total
-                      </small>
-                    </div>
-                  </div>
-                  <div
-                    class="field"
-                  >
-                    <div
-                      class="ui mini statistic"
-                    >
-                      <div
-                        class="value"
-                      >
-                        1-12
-                      </div>
-                      <small>
-                        Showing
-                      </small>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="field"
-                >
-                  <label>
-                    Ligand-Receptor Combinations
-                  </label>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div
-          class="right menu"
-        >
-          <div
-            class="item"
-          >
-            <div
-              class="css-1au1m76"
-              data-tour="colobar"
+              class="ui mini statistic"
             >
               <div
-                style="width: 100%; height: 100%;"
-              />
+                class="value"
+              >
+                25
+              </div>
+              <small>
+                Total
+              </small>
             </div>
+            <div
+              class="ui mini statistic"
+            >
+              <div
+                class="value"
+              >
+                1-12
+              </div>
+              <small>
+                Showing
+              </small>
+            </div>
+          </div>
+          <label>
+            Ligand-Receptor Combinations
+          </label>
+        </div>
+        <div
+          class="ui segment css-1d6gp5m"
+        >
+          <div
+            class="css-1au1m76"
+            data-tour="colobar"
+          >
+            <div
+              style="width: 100%; height: 100%;"
+            />
           </div>
         </div>
       </div>
@@ -2049,10 +2013,6 @@ exports[`snapshot tests one per group is checked 1`] = `
                 />
                  Ligands
               </span>
-              <i
-                aria-hidden="true"
-                class="info circle icon"
-              />
             </div>
             <div
               class="description"
@@ -2299,10 +2259,6 @@ exports[`snapshot tests one per group is checked 1`] = `
                 />
                  Receptors
               </span>
-              <i
-                aria-hidden="true"
-                class="info circle icon"
-              />
             </div>
             <div
               class="description"
@@ -3104,82 +3060,54 @@ exports[`snapshot tests one per group is checked 1`] = `
       class="sixteen wide computer sixteen wide large screen sixteen wide mobile sixteen wide tablet fourteen wide widescreen column css-u03goq"
     >
       <div
-        class="ui borderless secondary nohover menu"
+        class="css-1pnad6s"
       >
         <div
-          class="item"
+          class="ui compact segment css-1d6gp5m"
+          data-tour="summary"
         >
           <div
-            class="ui card"
-            data-tour="summary"
+            class="css-1nny79i"
           >
             <div
-              class="center aligned content"
-            >
-              <form
-                class="ui equal width form"
-              >
-                <div
-                  class="inline fields"
-                >
-                  <div
-                    class="field"
-                  >
-                    <div
-                      class="ui mini statistic"
-                    >
-                      <div
-                        class="value"
-                      >
-                        1
-                      </div>
-                      <small>
-                        Total
-                      </small>
-                    </div>
-                  </div>
-                  <div
-                    class="field"
-                  >
-                    <div
-                      class="ui mini statistic"
-                    >
-                      <div
-                        class="value"
-                      >
-                        1-1
-                      </div>
-                      <small>
-                        Showing
-                      </small>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="field"
-                >
-                  <label>
-                    Ligand-Receptor Combinations
-                  </label>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div
-          class="right menu"
-        >
-          <div
-            class="item"
-          >
-            <div
-              class="css-1au1m76"
-              data-tour="colobar"
+              class="ui mini statistic"
             >
               <div
-                style="width: 100%; height: 100%;"
-              />
+                class="value"
+              >
+                1
+              </div>
+              <small>
+                Total
+              </small>
             </div>
+            <div
+              class="ui mini statistic"
+            >
+              <div
+                class="value"
+              >
+                1-1
+              </div>
+              <small>
+                Showing
+              </small>
+            </div>
+          </div>
+          <label>
+            Ligand-Receptor Combinations
+          </label>
+        </div>
+        <div
+          class="ui segment css-1d6gp5m"
+        >
+          <div
+            class="css-1au1m76"
+            data-tour="colobar"
+          >
+            <div
+              style="width: 100%; height: 100%;"
+            />
           </div>
         </div>
       </div>

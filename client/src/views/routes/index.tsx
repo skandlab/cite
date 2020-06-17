@@ -41,7 +41,7 @@ export class AppRouter extends React.Component<{}, State> {
 		return (
 			<React.StrictMode>
 				<React.Suspense fallback={<Icon loading name="spinner" />}>
-					<Grid stackable>
+					<Grid>
 						<Navbar {...this.state} />
 						<Router history={browserHistory}>
 							<Switch>
