@@ -24,12 +24,9 @@ interface Props {
 const CommonMenu = () => (
 	<>
 		<Menu.Item>
-			<Image
-				size="mini"
-				src={URL_NAVBAR_LOGO}
-				alt="cite-logo"
-				onClick={() => browserHistory.push(ROUTES.Home.push())}
-			/>
+			<a href={ROUTES.Home.push()}>
+				<Image size="mini" src={URL_NAVBAR_LOGO} alt="cite-logo" />
+			</a>
 		</Menu.Item>
 		<Menu.Item>
 			<Responsive maxWidth={1000}>
@@ -60,10 +57,10 @@ const ComputerMenu = (props: { currentRoute: string }) => (
 					val.show && (
 						<Menu.Item
 							key={val.name}
-							name={val.name}
 							active={val.match(props.currentRoute)}
-							onClick={() => browserHistory.push(val.push())}
-						/>
+						>
+							<a href={val.push()}>{val.name}</a>
+						</Menu.Item>
 					)
 			)}
 		</Menu.Menu>

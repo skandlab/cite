@@ -122,7 +122,3 @@ body {
 	font-weight: normal !important;
 	color: rgba(0, 0, 0, 0.4) !important;
 }
-
-.ui.menu.nohover .item:hover {
-	background-color: unset !important;
-}
