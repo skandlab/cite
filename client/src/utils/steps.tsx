@@ -11,6 +11,10 @@ export const TourSteps: any = [
 					types and tumor types.
 				</p>
 				<p>
+					Sorted in descending order by the maximum value in each
+					heatmap.
+				</p>
+				<p>
 					Click on a square in the heatmaps to view cellwise data for{" "}
 					<strong>ligand-tumor</strong> and{" "}
 					<strong>receptor-tumor</strong> combinations.
