@@ -79,7 +79,7 @@ const PageAbout = () => (
 								estimates the relative complex concentration
 								given all four possible directions of signaling
 								and a normal tissue state, e.g. for
-								cancer-cancer (CC) signaling:
+								cancer-cancer (C&gt;C) signaling:
 								<Image
 									src={require("../../assets/about_formula.png")}
 									alt="relative cross-talk formula"

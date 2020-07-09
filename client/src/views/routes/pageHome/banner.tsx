@@ -31,13 +31,13 @@ export const Banner = ({
 			<p>
 				<b>Example:-</b>
 				<br />
-				If you are interested in the <u>AREG-EGFR</u> interaction in{" "}
+				If you are interested in the <u>AREG&gt;EGFR</u> interaction in{" "}
 				<u>glioblastoma (GBM) and lower-grade glioma (LGG)</u>, then you{" "}
 				select the respective ligand, receptor and cancer types. You can{" "}
 				hover over the individual cells to see the specific values of
 				Relative Crosstalk (<b>RC</b>) scores. The heatmap of the RC
 				scores for AREG-EGFR pair in GBM and LGG shows a{" "}
-				<u>very high SC (stroma-to-cancer) score</u> for this pair,
+				<u>very high S&gt;C (stroma-to-cancer) score</u> for this pair,
 				indicating that tumor infiltrating stromal cells over-express
 				the ligand AREG, activating over-expressed EGFR in cancer cells.
 			</p>
