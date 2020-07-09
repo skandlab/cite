@@ -20,8 +20,27 @@ exports[`snapshot tests nothing checked 1`] = `
             Welcome
           </h2>
           <p>
-            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME).
+            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME). The relative flow of signaling is estimated by the Relative Crosstalk (
+            <b>
+              RC
+            </b>
+            ) score. Read more about RC score 
+            <a
+              href="/ui/about"
+            >
+              here
+            </a>
+            .
           </p>
+          <button
+            class="ui mini button css-k4wnm0"
+          >
+            Take a tour    
+            <i
+              aria-hidden="true"
+              class="rocket icon"
+            />
+          </button>
           <p>
             <b>
               Example:-
@@ -35,7 +54,11 @@ exports[`snapshot tests nothing checked 1`] = `
             <u>
               glioblastoma (GBM) and lower-grade glioma (LGG)
             </u>
-            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of RC scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
+            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of Relative Crosstalk (
+            <b>
+              RC
+            </b>
+            ) scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
             <u>
               very high SC (stroma-to-cancer) score
             </u>
@@ -47,15 +70,6 @@ exports[`snapshot tests nothing checked 1`] = `
             role="button"
           >
             Try example
-          </button>
-          <button
-            class="ui mini button css-k4wnm0"
-          >
-            Take a tour    
-            <i
-              aria-hidden="true"
-              class="rocket icon"
-            />
           </button>
         </div>
       </div>
@@ -1946,8 +1960,27 @@ exports[`snapshot tests one per group is checked 1`] = `
             Welcome
           </h2>
           <p>
-            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME).
+            CITE provides visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME). The relative flow of signaling is estimated by the Relative Crosstalk (
+            <b>
+              RC
+            </b>
+            ) score. Read more about RC score 
+            <a
+              href="/ui/about"
+            >
+              here
+            </a>
+            .
           </p>
+          <button
+            class="ui mini button css-k4wnm0"
+          >
+            Take a tour    
+            <i
+              aria-hidden="true"
+              class="rocket icon"
+            />
+          </button>
           <p>
             <b>
               Example:-
@@ -1961,7 +1994,11 @@ exports[`snapshot tests one per group is checked 1`] = `
             <u>
               glioblastoma (GBM) and lower-grade glioma (LGG)
             </u>
-            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of RC scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
+            , then you select the respective ligand, receptor and cancer types. You can hover over the individual cells to see the specific values of Relative Crosstalk (
+            <b>
+              RC
+            </b>
+            ) scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
             <u>
               very high SC (stroma-to-cancer) score
             </u>
@@ -1973,15 +2010,6 @@ exports[`snapshot tests one per group is checked 1`] = `
             role="button"
           >
             Try example
-          </button>
-          <button
-            class="ui mini button css-k4wnm0"
-          >
-            Take a tour    
-            <i
-              aria-hidden="true"
-              class="rocket icon"
-            />
           </button>
         </div>
       </div>

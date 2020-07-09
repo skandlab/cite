@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 import { GridColumn } from "../../containers/gridColumn";
 import { StatusBar } from "../../hoc/statusBar";
@@ -10,8 +10,12 @@ interface Props {
 	scoreData: HeatmapCardType[];
 }
 
-export const DataDisplayGrid = (props: Props) => {
+export const DataDisplayGrid = ({ scoreData }: Props) => {
 	const [currentPageNumber, updateCurrentPageNumber] = useState(1);
+
+	useEffect(() => {
+		updateCurrentPageNumber(1);
+	}, [scoreData]);
 
 	let { start, end } = calculatePaginationItems(currentPageNumber);
 
@@ -20,7 +24,7 @@ export const DataDisplayGrid = (props: Props) => {
 			<Grid.Row centered>
 				<GridColumn>
 					<StatusBar
-						totalItems={props.scoreData.length}
+						totalItems={scoreData.length}
 						currentPageNumber={currentPageNumber}
 					/>
 				</GridColumn>
@@ -31,7 +35,7 @@ export const DataDisplayGrid = (props: Props) => {
 			<Grid.Row centered>
 				<GridColumn>
 					<HeatMapCardGroup
-						scoreDataList={props.scoreData.slice(start, end)}
+						scoreDataList={scoreData.slice(start, end)}
 					/>
 				</GridColumn>
 			</Grid.Row>
@@ -39,8 +43,8 @@ export const DataDisplayGrid = (props: Props) => {
 			<Grid.Row centered>
 				<GridColumn>
 					<AppPagination
-						{...props}
-						totalItems={props.scoreData.length}
+						totalItems={scoreData.length}
+						currentPageNumber={currentPageNumber}
 						handleOnPageChange={updateCurrentPageNumber}
 					/>
 				</GridColumn>

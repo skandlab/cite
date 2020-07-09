@@ -14,6 +14,7 @@ const mockedHandleOnPageChange = jest.fn((data) => null);
 const defaultRender = (totalItems: number) =>
 	render(
 		<AppPagination
+			currentPageNumber={1}
 			totalItems={totalItems}
 			handleOnPageChange={mockedHandleOnPageChange}
 		/>
@@ -72,8 +73,11 @@ describe("change page number", () => {
 		expect(mockedHandleOnPageChange.mock.calls[0]).toBeUndefined();
 
 		fireEvent.click(aTags[3]);
+		expect(mockedHandleOnPageChange.mock.calls[0][0]).toEqual(2);
 		fireEvent.click(aTags[2]);
-		expect(mockedHandleOnPageChange.mock.calls[1][0]).toEqual(1);
+
+		// not called if page changed to same page
+		expect(mockedHandleOnPageChange.mock.calls[1]).toBeUndefined();
 		mockedHandleOnPageChange.mockClear();
 	});
 });

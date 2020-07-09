@@ -10,16 +10,21 @@ export const calculatePaginationItems = (pageNumber: number) => ({
 
 interface Props {
 	totalItems: number;
+	currentPageNumber: number;
 	handleOnPageChange: (activePageNumber: number) => void;
 }
 
-export const AppPagination = ({ totalItems, handleOnPageChange }: Props) => (
+export const AppPagination = ({
+	totalItems,
+	currentPageNumber,
+	handleOnPageChange,
+}: Props) => (
 	<Container textAlign="center">
 		<Pagination
 			className="pagination"
 			pointing
 			secondary
-			defaultActivePage={1}
+			activePage={currentPageNumber}
 			totalPages={Math.max(Math.ceil(totalItems / CardsPerPage), 1)}
 			onPageChange={(
 				_: React.SyntheticEvent,

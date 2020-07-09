@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/dom";
 import "@testing-library/jest-dom/extend-expect";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HomePage } from "./pageHome";
 import OptionsPerCard from "../../../__mockEndpoints__";
@@ -816,6 +816,79 @@ describe("integration tests", () => {
 			["0 / 5", "0 / 5", "0 / 5", "0 / 6"],
 			[true, true, true, true]
 		);
+	});
+});
+
+describe("pagination tests", () => {
+	test("page1 -> change data -> page1", async () => {
+		render(<HomePage />);
+		await screen.findByText("cs");
+
+		let { getByText } = within(screen.getByRole("navigation"));
+		expect(getByText("1")).toBeInTheDocument();
+		expect(getByText("2")).toBeInTheDocument();
+		expect(getByText("3")).toBeInTheDocument();
+
+		expect(getByText("1")).toHaveClass("active");
+
+		/**
+		 * toggle
+		 */
+		fireEvent.click(
+			screen.getByTestId("cs").getElementsByTagName("input")[0]
+		);
+		await screen.getByRole("img");
+		await screen.findByTestId("2_checkbox-list");
+
+		TestState(
+			[5, 5, 5, 6],
+			["", "", "", ""],
+			["cs"],
+			[],
+			["0 / 5", "0 / 5", "1 / 5", "0 / 6"],
+			[true, true, false, true]
+		);
+		expect(getByText("1")).toHaveClass("active");
+	});
+
+	test("page2 -> change data that has only page1 data -> page1", async () => {
+		render(<HomePage />);
+		await screen.findByText("cs");
+
+		let { getByText, queryByText } = within(screen.getByRole("navigation"));
+		expect(getByText("1")).toBeInTheDocument();
+		expect(getByText("2")).toBeInTheDocument();
+		expect(getByText("3")).toBeInTheDocument();
+
+		expect(getByText("1")).toHaveClass("active");
+
+		/**
+		 * change page
+		 */
+		fireEvent.click(screen.getByText("2"));
+
+		/**
+		 * toggle
+		 */
+		fireEvent.click(
+			screen.getByTestId("ADAM15").getElementsByTagName("input")[0]
+		);
+		await screen.getByRole("img");
+		await screen.findByTestId("0_checkbox-list");
+
+		TestState(
+			[5, 5, 5, 6],
+			["", "", "", ""],
+			["ADAM15"],
+			["A2M", "AANAT", "ADAM12", "ADAM17"],
+			["1 / 5", "0 / 5", "0 / 5", "0 / 6"],
+			[false, true, true, true],
+			5
+		);
+		expect(getByText("1")).toHaveClass("active");
+
+		expect(queryByText("2")).not.toBeInTheDocument();
+		expect(queryByText("3")).not.toBeInTheDocument();
 	});
 });
 
