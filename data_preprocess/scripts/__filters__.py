@@ -40,7 +40,7 @@ def run(tumorList, ligandList, receptorList, interactionList):
                 {
                     "filterIndex": 2,
                     "title": "Interaction Type",
-                    "popupContent": "<p>read more on interaction type in <a href='/ui/about' target='_blank' rel='noopener noreferrer' >about page</a> <sup><Icon name='external alternate' size='small' fitted /></sup></p>",
+                    "popupContent": "<p>Read more on interaction types in the <a href='/ui/about' target='_blank' rel='noopener noreferrer' >about page</a> <sup><Icon name='external alternate' size='small' fitted /></sup>.</p>",
                     "options": [
                         {
                             "index": index,
