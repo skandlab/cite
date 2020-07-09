@@ -29,8 +29,8 @@ TUMOR_TYPE_DESCRIPTION = {
     "UCEC": "Uterine Corpus Endometrial Carcinoma",
 }
 
-PAIRS_FILE = "source/pairs_v3.txt"
-INPUT_SCORE_FILE = "source/productScore_v3.csv"
+PAIRS_FILE = "source/pairs_v4.txt"
+INPUT_SCORE_FILE = "source/productScore_v4.csv"
 METADATA_FILE = "output/metadata.json"
 
 FILTERS_FILE = "output/filters.json"
