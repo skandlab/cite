@@ -1,10 +1,10 @@
 import React from "react";
 import {
+	PlotEchartsBasic,
 	echartsProps,
 	scatterplotProps,
 	lineplotProps,
-} from "./__plotConfig__.json";
-import { PlotEchartsBasic } from "./plotEchartsBasic";
+} from "./plotEchartsBasic";
 
 interface Props {
 	title?: string;

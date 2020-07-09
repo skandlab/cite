@@ -65,7 +65,7 @@
 		},
 		"yAxis": {
 			"nameLocation": "middle",
-			"nameGap": 8,
+			"nameGap": 25,
 			"nameTextStyle": {
 				"color": "#868686",
 				"fontSize": 14,

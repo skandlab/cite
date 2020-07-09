@@ -1,5 +1,5 @@
 import React from "react";
-import { echartsProps, barplotProps } from "./__plotConfig__.json";
+import { echartsProps, barplotProps } from "./plotEchartsBasic";
 import { PlotEchartsBasic } from "./plotEchartsBasic";
 
 interface Props {
