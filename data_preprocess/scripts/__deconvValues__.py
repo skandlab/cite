@@ -46,7 +46,9 @@ def run(ligandList, receptorList):
     purity = pd.read_parquet(c.PURITY_FILE)
     dfSamplesExp["cancer"] = purity.loc[
         np.intersect1d(dfSamplesExp.index, purity.index), "cancer"
-    ].round(3)
+    ]
+
+    dfSamplesExp = dfSamplesExp.round(3)
 
     result = {}
     for [gene, tumorType] in dfExp.index:
@@ -73,7 +75,7 @@ def run(ligandList, receptorList):
 
         # scatterplotData
         data["scatterplotData"] = [
-            {"name": name, "value": value}
+            {"name": name, "value": np.round(value, 3).tolist()}
             for name, value in zip(
                 mapping_tumor_samples[tumorType],
                 dfSamplesExp.loc[
