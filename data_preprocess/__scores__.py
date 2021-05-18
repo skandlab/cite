@@ -1,6 +1,5 @@
 from logging import getLogger
-import pandas as pd
-from . import __contants__ as c
+import __contants__ as c
 
 LOGGER = getLogger(__name__)
 

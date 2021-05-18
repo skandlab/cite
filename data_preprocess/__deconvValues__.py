@@ -1,11 +1,11 @@
 import pandas as pd
-import pickle
+import json
 import numpy as np
-from . import __contants__ as c
+import __contants__ as c
 
 
 with open(c.MAPPING_TUMOR_SAMPLES_FILE, "rb") as f:
-    mapping_tumor_samples = pickle.load(f)
+    mapping_tumor_samples = json.load(f)
 
 
 def run(ligandList, receptorList):
@@ -39,7 +39,7 @@ def run(ligandList, receptorList):
     dfExp.reset_index(inplace=True)
     dfExp.set_index(["gene", "tumorType"], inplace=True)
 
-    dfSamplesExp = pd.read_pickle(c.EXP_PER_SAMPLES_FILE)
+    dfSamplesExp = pd.read_parquet(c.EXP_PER_SAMPLES_FILE)
     # aliases
     dfSamplesExp["C10orf54"] = dfSamplesExp["VSIR"]
     dfSamplesExp = dfSamplesExp[np.intersect1d(geneList, dfSamplesExp.columns)]
@@ -86,7 +86,7 @@ def run(ligandList, receptorList):
 
         result[hashedKey] = data
 
-    with open(c.DECONV_VALUES_FILE, "wb") as f:
-        pickle.dump(
+    with open(c.DECONV_VALUES_FILE, "w") as f:
+        json.dump(
             result, f,
         )

@@ -1,9 +1,9 @@
 import pandas as pd
 import json
-from . import __contants__ as c
-from . import __filters__
-from . import __scores__
-from . import __deconvValues__
+import __contants__ as c
+import __filters__
+import __scores__
+import __deconvValues__
 
 
 df = pd.read_csv(

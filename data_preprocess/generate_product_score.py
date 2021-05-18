@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from . import __contants__ as c
+import __contants__ as c
 
 df = pd.read_csv(c.EXP_PER_CELLTYPE_FILE)
 

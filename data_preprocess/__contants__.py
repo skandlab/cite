@@ -29,20 +29,18 @@ TUMOR_TYPE_DESCRIPTION = {
     "UCEC": "Uterine Corpus Endometrial Carcinoma",
 }
 
+EXP_PER_CELLTYPE_FILE = "source/expPerCellType.csv"
 PAIRS_FILE = "source/pairs_v4.txt"
 INPUT_SCORE_FILE = "source/productScore_v4.csv"
-METADATA_FILE = "output/metadata.json"
 
+MAPPING_TUMOR_SAMPLES_FILE = "source/mapTumorSamples.json"
+EXP_PER_SAMPLES_FILE = "source/expPerSamples.parquet"
+PURITY_FILE = "source/purity.parquet"
+
+DECONV_VALUES_FILE = "output/deconvValues.json"
 FILTERS_FILE = "output/filters.json"
-
 LIGAND_INDEX_FILE = "output/map_ligand_index.parquet"
 RECEPTOR_INDEX_FILE = "output/map_receptor_index.parquet"
 TUMOR_INDEX_FILE = "output/map_tumor_index.parquet"
-
+METADATA_FILE = "output/metadata.json"
 SCORES_FILE = "output/scores.parquet"
-
-MAPPING_TUMOR_SAMPLES_FILE = "source/mapTumorSamples.pickle"
-EXP_PER_CELLTYPE_FILE = "source/expPerCellType.csv"
-EXP_PER_SAMPLES_FILE = "source/expPerSamples.pkl"
-PURITY_FILE = "source/purity.parquet"
-DECONV_VALUES_FILE = "output/deconvValues.pickle"

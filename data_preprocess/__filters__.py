@@ -1,6 +1,6 @@
 import json
 
-from . import __contants__ as c
+import __contants__ as c
 
 
 def run(tumorList, ligandList, receptorList, interactionList):
