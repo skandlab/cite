@@ -1,4 +1,3 @@
-import pickle
 import json
 import pandas as pd
 from . import settings
@@ -49,5 +48,5 @@ class DAO:
         with open(settings.DATA_FILTERS_FILEPATH, "r") as file:
             self.dataFilters = json.load(file)
 
-        with open(settings.DATA_DECONV_VALUES_FILEPATH, "rb") as file:
-            self.deconvValues = pickle.load(file)
+        with open(settings.DATA_DECONV_VALUES_FILEPATH, "r") as file:
+            self.deconvValues = json.load(file)
