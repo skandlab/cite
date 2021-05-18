@@ -1,5 +1,21 @@
 # Data Explanation
 
+## folder structure
+
+```
+.
++-- source
+|   +-- ...< data files >
++-- output
+|   +-- ...< data files >
++-- generate_product_score.py
++-- generate_data.py
++-- __scores__.py
++-- __filters__.py
++-- __deconvValues__.py
++-- __contants__.py
+```
+
 ## Source
 
 -   pairs files
@@ -20,15 +36,15 @@
 
 -   mapTumorSamples
 
-    sample id per tumor type
+    sample id per tumor type (TCGA)
 
 -   expPerSamples
 
-    gene expression for each sample
+    gene expression for each sample (TCGA)
 
 -   purity
 
-    sample purity
+    sample purity (TCGA)
 
 ## Output
 
