@@ -8,8 +8,9 @@ __pycache__
 **/.coverage
 **/report*
 
-data_preprocess/*
-!data_preprocess/scripts
+data_preprocess/archive
+data_preprocess/output
+data_preprocess/source
 
 server/data
 client/coverage

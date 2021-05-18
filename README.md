@@ -1,52 +1,51 @@
-         /$$$$$$$$ /$$   /$$ /$$      /$$ /$$$$$$$$ /$$$$$$$  /$$$$$$  /$$$$$$
-        |__  $$__/| $$  | $$| $$$    /$$$| $$_____/| $$__  $$|_  $$_/ /$$__  $$
-            | $$   | $$  | $$| $$$$  /$$$$| $$      | $$  \ $$  | $$  | $$  \__/
-            | $$   | $$  | $$| $$ $$/$$ $$| $$$$$   | $$$$$$$/  | $$  | $$
-            | $$   | $$  | $$| $$  $$$| $$| $$__/   | $$__  $$  | $$  | $$
-            | $$   | $$  | $$| $$\  $ | $$| $$      | $$  \ $$  | $$  | $$    $$
-            | $$   |  $$$$$$/| $$ \/  | $$| $$$$$$$$| $$  | $$ /$$$$$$|  $$$$$$/
-            |__/    \______/ |__/     |__/|________/|__/  |__/|______/ \______/
+          /$$$$$$  /$$$$$$ /$$$$$$$$ /$$$$$$$$
+        /$$__  $$|_  $$_/|__  $$__/| $$_____/
+        | $$  \__/  | $$     | $$   | $$
+        | $$        | $$     | $$   | $$$$$
+        | $$        | $$     | $$   | $$__/
+        | $$    $$  | $$     | $$   | $$
+        |  $$$$$$/ /$$$$$$   | $$   | $$$$$$$$
+        \______/ |______/   |__/   |________/
 
 # CITE [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
 
-### Authors
+## Authors
 
 -   **Probhonjon Baruah** - [bigfoot31](https://github.com/bigfoot31)
 
-### Repo structure
+## Repo structure
 
+-   data_preprocess: data processing code
+    -   scripts: files to generate data files
 -   client: frontend code written with React
 -   server: backend code written with Flask
--   data_preprocess: data processing code
-    -   scripts: files to generate images and json files
 -   nginx: nginx web server to host frontend production code
 
-### Deployment
+## Deployment
 
-#### deployment is done through docker
+### deployment is done through docker
 
 -   nginx image: docker image that hosts frontend code
 -   python image: docker image that host backend code
 
-#### requirements
+### requirements
 
 -   certs: valid https certs
 -   data: files that contain expression and fold-change data
 -   static: folder that contains all images including homepage help-image
 
-#### process
+### process
 
 ```bash
 git clone https://github.com/bigfoot31/cite
 cp -r certs cite
 cp -r data cite
-cp -r static cite
 cd cite
 docker-compose build
 docker-compose up -d
 ```
 
-#### additional info
+### additional info
 
 -   download fonts from https://google-webfonts-helper.herokuapp.com/fonts/noto-sans-sc?subsets=latin
 -   virus scan
@@ -67,3 +66,7 @@ docker-compose up -d
     ```python
     pylint --rcfile pylintrc.ini src > report_pylint.txt
     ```
+
+## Acknowledgements
+
+-   ASCII made with [Link](http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=CITE)
