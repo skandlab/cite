@@ -48,7 +48,7 @@ exports[`snapshot tests nothing checked 1`] = `
             <br />
             If you are interested in the 
             <u>
-              AREG-EGFR
+              AREG&gt;EGFR
             </u>
              interaction in 
             <u>
@@ -60,7 +60,7 @@ exports[`snapshot tests nothing checked 1`] = `
             </b>
             ) scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
             <u>
-              very high SC (stroma-to-cancer) score
+              very high S&gt;C (stroma-to-cancer) score
             </u>
              for this pair, indicating that tumor infiltrating stromal cells over-express the ligand AREG, activating over-expressed EGFR in cancer cells.
           </p>
@@ -1988,7 +1988,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             <br />
             If you are interested in the 
             <u>
-              AREG-EGFR
+              AREG&gt;EGFR
             </u>
              interaction in 
             <u>
@@ -2000,7 +2000,7 @@ exports[`snapshot tests one per group is checked 1`] = `
             </b>
             ) scores. The heatmap of the RC scores for AREG-EGFR pair in GBM and LGG shows a 
             <u>
-              very high SC (stroma-to-cancer) score
+              very high S&gt;C (stroma-to-cancer) score
             </u>
              for this pair, indicating that tumor infiltrating stromal cells over-express the ligand AREG, activating over-expressed EGFR in cancer cells.
           </p>
