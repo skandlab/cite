@@ -48,6 +48,8 @@ def get_score(
     paramsInteractionList: List[str],
     paramsTumorList: List[str],
 ):
+    # comment the following `if` statement to generate the
+    # `default.json` file
     if (
         paramsLigandList == []
         and paramsReceptorList == []
