@@ -27,18 +27,34 @@ def __validate__(
     interactionList: List[str],
     tumorList: List[str],
 ):
+    MAX_LIGAND_LENGTH = 8
+    MAX_RECEPTOR_LENGTH = 9
+    MAX_INTERACTION_LENGTH = 2
+    MAX_TUMOR_LENGTH = 4
+    for i in ligandList:
+        if len(i) > MAX_LIGAND_LENGTH:
+            raise error.ValidationError("Invalid ligand in query")
+    for i in receptorList:
+        if len(i) > MAX_RECEPTOR_LENGTH:
+            raise error.ValidationError("Invalid receptor in query")
+    for i in interactionList:
+        if len(i) > MAX_INTERACTION_LENGTH:
+            raise error.ValidationError("Invalid interaction in query")
+    for i in tumorList:
+        if len(i) > MAX_TUMOR_LENGTH:
+            raise error.ValidationError("Invalid tumor in query")
     if len(np.setdiff1d(ligandList, dao.DB_INSTANCE.ligandList)) != 0:
-        raise error.ValidationError("Invalid ligand in query: {}".format(ligandList))
+        raise error.ValidationError("Invalid ligand in query")
     if len(np.setdiff1d(receptorList, dao.DB_INSTANCE.receptorList)) != 0:
         raise error.ValidationError(
-            "Invalid receptor in query: {}".format(receptorList)
+            "Invalid receptor in query"
         )
     if len(np.setdiff1d(interactionList, dao.DB_INSTANCE.interactionList)) != 0:
         raise error.ValidationError(
-            "Invalid interaction in query: {}".format(interactionList)
+            "Invalid interaction in query"
         )
     if len(np.setdiff1d(tumorList, dao.DB_INSTANCE.tumorList)) != 0:
-        raise error.ValidationError("Invalid tumor in query: {}".format(tumorList))
+        raise error.ValidationError("Invalid tumor in query")
 
 
 # TODO: caching machinism

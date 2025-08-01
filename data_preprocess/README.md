@@ -21,12 +21,7 @@
 -   pairs files
 
     whenever new pairs come, check whether both genes are present in expPerCellType.csv and expPerCellType.csv files.
-
-    -   pairs_v1.txt = from umesh
-    -   pairs_v2.txt = v1 + additional pairs from Neha (pairs_neha_addnl_v1.txt)
-    -   pairs_v3.txt = v2 + additional pairs from Neha (pairs_neha_addnl_v2.txt)
-    -   pairs_v4.txt = refactoring of pairs_v3. LAG3 was in both ligand and receptor in v3. plus other issues.
-
+    
 -   product score
 
     -   expPerCellType.csv + pairs_v< version No. >.txt --> product_score

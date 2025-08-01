@@ -1,4 +1,5 @@
 import React from "react";
+import URL_NAVBAR_LOGO from "../../assets/logo.svg";
 import {
 	Grid,
 	Menu,
@@ -9,7 +10,6 @@ import {
 } from "semantic-ui-react";
 
 import {
-	URL_NAVBAR_LOGO,
 	APP_TITLE,
 	APP_DESCRIPTION,
 } from "../../utils/constants";

@@ -69,6 +69,11 @@ export class AppRouter extends React.Component<{}, State> {
 									path={ROUTES.Home.routes}
 									component={LazyImportedHomePage}
 								/>
+								<Route
+									exact
+									path="/"
+									component={LazyImportedHomePage}
+								/>
 								<Redirect from="*" to={ROUTES.Home.push()} />
 							</Switch>
 						</Router>

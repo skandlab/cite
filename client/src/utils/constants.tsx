@@ -2,8 +2,6 @@ export const APP_TITLE = "CITE";
 export const APP_DESCRIPTION =
 	"Crosstalk Interactions within Tumor microEnvironment";
 
-export const URL_NAVBAR_LOGO = require("../assets/logo.svg");
-
 export const ExampleQueryParams = ["AREG", "EGFR", "GBM", "LGG"];
 
 export const Members: {

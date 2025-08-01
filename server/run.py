@@ -44,4 +44,4 @@ if dao.DB_INSTANCE is None:
     LOGGER.error("database not initialized")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5001)
