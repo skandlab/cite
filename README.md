@@ -1,28 +1,45 @@
-          /$$$$$$  /$$$$$$ /$$$$$$$$ /$$$$$$$$
-        /$$__  $$|_  $$_/|__  $$__/| $$_____/
-        | $$  \__/  | $$     | $$   | $$
-        | $$        | $$     | $$   | $$$$$
-        | $$        | $$     | $$   | $$__/
-        | $$    $$  | $$     | $$   | $$
-        |  $$$$$$/ /$$$$$$   | $$   | $$$$$$$$
-        \______/ |______/   |__/   |________/
+# CITE - Crosstalk Interactions within Tumor microEnvironment
 
-# CITE [![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
+> ⚠️ **Note:** CITE is now fully **offline**. Users must run it locally by following the instructions below.
 
-This documentation is meant for CITE's offline usage.
+---
+
+## Overview
+
+*CITE provides a database and dynamic visualization of ligand-receptor (LR) signaling interactions within the tumor microenvironment (TME).*
+
+Crosstalk between ligands and receptors on cancer and stromal cells were estimated in the tumor microenvironment of 20 solid tumor types, based on cancer and stroma-specific expression.
+
+The Relative Crosstalk (**RC**) score estimates the relative complex concentration given all four possible directions of signaling and a normal tissue state, e.g. for cancer-cancer (C>C) signaling.
+
+To estimate the relative flow of signaling between cancer and stromal cell compartments, the RC score was used. Ligand-receptor complex activity was approximated using the product of ligand and receptor gene expression inferred for the given compartments (in linear scale).
+
+---
+
+## Made with
+
+[![Generic badge](https://img.shields.io/badge/Made%20with-React-blue)](https://shields.io/)  
+[![Generic badge](https://img.shields.io/badge/Made%20with-Flask-red)](https://shields.io/)
+
+---
 
 ## Authors
 
--   **Probhonjon Baruah** - [bigfoot31](https://github.com/bigfoot31)
+- **Probhonjon Baruah** – [bigfoot31](https://github.com/bigfoot31)
+- **Tanmay Kulshrestha** - [tanmay2893](https://github.com/tanmay2893)
 
-## Repo structure
+---
+
+## Repo Structure
+
+
 
 -   data_preprocess: data processing code
     -   scripts: files to generate data files
 -   client: frontend code written with React
 -   server: backend code written with Flask
 
-## Deployment
+## Deployment (Local Only)
 
 ### requirements
 
