@@ -14,9 +14,6 @@ The Relative Crosstalk (**RC**) score estimates the relative complex concentrati
 
 To estimate the relative flow of signaling between cancer and stromal cell compartments, the RC score was used. Ligand-receptor complex activity was approximated using the product of ligand and receptor gene expression inferred for the given compartments (in linear scale). 
 
-See [Ghoshdastider et al., Data-driven inference of crosstalk in the tumor microenvironment, bioRxiv, 2020.] (https://www.biorxiv.org/content/10.1101/835512v1)
-
-
 ---
 
 ## Made with
@@ -76,3 +73,8 @@ npm run start
 ## Acknowledgements
 
 -   ASCII made with [Link](http://patorjk.com/software/taag/#p=testall&f=Graffiti&t=CITE)
+
+If you use CITE in your work, please cite this paper:
+
+Ghoshdastider et al., Data-driven inference of crosstalk in the tumor microenvironment, bioRxiv, 2020. (https://doi.org/10.1101/835512)
+
